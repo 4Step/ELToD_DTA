@@ -1,0 +1,723 @@
+
+	********************************************
+	|                                          |
+	|        FileFormat - Version 7.1.5        |
+	|  Copyright 2017 by TRANSIMS Open-Source  |
+	|         Mon Oct  2 11:37:10 2017         |
+	|                                          |
+	********************************************
+
+	Control File = FileFormat.ctl
+	Report File  = FileFormat.prn (Create)
+
+	FileFormat
+
+	Project Directory = .\
+	Random Number Seed = 1506958630
+
+	FileFormat Control Keys:
+
+	Data File #1 = .\input/Trip Table 1.csv
+	Data Format #1 = COMMA_DELIMITED
+
+	Data File #2 = .\input/Trip Table 2.csv
+	Data Format #2 = COMMA_DELIMITED
+
+	Data File #3 = .\input/Trip Table 3.csv
+	Data Format #3 = COMMA_DELIMITED
+
+	Data File #4 = .\input/Trip Table 4.csv
+	Data Format #4 = COMMA_DELIMITED
+
+	Data File #5 = .\input/Trip Table 5.csv
+	Data Format #5 = COMMA_DELIMITED
+
+	Data File #6 = .\input/Trip Table 6.csv
+	Data Format #6 = COMMA_DELIMITED
+
+	Data File #7 = .\input/Trip Table 7.csv
+	Data Format #7 = COMMA_DELIMITED
+
+	Data File #8 = .\input/Trip Table 8.csv
+	Data Format #8 = COMMA_DELIMITED
+
+	Data File #9 = .\input/Trip Table 9.csv
+	Data Format #9 = COMMA_DELIMITED
+
+	Data File #10 = .\input/Trip Table 10.csv
+	Data Format #10 = COMMA_DELIMITED
+
+	Data File #11 = .\input/Trip Table 11.csv
+	Data Format #11 = COMMA_DELIMITED
+
+	Data File #12 = .\input/Trip Table 12.csv
+	Data Format #12 = COMMA_DELIMITED
+
+	Data File #13 = .\input/Trip Table 13.csv
+	Data Format #13 = COMMA_DELIMITED
+
+	Data File #14 = .\input/Trip Table 14.csv
+	Data Format #14 = COMMA_DELIMITED
+
+	Data File #15 = .\input/Trip Table 15.csv	FileFormat
+	Mon Oct  2 11:37:10 2017  FileFormat  page 2
+
+	Data Format #15 = COMMA_DELIMITED
+
+	Data File #16 = .\input/Trip Table 16.csv
+	Data Format #16 = COMMA_DELIMITED
+
+	Data File #17 = .\input/Trip Table 17.csv
+	Data Format #17 = COMMA_DELIMITED
+
+	Data File #18 = .\input/Trip Table 18.csv
+	Data Format #18 = COMMA_DELIMITED
+
+	Data File #19 = .\input/Trip Table 19.csv
+	Data Format #19 = COMMA_DELIMITED
+
+	Data File #20 = .\input/Trip Table 20.csv
+	Data Format #20 = COMMA_DELIMITED
+
+	Data File #21 = .\input/Trip Table 21.csv
+	Data Format #21 = COMMA_DELIMITED
+
+	Data File #22 = .\input/Trip Table 22.csv
+	Data Format #22 = COMMA_DELIMITED
+
+	Data File #23 = .\input/Trip Table 23.csv
+	Data Format #23 = COMMA_DELIMITED
+
+	Data File #24 = .\input/Trip Table 24.csv
+	Data Format #24 = COMMA_DELIMITED
+
+	Data File #25 = .\input/Trip Table 25.csv
+	Data Format #25 = COMMA_DELIMITED
+
+	Data File #26 = .\input/Trip Table 26.csv
+	Data Format #26 = COMMA_DELIMITED
+
+	Data File #27 = .\input/Trip Table 27.csv
+	Data Format #27 = COMMA_DELIMITED
+
+	Data File #28 = .\input/Trip Table 28.csv
+	Data Format #28 = COMMA_DELIMITED
+
+	Data File #29 = .\input/Trip Table 29.csv
+	Data Format #29 = COMMA_DELIMITED
+
+	Data File #30 = .\input/Trip Table 30.csv
+	Data Format #30 = COMMA_DELIMITED
+
+	Data File #31 = .\input/Trip Table 31.csv
+	Data Format #31 = COMMA_DELIMITED
+
+	Data File #32 = .\input/Trip Table 32.csv
+	Data Format #32 = COMMA_DELIMITED
+
+	Data File #33 = .\input/Trip Table 33.csv
+	Data Format #33 = COMMA_DELIMITED
+
+	Data File #34 = .\input/Trip Table 34.csv
+	Data Format #34 = COMMA_DELIMITED
+
+	Data File #35 = .\input/Trip Table 35.csv
+	Data Format #35 = COMMA_DELIMITED
+	FileFormat
+	Mon Oct  2 11:37:10 2017  FileFormat  page 3
+
+	Data File #36 = .\input/Trip Table 36.csv
+	Data Format #36 = COMMA_DELIMITED
+
+	Data File #37 = .\input/Trip Table 37.csv
+	Data Format #37 = COMMA_DELIMITED
+
+	Data File #38 = .\input/Trip Table 38.csv
+	Data Format #38 = COMMA_DELIMITED
+
+	Data File #39 = .\input/Trip Table 39.csv
+	Data Format #39 = COMMA_DELIMITED
+
+	Data File #40 = .\input/Trip Table 40.csv
+	Data Format #40 = COMMA_DELIMITED
+
+	Data File #41 = .\input/Trip Table 41.csv
+	Data Format #41 = COMMA_DELIMITED
+
+	Data File #42 = .\input/Trip Table 42.csv
+	Data Format #42 = COMMA_DELIMITED
+
+	Data File #43 = .\input/Trip Table 43.csv
+	Data Format #43 = COMMA_DELIMITED
+
+	Data File #44 = .\input/Trip Table 44.csv
+	Data Format #44 = COMMA_DELIMITED
+
+	Data File #45 = .\input/Trip Table 45.csv
+	Data Format #45 = COMMA_DELIMITED
+
+	Data File #46 = .\input/Trip Table 46.csv
+	Data Format #46 = COMMA_DELIMITED
+
+	Data File #47 = .\input/Trip Table 47.csv
+	Data Format #47 = COMMA_DELIMITED
+
+	Data File #48 = .\input/Trip Table 48.csv
+	Data Format #48 = COMMA_DELIMITED
+
+	Data File #49 = .\input/Trip Table 49.csv
+	Data Format #49 = COMMA_DELIMITED
+
+	Data File #50 = .\input/Trip Table 50.csv
+	Data Format #50 = COMMA_DELIMITED
+
+	Data File #51 = .\input/Trip Table 51.csv
+	Data Format #51 = COMMA_DELIMITED
+
+	Data File #52 = .\input/Trip Table 52.csv
+	Data Format #52 = COMMA_DELIMITED
+
+	Data File #53 = .\input/Trip Table 53.csv
+	Data Format #53 = COMMA_DELIMITED
+
+	Data File #54 = .\input/Trip Table 54.csv
+	Data Format #54 = COMMA_DELIMITED
+
+	Data File #55 = .\input/Trip Table 55.csv
+	Data Format #55 = COMMA_DELIMITED
+
+	Data File #56 = .\input/Trip Table 56.csv
+	Data Format #56 = COMMA_DELIMITED	FileFormat
+	Mon Oct  2 11:37:10 2017  FileFormat  page 4
+
+
+	Data File #57 = .\input/Trip Table 57.csv
+	Data Format #57 = COMMA_DELIMITED
+
+	Data File #58 = .\input/Trip Table 58.csv
+	Data Format #58 = COMMA_DELIMITED
+
+	Data File #59 = .\input/Trip Table 59.csv
+	Data Format #59 = COMMA_DELIMITED
+
+	Data File #60 = .\input/Trip Table 60.csv
+	Data Format #60 = COMMA_DELIMITED
+
+	Data File #61 = .\input/Trip Table 61.csv
+	Data Format #61 = COMMA_DELIMITED
+
+	Data File #62 = .\input/Trip Table 62.csv
+	Data Format #62 = COMMA_DELIMITED
+
+	Data File #63 = .\input/Trip Table 63.csv
+	Data Format #63 = COMMA_DELIMITED
+
+	Data File #64 = .\input/Trip Table 64.csv
+	Data Format #64 = COMMA_DELIMITED
+
+	Data File #65 = .\input/Trip Table 65.csv
+	Data Format #65 = COMMA_DELIMITED
+
+	Data File #66 = .\input/Trip Table 66.csv
+	Data Format #66 = COMMA_DELIMITED
+
+	Data File #67 = .\input/Trip Table 67.csv
+	Data Format #67 = COMMA_DELIMITED
+
+	Data File #68 = .\input/Trip Table 68.csv
+	Data Format #68 = COMMA_DELIMITED
+
+	Data File #69 = .\input/Trip Table 69.csv
+	Data Format #69 = COMMA_DELIMITED
+
+	Data File #70 = .\input/Trip Table 70.csv
+	Data Format #70 = COMMA_DELIMITED
+
+	Data File #71 = .\input/Trip Table 71.csv
+	Data Format #71 = COMMA_DELIMITED
+
+	Data File #72 = .\input/Trip Table 72.csv
+	Data Format #72 = COMMA_DELIMITED
+
+	Data File #73 = .\input/Trip Table 73.csv
+	Data Format #73 = COMMA_DELIMITED
+
+	Data File #74 = .\input/Trip Table 74.csv
+	Data Format #74 = COMMA_DELIMITED
+
+	Data File #75 = .\input/Trip Table 75.csv
+	Data Format #75 = COMMA_DELIMITED
+
+	Data File #76 = .\input/Trip Table 76.csv
+	Data Format #76 = COMMA_DELIMITED
+
+	Data File #77 = .\input/Trip Table 77.csv	FileFormat
+	Mon Oct  2 11:37:10 2017  FileFormat  page 5
+
+	Data Format #77 = COMMA_DELIMITED
+
+	Data File #78 = .\input/Trip Table 78.csv
+	Data Format #78 = COMMA_DELIMITED
+
+	Data File #79 = .\input/Trip Table 79.csv
+	Data Format #79 = COMMA_DELIMITED
+
+	Data File #80 = .\input/Trip Table 80.csv
+	Data Format #80 = COMMA_DELIMITED
+
+	Data File #81 = .\input/Trip Table 81.csv
+	Data Format #81 = COMMA_DELIMITED
+
+	Data File #82 = .\input/Trip Table 82.csv
+	Data Format #82 = COMMA_DELIMITED
+
+	Data File #83 = .\input/Trip Table 83.csv
+	Data Format #83 = COMMA_DELIMITED
+
+	Data File #84 = .\input/Trip Table 84.csv
+	Data Format #84 = COMMA_DELIMITED
+
+	Data File #85 = .\input/Trip Table 85.csv
+	Data Format #85 = COMMA_DELIMITED
+
+	Data File #86 = .\input/Trip Table 86.csv
+	Data Format #86 = COMMA_DELIMITED
+
+	Data File #87 = .\input/Trip Table 87.csv
+	Data Format #87 = COMMA_DELIMITED
+
+	Data File #88 = .\input/Trip Table 88.csv
+	Data Format #88 = COMMA_DELIMITED
+
+	Data File #89 = .\input/Trip Table 89.csv
+	Data Format #89 = COMMA_DELIMITED
+
+	Data File #90 = .\input/Trip Table 90.csv
+	Data Format #90 = COMMA_DELIMITED
+
+	Data File #91 = .\input/Trip Table 91.csv
+	Data Format #91 = COMMA_DELIMITED
+
+	Data File #92 = .\input/Trip Table 92.csv
+	Data Format #92 = COMMA_DELIMITED
+
+	Data File #93 = .\input/Trip Table 93.csv
+	Data Format #93 = COMMA_DELIMITED
+
+	Data File #94 = .\input/Trip Table 94.csv
+	Data Format #94 = COMMA_DELIMITED
+
+	Data File #95 = .\input/Trip Table 95.csv
+	Data Format #95 = COMMA_DELIMITED
+
+	Data File #96 = .\input/Trip Table 96.csv
+	Data Format #96 = COMMA_DELIMITED
+
+	New Concatenate Data File = .\TRIP_TABLE.csv
+	New Concatenate Data Format = COMMA_DELIMITED
+	FileFormat
+	Mon Oct  2 11:37:10 2017  FileFormat  page 6
+
+	Conversion Script = .\Script.txt
+
+
+
+	Data File #1
+	Number of Input Data Records  = 32320
+	Number of Selected Records    = 32320
+
+	Data File #2
+	Number of Input Data Records  = 31864
+	Number of Selected Records    = 31864
+
+	Data File #3
+	Number of Input Data Records  = 31318
+	Number of Selected Records    = 31318
+
+	Data File #4
+	Number of Input Data Records  = 30813
+	Number of Selected Records    = 30813
+
+	Data File #5
+	Number of Input Data Records  = 30438
+	Number of Selected Records    = 30438
+
+	Data File #6
+	Number of Input Data Records  = 29963
+	Number of Selected Records    = 29963
+
+	Data File #7
+	Number of Input Data Records  = 29616
+	Number of Selected Records    = 29616
+
+	Data File #8
+	Number of Input Data Records  = 29229
+	Number of Selected Records    = 29229
+
+	Data File #9
+	Number of Input Data Records  = 28807
+	Number of Selected Records    = 28807
+
+	Data File #10
+	Number of Input Data Records  = 28345
+	Number of Selected Records    = 28345
+
+	Data File #11
+	Number of Input Data Records  = 28106
+	Number of Selected Records    = 28106
+
+	Data File #12
+	Number of Input Data Records  = 27864
+	Number of Selected Records    = 27864
+
+	Data File #13
+	Number of Input Data Records  = 27813
+	Number of Selected Records    = 27813
+
+	Data File #14
+	Number of Input Data Records  = 27969
+	Number of Selected Records    = 27969
+
+	Data File #15
+	Number of Input Data Records  = 28268	FileFormat
+	Mon Oct  2 11:37:15 2017  FileFormat  page 7
+
+	Number of Selected Records    = 28268
+
+	Data File #16
+	Number of Input Data Records  = 28502
+	Number of Selected Records    = 28502
+
+	Data File #17
+	Number of Input Data Records  = 28722
+	Number of Selected Records    = 28722
+
+	Data File #18
+	Number of Input Data Records  = 29301
+	Number of Selected Records    = 29301
+
+	Data File #19
+	Number of Input Data Records  = 30236
+	Number of Selected Records    = 30236
+
+	Data File #20
+	Number of Input Data Records  = 30706
+	Number of Selected Records    = 30706
+
+	Data File #21
+	Number of Input Data Records  = 31273
+	Number of Selected Records    = 31273
+
+	Data File #22
+	Number of Input Data Records  = 32271
+	Number of Selected Records    = 32271
+
+	Data File #23
+	Number of Input Data Records  = 33375
+	Number of Selected Records    = 33375
+
+	Data File #24
+	Number of Input Data Records  = 34086
+	Number of Selected Records    = 34086
+
+	Data File #25
+	Number of Input Data Records  = 36163
+	Number of Selected Records    = 36163
+
+	Data File #26
+	Number of Input Data Records  = 36946
+	Number of Selected Records    = 36946
+
+	Data File #27
+	Number of Input Data Records  = 37502
+	Number of Selected Records    = 37502
+
+	Data File #28
+	Number of Input Data Records  = 37878
+	Number of Selected Records    = 37878
+
+	Data File #29
+	Number of Input Data Records  = 38296
+	Number of Selected Records    = 38296
+
+	Data File #30
+	Number of Input Data Records  = 38731
+	Number of Selected Records    = 38731	FileFormat
+	Mon Oct  2 11:37:21 2017  FileFormat  page 8
+
+
+	Data File #31
+	Number of Input Data Records  = 39237
+	Number of Selected Records    = 39237
+
+	Data File #32
+	Number of Input Data Records  = 39248
+	Number of Selected Records    = 39248
+
+	Data File #33
+	Number of Input Data Records  = 39228
+	Number of Selected Records    = 39228
+
+	Data File #34
+	Number of Input Data Records  = 39228
+	Number of Selected Records    = 39228
+
+	Data File #35
+	Number of Input Data Records  = 39217
+	Number of Selected Records    = 39217
+
+	Data File #36
+	Number of Input Data Records  = 38727
+	Number of Selected Records    = 38727
+
+	Data File #37
+	Number of Input Data Records  = 39548
+	Number of Selected Records    = 39548
+
+	Data File #38
+	Number of Input Data Records  = 39321
+	Number of Selected Records    = 39321
+
+	Data File #39
+	Number of Input Data Records  = 39317
+	Number of Selected Records    = 39317
+
+	Data File #40
+	Number of Input Data Records  = 39317
+	Number of Selected Records    = 39317
+
+	Data File #41
+	Number of Input Data Records  = 39140
+	Number of Selected Records    = 39140
+
+	Data File #42
+	Number of Input Data Records  = 39140
+	Number of Selected Records    = 39140
+
+	Data File #43
+	Number of Input Data Records  = 39302
+	Number of Selected Records    = 39302
+
+	Data File #44
+	Number of Input Data Records  = 39306
+	Number of Selected Records    = 39306
+
+	Data File #45
+	Number of Input Data Records  = 39306
+	Number of Selected Records    = 39306
+
+	Data File #46	FileFormat
+	Mon Oct  2 11:37:27 2017  FileFormat  page 9
+
+	Number of Input Data Records  = 39306
+	Number of Selected Records    = 39306
+
+	Data File #47
+	Number of Input Data Records  = 39305
+	Number of Selected Records    = 39305
+
+	Data File #48
+	Number of Input Data Records  = 39305
+	Number of Selected Records    = 39305
+
+	Data File #49
+	Number of Input Data Records  = 39532
+	Number of Selected Records    = 39532
+
+	Data File #50
+	Number of Input Data Records  = 39532
+	Number of Selected Records    = 39532
+
+	Data File #51
+	Number of Input Data Records  = 39532
+	Number of Selected Records    = 39532
+
+	Data File #52
+	Number of Input Data Records  = 39545
+	Number of Selected Records    = 39545
+
+	Data File #53
+	Number of Input Data Records  = 39547
+	Number of Selected Records    = 39547
+
+	Data File #54
+	Number of Input Data Records  = 39548
+	Number of Selected Records    = 39548
+
+	Data File #55
+	Number of Input Data Records  = 39548
+	Number of Selected Records    = 39548
+
+	Data File #56
+	Number of Input Data Records  = 39553
+	Number of Selected Records    = 39553
+
+	Data File #57
+	Number of Input Data Records  = 39565
+	Number of Selected Records    = 39565
+
+	Data File #58
+	Number of Input Data Records  = 39574
+	Number of Selected Records    = 39574
+
+	Data File #59
+	Number of Input Data Records  = 39816
+	Number of Selected Records    = 39816
+
+	Data File #60
+	Number of Input Data Records  = 39825
+	Number of Selected Records    = 39825
+
+	Data File #61
+	Number of Input Data Records  = 39802
+	Number of Selected Records    = 39802	FileFormat
+	Mon Oct  2 11:37:34 2017  FileFormat  page 10
+
+
+	Data File #62
+	Number of Input Data Records  = 39817
+	Number of Selected Records    = 39817
+
+	Data File #63
+	Number of Input Data Records  = 39817
+	Number of Selected Records    = 39817
+
+	Data File #64
+	Number of Input Data Records  = 39817
+	Number of Selected Records    = 39817
+
+	Data File #65
+	Number of Input Data Records  = 40091
+	Number of Selected Records    = 40091
+
+	Data File #66
+	Number of Input Data Records  = 40091
+	Number of Selected Records    = 40091
+
+	Data File #67
+	Number of Input Data Records  = 40076
+	Number of Selected Records    = 40076
+
+	Data File #68
+	Number of Input Data Records  = 40101
+	Number of Selected Records    = 40101
+
+	Data File #69
+	Number of Input Data Records  = 40086
+	Number of Selected Records    = 40086
+
+	Data File #70
+	Number of Input Data Records  = 40086
+	Number of Selected Records    = 40086
+
+	Data File #71
+	Number of Input Data Records  = 40086
+	Number of Selected Records    = 40086
+
+	Data File #72
+	Number of Input Data Records  = 40086
+	Number of Selected Records    = 40086
+
+	Data File #73
+	Number of Input Data Records  = 39808
+	Number of Selected Records    = 39808
+
+	Data File #74
+	Number of Input Data Records  = 39808
+	Number of Selected Records    = 39808
+
+	Data File #75
+	Number of Input Data Records  = 39543
+	Number of Selected Records    = 39543
+
+	Data File #76
+	Number of Input Data Records  = 39533
+	Number of Selected Records    = 39533
+
+	Data File #77	FileFormat
+	Mon Oct  2 11:37:40 2017  FileFormat  page 11
+
+	Number of Input Data Records  = 37085
+	Number of Selected Records    = 37085
+
+	Data File #78
+	Number of Input Data Records  = 37059
+	Number of Selected Records    = 37059
+
+	Data File #79
+	Number of Input Data Records  = 36533
+	Number of Selected Records    = 36533
+
+	Data File #80
+	Number of Input Data Records  = 36514
+	Number of Selected Records    = 36514
+
+	Data File #81
+	Number of Input Data Records  = 36487
+	Number of Selected Records    = 36487
+
+	Data File #82
+	Number of Input Data Records  = 36050
+	Number of Selected Records    = 36050
+
+	Data File #83
+	Number of Input Data Records  = 36028
+	Number of Selected Records    = 36028
+
+	Data File #84
+	Number of Input Data Records  = 36004
+	Number of Selected Records    = 36004
+
+	Data File #85
+	Number of Input Data Records  = 35987
+	Number of Selected Records    = 35987
+
+	Data File #86
+	Number of Input Data Records  = 35622
+	Number of Selected Records    = 35622
+
+	Data File #87
+	Number of Input Data Records  = 35619
+	Number of Selected Records    = 35619
+
+	Data File #88
+	Number of Input Data Records  = 35226
+	Number of Selected Records    = 35226
+
+	Data File #89
+	Number of Input Data Records  = 35568
+	Number of Selected Records    = 35568
+
+	Data File #90
+	Number of Input Data Records  = 35093
+	Number of Selected Records    = 35093
+
+	Data File #91
+	Number of Input Data Records  = 34657
+	Number of Selected Records    = 34657
+
+	Data File #92
+	Number of Input Data Records  = 34640
+	Number of Selected Records    = 34640	FileFormat
+	Mon Oct  2 11:37:46 2017  FileFormat  page 12
+
+
+	Data File #93
+	Number of Input Data Records  = 34119
+	Number of Selected Records    = 34119
+
+	Data File #94
+	Number of Input Data Records  = 33770
+	Number of Selected Records    = 33770
+
+	Data File #95
+	Number of Input Data Records  = 33470
+	Number of Selected Records    = 33470
+
+	Data File #96
+	Number of Input Data Records  = 32943
+	Number of Selected Records    = 32943
+
+	Number of Output Data Records = 3475458
+
+	Mon Oct  2 11:37:47 2017 -- Process Complete (0:00:37)

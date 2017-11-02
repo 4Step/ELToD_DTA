@@ -1,0 +1,80 @@
+
+	********************************************
+	|                                          |
+	|           DTA - Version 7.1.4            |
+	|  Copyright 2017 by TRANSIMS Open-Source  |
+	|         Mon Oct 30 22:22:03 2017         |
+	|                                          |
+	********************************************
+
+	Control File = DTA.ctl
+	Report File  = DTA.prn (Create)
+
+	DTA
+
+	Project Directory = .\
+	Default File Format = COMMA_DELIMITED
+	Model Start Time = 0
+	Model End Time = 24
+	Model Time Increment = 15
+	Number of Threads = 8
+	Random Number Seed = 1509416523
+
+	DTA Control Keys:
+	Link File = .\LINK.CSV
+	Express Facility Types = 96..98
+
+	Node File = .\NODE.CSV
+	Express Node Types = 90..91
+	Zone Node Type = 99
+
+	Toll File = .\Toll_Link.csv
+
+	Trip File = .\TRIP_TABLE.CSV  (Modes=SOV, HOV3, TRK)
+	Minimum Trip Split = 0.01
+
+	Number of Iterations = 4
+	Time Value = 10
+	Distance Value = 1
+	Cost Value = 1
+	Mode Cost Factors = SOV=1.00, HOV3=0.50, TRK=4.00
+
+	Toll Policy Codes = 1, 5..6
+	Minimum Toll = 0.25
+	Maximum Toll = 7.0
+	Maximum VC Ratio = 5.0
+	VC Ratio Offset = 0.175
+	Toll Exponent = 3.5
+	Maximum Toll Change = 10.0
+
+	New Volume File = .\Volume.csv
+
+	New Path Leg File = .\Path_Leg.csv
+	Select Origins = 2
+	Select Destinations = 165
+	Select Time Periods = 24
+	Select Modes = SOV, HOV3, TRK
+
+	Number of Node Records = 4919
+	Number of Express Node Records = 9
+	Maximum Zone Number = 229
+
+	Number of Link Records = 9880	DTA
+	Mon Oct 30 22:22:03 2017  DTA  page 2
+
+	Number of Express Link Records = 31
+
+	Number of Toll Records = 125
+	Number of Express Toll Records = 2
+
+	Number of Assignment Threads = 8
+
+	Iteration 1 Processing Time 0:00:41
+
+	Iteration 2 Processing Time 0:00:39
+
+	Iteration 3 Processing Time 0:00:39
+
+	Iteration 4 Processing Time 0:00:39
+
+	Mon Oct 30 22:24:50 2017 -- Process Complete (0:02:47)

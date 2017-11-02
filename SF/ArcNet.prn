@@ -1,0 +1,53 @@
+
+	********************************************
+	|                                          |
+	|          ArcNet - Version 7.1.7          |
+	|  Copyright 2017 by TRANSIMS Open-Source  |
+	|         Mon Oct 23 13:33:20 2017         |
+	|                                          |
+	********************************************
+
+	Control File = ArcNet.ctl
+	Report File  = ArcNet.prn (Create)
+
+	ArcNet
+
+	Project Directory = .\
+	Random Number Seed = 1508780000
+
+	Input System Network Files:
+	Node File = .\node.csv
+	Node Format = COMMA_DELIMITED
+	Link File = .\link.csv
+	Link Format = COMMA_DELIMITED
+
+	Notes And Name Fields = TRUE
+
+	Data Service Controls:
+
+	Select Service Controls:
+
+	Draw Service Controls:
+	Draw Network Lanes = TRUE
+	Lane Width = 12.00 feet
+	Center Oneway Links = TRUE
+
+	Draw Oneway Arrows = TRUE
+
+	ArcNet Output Files:
+	New Arc Node File = .\shapefiles/node.shp
+	New Arc Node Format = SHAPEFILE
+	New Arc Link File = .\shapefiles/link.shp
+	New Arc Link Format = SHAPEFILE
+	New Arc Centerline File = .\shapefiles/centerline.shp
+	New Arc Centerline Format = SHAPEFILE
+
+	ArcNet Control Keys:
+
+
+	Number of Node File Records = 4919
+
+	Number of Link File Records = 9880
+	Number of Directional Links = 9880
+
+	Mon Oct 23 13:33:21 2017 -- Process Complete (0:00:01)

@@ -1,0 +1,52 @@
+
+	********************************************
+	|                                          |
+	|          ArcNet - Version 7.1.7          |
+	|  Copyright 2017 by TRANSIMS Open-Source  |
+	|         Mon Oct 30 22:24:50 2017         |
+	|                                          |
+	********************************************
+
+	Control File = ArcNet_Path.ctl
+	Report File  = ArcNet_Path.prn (Create)
+
+	ArcNet
+
+	Project Directory = .\
+	Random Number Seed = 1509416690
+
+	Input System Network Files:
+	Node File = .\node.csv
+	Node Format = COMMA_DELIMITED
+	Link File = .\path_leg.csv
+	Link Format = COMMA_DELIMITED
+
+	Notes And Name Fields = TRUE
+
+	Data Service Controls:
+
+	Select Service Controls:
+
+	Draw Service Controls:
+	Draw Network Lanes = FALSE
+	Lane Width = 12.00 feet
+	Center Oneway Links = TRUE
+	Link Direction Offset = 0.00 feet
+	Draw AB Direction = FALSE
+
+	Draw Oneway Arrows = TRUE
+
+	ArcNet Output Files:
+	New Arc Centerline File = .\shapefiles/path_leg.shp
+	New Arc Centerline Format = SHAPEFILE
+
+	ArcNet Control Keys:
+	Default Link Data = TRUE
+
+
+	Number of Node File Records = 4919
+
+	Number of Link File Records = 674
+	Number of Directional Links = 674
+
+	Mon Oct 30 22:24:50 2017 -- Process Complete (0:00:00)

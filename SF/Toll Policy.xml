@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Toll_Policy>
+  <Policy>
+    <ID>1</ID>
+    <Method>
+      Curve
+    </Method>
+    <Min>
+      <!--Number in dollars -->
+      0.25
+    </Min>
+    <Max>
+      <!--Number in dollars -->
+      7
+    </Max>
+    <Round_Number>
+      <!--Number in dollars -->
+      0.00001
+    </Round_Number>
+    <Exponent>
+      3.5
+    </Exponent>
+    <VC_Offset>
+      0.175
+    </VC_Offset>
+    <Max_Toll_Change>
+      <!--Number in dollars -->
+      10
+    </Max_Toll_Change>
+    <Min_Toll_Change_Time_Interval>
+      <!--Number in minutes -->
+      5
+    </Min_Toll_Change_Time_Interval>
+  </Policy>
+  <Policy>
+    <ID>2</ID>
+    <Method>Lookup_Table</Method>
+    <Toll_Rate_File>
+      M:\kn815lw\DTATR_v1.0\Input\I95Ph1\Toll_Rate.csv
+    </Toll_Rate_File>
+    <Toll_Boundary_File>
+      M:\kn815lw\DTATR_v1.0\Input\I95Ph1\Toll_Boundary.csv
+    </Toll_Boundary_File>
+    <Min>
+      <!--Number in dollars -->
+      0.25
+    </Min>
+    <Max>
+      <!--Number in dollars -->
+      7
+    </Max>
+    <Round_Number>
+      <!--Number in dollars -->
+      0.25
+    </Round_Number>
+    <Max_Toll_Change>
+      <!--Number in dollars -->
+      1
+    </Max_Toll_Change>
+    <Min_Toll_Change_Time_Interval>
+      <!--Number in minutes -->
+      5
+    </Min_Toll_Change_Time_Interval>
+  </Policy>
+  <Policy>
+    <ID>3</ID>
+    <Method>Static</Method>
+    <Toll>0</Toll>
+  </Policy>
+  <Policy>
+    <ID>4</ID>
+    <Method>
+      Curve
+    </Method>
+    <Min>
+      <!--Number in dollars -->
+      0.25
+    </Min>
+    <Max>
+      <!--Number in dollars -->
+      10
+    </Max>
+    <Round_Number>
+      <!--Number in dollars -->
+      0.25
+    </Round_Number>
+    <Exponent>
+      <!--Number in dollars -->
+      20
+    </Exponent>
+    <VC_Offset>
+      0.15
+    </VC_Offset>
+    <Max_Toll_Change>
+      <!--Number in dollars -->
+      1
+    </Max_Toll_Change>
+    <Min_Toll_Change_Time_Interval>
+      <!--Number in minutes -->
+      5
+    </Min_Toll_Change_Time_Interval>
+  </Policy>
+</Toll_Policy>

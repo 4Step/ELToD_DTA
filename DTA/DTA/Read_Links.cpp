@@ -46,7 +46,7 @@ void DTA::Read_Links (void)
 			Warning (String ("Node %d was Not Found in the Node File") % anode);
 			continue;
 		}
-		anode = map_itr->second;
+		anode = map_itr->second; // index of Anode
 
 		//---- convert the bnode ----
 
@@ -55,7 +55,7 @@ void DTA::Read_Links (void)
 			Warning (String ("Node %d was Not Found in the Node File") % bnode);
 			continue;
 		}
-		bnode = map_itr->second;
+		bnode = map_itr->second; // index of Bnode
 
 		link_data.Clear ();
 		link_data.Anode (anode);	
@@ -65,9 +65,9 @@ void DTA::Read_Links (void)
 
 		if (express_types.In_Range (link_data.Type ())) num_express++;
 
-		cap = link_file.Cap () * cap_factor;
-		if (link_file.Lanes_Flag ()) {
-			cap *= link_file.Lanes ();
+		cap = link_file.Cap () * cap_factor;         // link capacity by time period
+		if (link_file.Lanes_Flag ()) {               // if lanes > 0
+			cap *= link_file.Lanes ();               // lanes * capacity / period
 		}
 		link_data.Cap (cap);
 		link_data.Toll (link_file.Toll ());
@@ -91,7 +91,7 @@ void DTA::Read_Links (void)
 			speed = link_file.Speed ();
 			if (speed == 0) speed = 25.0;
 
-			link_data.Time0 (link_data.Length () * 60.0 / speed);
+			link_data.Time0 (link_data.Length () * 60.0 / speed); // free flow travel time
 		}
 		link_data.Num_Periods (num_period);
 

@@ -3,7 +3,7 @@
 	|                                          |
 	|           DTA - Version 7.1.4            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Mon Oct 30 22:22:03 2017         |
+	|         Thu Nov 16 11:32:57 2017         |
 	|                                          |
 	********************************************
 
@@ -18,7 +18,7 @@
 	Model End Time = 24
 	Model Time Increment = 15
 	Number of Threads = 8
-	Random Number Seed = 1509416523
+	Random Number Seed = 1510849977
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
@@ -60,21 +60,10 @@
 	Maximum Zone Number = 229
 
 	Number of Link Records = 9880	DTA
-	Mon Oct 30 22:22:03 2017  DTA  page 2
+	Thu Nov 16 11:33:09 2017  DTA  page 2
 
 	Number of Express Link Records = 31
 
 	Number of Toll Records = 125
 	Number of Express Toll Records = 2
 
-	Number of Assignment Threads = 8
-
-	Iteration 1 Processing Time 0:00:41
-
-	Iteration 2 Processing Time 0:00:39
-
-	Iteration 3 Processing Time 0:00:39
-
-	Iteration 4 Processing Time 0:00:39
-
-	Mon Oct 30 22:24:50 2017 -- Process Complete (0:02:47)

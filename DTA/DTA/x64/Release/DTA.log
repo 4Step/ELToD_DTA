@@ -1,1 +1,20 @@
-﻿
+﻿  Alt_Path.cpp
+  Assign_Trips.cpp
+  Build_Path.cpp
+  Control.cpp
+  DTA.cpp
+  Execute.cpp
+  File_Types.cpp
+  Load_Path.cpp
+  Process_Trips.cpp
+  Read_Links.cpp
+  Read_Nodes.cpp
+  Read_Tolls.cpp
+  Read_Trips.cpp
+  Toll_Choice.cpp
+  Update_Time_Cost.cpp
+  Write_Volumes.cpp
+  Generating code
+  All 3082 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  DTA.vcxproj -> C:\projects\Advanced_Projects\ELToD_DTA\DTA\x64\Release\DTA.exe

@@ -43,6 +43,7 @@ void DTA::Read_Trips (void)
 		period = (trip_file.Period () - 1) * increment;
 
 		if (org != assign_data.Origin () || period != assign_data.Start ()) {
+			// iterative loadings
 			if (assign_data.Origin () > 0) {
 				if (thread_flag) {
 					assign_queue.Put (assign_data);
@@ -50,6 +51,7 @@ void DTA::Read_Trips (void)
 					(*assign_trips)->Process_Trips (assign_data);
 				}
 			}
+			// Initial loadings
 			assign_data.Origin (org);
 			assign_data.Start (period);
 			assign_data.Zero_Trips ();

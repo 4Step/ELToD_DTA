@@ -11,7 +11,7 @@
 DTA::DTA (void) : Execution_Service ()
 {
 	Program ("DTA");
-	Version (4);
+	Version (5);
 	Title ("Dynamnic Traffic Assignment");
 
 	Control_Key keys [] = { //--- code, key, level, status, type, default, range, help ----
@@ -22,7 +22,9 @@ DTA::DTA (void) : Execution_Service ()
 
 		{ NODE_FILE, "NODE_FILE", LEVEL0, REQ_KEY, IN_KEY, "", FILE_RANGE, NO_HELP },
 		{ NODE_FORMAT, "NODE_FORMAT", LEVEL0, OPT_KEY, TEXT_KEY, "COMMA_DELIMITED", FORMAT_RANGE, FORMAT_HELP },
-		{ EXPRESS_NODE_TYPES, "EXPRESS_NODE_TYPES", LEVEL0, OPT_KEY, INT_KEY, "90..91", "1..100", NO_HELP },
+		{ EXPRESS_ENTRY_TYPES, "EXPRESS_ENTRY_TYPES", LEVEL0, OPT_KEY, INT_KEY, "90", "1..100", NO_HELP },
+		{ EXPRESS_EXIT_TYPES, "EXPRESS_EXIT_TYPES", LEVEL0, OPT_KEY, INT_KEY, "92", "1..100", NO_HELP },
+		{ GENERAL_JOIN_TYPES, "GENERAL_JOIN_TYPES", LEVEL0, OPT_KEY, INT_KEY, "91", "1..100", NO_HELP },
 		{ ZONE_NODE_TYPE, "ZONE_NODE_TYPE", LEVEL0, OPT_KEY, INT_KEY, "99", "1..100", NO_HELP },
 
 		{ TRIP_FILE, "TRIP_FILE", LEVEL0, REQ_KEY, IN_KEY, "", FILE_RANGE, NO_HELP },
@@ -51,24 +53,27 @@ DTA::DTA (void) : Execution_Service ()
 		{ SELECT_ORIGINS, "SELECT_ORIGINS", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
 		{ SELECT_DESTINATIONS, "SELECT_DESTINATIONS", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
 		{ SELECT_TIME_PERIODS, "SELECT_TIME_PERIODS", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
+		{ SELECT_ITERATIONS, "SELECT_ITERATIONS", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
 		{ SELECT_MODES, "SELECT_MODES", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
+		{ NEW_CONVERGENCE_FILE, "NEW_CONVERGENCE_FILE", LEVEL0, OPT_KEY, OUT_KEY, "", FILE_RANGE, NO_HELP },
 		END_CONTROL
 	};
 	const char *reports [] = {
-		"STATISTICS_REPORT",
+		"CONVERGENCE_REPORT",
 		""
 	};
 	Key_List (keys);
 	Report_List (reports);
 
 	thread_flag = volume_flag = path_leg_flag = false;
-	sel_org_flag = sel_des_flag = sel_per_flag = sel_mode_flag = false;
+	sel_org_flag = sel_des_flag = sel_per_flag = sel_iter_flag = sel_mode_flag = false;
 	max_zone = 1000;
 	num_period = 96;
 	num_mode = 0;
 	num_iter = 10;
 	value_time = value_len = 0.0;
 	zone_type = 99;
+	min_speed = 0.1;
 
 	min_trip_split = 0.01;
 }

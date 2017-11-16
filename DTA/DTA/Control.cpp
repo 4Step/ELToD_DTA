@@ -15,6 +15,7 @@ void DTA::Program_Control (void)
 	Strings values;
 	Str_Itr str_itr;
 	Flt_Itr val_itr;
+	Choice_Model model;
 	
 	//---- create the network files ----
 
@@ -64,9 +65,17 @@ void DTA::Program_Control (void)
 		Error ("Node File Not Found");
 	}
 
-	//---- express node types ----
+	//---- express entry types ----
 
-	node_types.Add_Ranges (Get_Control_Text (EXPRESS_NODE_TYPES));
+	entry_types.Add_Ranges (Get_Control_Text (EXPRESS_ENTRY_TYPES));
+
+	//---- express exit types ----
+
+	exit_types.Add_Ranges (Get_Control_Text (EXPRESS_EXIT_TYPES));
+
+	//---- general join types ----
+
+	join_types.Add_Ranges (Get_Control_Text (GENERAL_JOIN_TYPES));
 
 	//---- node zone type ----
 
@@ -253,6 +262,22 @@ void DTA::Program_Control (void)
 		max_change.push_back (10.0);
 	}
 
+	//---- toll choice model ----
+
+	model.Time_Factor (-0.117);
+	model.Toll_Factor (-0.584);
+	model.Rely_Ratio (2.0);
+	model.Rely_Time (0.2);
+	model.Rely_Dist (0.1);
+	model.Perceive_Time (13.67);
+	model.Perceive_Mid_VC (0.693);
+	model.Perceive_Max_VC (1.2);
+	model.Express_Weight (1.28);
+	model.Scale_Length (7.2);
+	model.Scale_Alpha (1.0);
+
+	model_array.push_back (model);
+
 	//---- open the volume file ----
 
 	Print (1);
@@ -316,6 +341,15 @@ void DTA::Program_Control (void)
 			sel_per_range.Add_Ranges (key);
 		}
 
+		//---- select iterations ----
+
+		key = Get_Control_Text (SELECT_ITERATIONS);
+
+		if (!key.empty () && !key.Equals ("NONE")) {
+			sel_iter_flag = true;
+			sel_iter_range.Add_Ranges (key);
+		}
+
 		//---- select modes ----
 
 		key = Get_Control_Text (SELECT_MODES);
@@ -333,10 +367,28 @@ void DTA::Program_Control (void)
 				}
 			}
 		}
+
+		if (!sel_iter_flag && (sel_mode_flag || sel_org_flag || sel_des_flag || sel_per_flag)) {
+			sel_iter_flag = true;
+			sel_iter_range.Add_Ranges ((key ("%d") % num_iter));
+		}
+	}
+
+	//---- open the convergence_file ----
+
+	key = Get_Control_String (NEW_CONVERGENCE_FILE);
+
+	if (!key.empty ()) {
+		Print (1);
+		if (!gap_file.Create (Project_Filename (key))) {
+			Error ("Convergence File was Not Created");
+		}
 	}
 
 	//---- read report types ----
 
 	List_Reports ();
+
+	gap_flag = (Report_Flag (CONVERGENCE_REPORT) || gap_file.Is_Open ());
 }
 

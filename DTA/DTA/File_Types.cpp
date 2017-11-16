@@ -302,7 +302,7 @@ Path_Leg_File::Path_Leg_File (void) : Db_Header ()
 	File_Type ("Path Leg File");
 	File_ID ("Path");
 
-	org = des = period = mode = node_a = node_b = length = time = cost = trips = -1;
+	org = des = period = iteration = mode = node_a = node_b = length = time = cost = trips = -1;
 }
 
 //---------------------------------------------------------
@@ -316,6 +316,7 @@ bool Path_Leg_File::Create_Fields (void)
 	Add_Field ("ORG", DB_INTEGER, 10);
 	Add_Field ("DES", DB_INTEGER, 10);
 	Add_Field ("PERIOD", DB_INTEGER, 3);
+	Add_Field ("ITERATION", DB_INTEGER, 3);
 	Add_Field ("MODE", DB_STRING, 8);
 	Add_Field ("A", DB_INTEGER, 10);
 	Add_Field ("B", DB_INTEGER, 10);
@@ -343,6 +344,7 @@ bool Path_Leg_File::Set_Field_Numbers (void)
 
 	if (org < 0 || des < 0 || period < 0 || node_a < 0 || node_b < 0) return (false);
 
+	iteration = Optional_Field ("ITERATION", "ITER", "NUMBER");
 	mode = Optional_Field ("MODE", "TYPE");
 	time = Optional_Field ("TIME", "TIME0", "TIM");
 	cost = Optional_Field ("COST");
@@ -351,3 +353,59 @@ bool Path_Leg_File::Set_Field_Numbers (void)
 
 	return (true);
 }
+
+//-----------------------------------------------------------
+//	Gap_File constructors
+//-----------------------------------------------------------
+
+Gap_File::Gap_File (void) : Db_Header ()
+{
+	File_Type ("Gap File");
+	File_ID ("Gap");
+
+	iteration = gap = std_dev = maximum = rmse = diff = total = -1;
+}
+
+//---------------------------------------------------------
+//	Create_Fields
+//---------------------------------------------------------
+
+bool Gap_File::Create_Fields (void)
+{
+	Clear_Fields ();
+
+	Add_Field ("ITERATION", DB_INTEGER, 6);
+	Add_Field ("GAP", DB_DOUBLE, 13.6);
+	Add_Field ("STD_DEV", DB_DOUBLE, 13.6);
+	Add_Field ("MAXIMUM", DB_DOUBLE, 13.6);
+	Add_Field ("RMSE", DB_DOUBLE, 9.1);
+	Add_Field ("DIFFERENCE", DB_DOUBLE, 13.0);
+	Add_Field ("TOTAL", DB_DOUBLE, 13.0);
+
+	return (Set_Field_Numbers ());
+}
+
+//-----------------------------------------------------------
+//	Set_Field_Numbers
+//-----------------------------------------------------------
+
+bool Gap_File::Set_Field_Numbers (void)
+{
+	//---- required fields ----
+
+	iteration = Required_Field ("ITERATION", "ID");
+	gap = Required_Field ("GAP", "ERROR");
+
+	if (iteration < 0 || gap < 0) return (false);
+
+	//---- optional fields ----
+
+	std_dev = Optional_Field ("STD_DEV", "STDDEV");
+	maximum = Optional_Field ("MAXIMUM", "MAX");
+	rmse = Optional_Field ("RMSE");
+	diff = Optional_Field ("DIFFERENCE", "DIFF", "HOURS");
+	total = Optional_Field ("TOTAL", "TOT", "IMPED");
+
+	return (true);
+}
+

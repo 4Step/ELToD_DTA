@@ -126,6 +126,8 @@
     <ClCompile Include="DTA.cpp" />
     <ClCompile Include="Execute.cpp" />
     <ClCompile Include="File_Types.cpp" />
+    <ClCompile Include="Gap_Data.cpp" />
+    <ClCompile Include="Gap_Report.cpp" />
     <ClCompile Include="Load_Path.cpp" />
     <ClCompile Include="Process_Trips.cpp" />
     <ClCompile Include="Read_Links.cpp" />

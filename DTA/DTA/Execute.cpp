@@ -10,7 +10,8 @@
 
 void DTA::Execute (void)
 {
-	int i, iter;
+	int i;
+	double gap;
 	clock_t start;
 
 	//---- read the node file ----
@@ -57,10 +58,12 @@ void DTA::Execute (void)
 
 		Read_Trips ();
 
-		Update_Time_Cost (iter);
+		gap = Update_Time_Cost (iter);
 
 		if (num_iter > 1) {
-			Print (2, String ("Iteration %d Processing Time %s") % iter % Processing_Time (clock () - start));
+			Show_Message (String ("Convergence Gap = %.4lf") % gap);
+			Show_Message (1);
+			Print (2, String ("Iteration %d Gap %.4lf Processing Time %s") % iter % gap % Processing_Time (clock () - start));
 		}
 	}
 	trip_file.Close ();
@@ -96,8 +99,8 @@ void DTA::Execute (void)
 
 	for (i = First_Report (); i != 0; i = Next_Report ()) {
 		switch (i) {
-			case STATS_REPORT:		//---- Statistics Report ----
-				//Statistics_Report ();
+			case CONVERGENCE_REPORT:		//---- Statistics Report ----
+				Gap_Report ();
 				break;
 			default:
 				break;
@@ -113,8 +116,8 @@ void DTA::Execute (void)
 void DTA::Page_Header (void)
 {
 	switch (Header_Number ()) {
-		case STATS_REPORT:		//---- Statistics Report ----
-			//Statistics_Header ();
+		case CONVERGENCE_REPORT:		//---- Statistics Report ----
+			Gap_Header ();
 			break;
 		default:
 			break;

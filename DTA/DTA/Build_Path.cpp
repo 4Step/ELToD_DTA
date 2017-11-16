@@ -30,9 +30,13 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 
 	cost_factor = exe->cost_factors [mode];
 
+	path_root.Time (start);
+
 	first_ptr = &path_root;
 	first_ptr->Next (root);
 	last_ptr = &path_array [root];
+
+	last_ptr->Time (start);
 
 	period = exe->time_periods.Period ((int) start);
 
@@ -44,11 +48,14 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 
 		if (!exe->sel_org_flag || exe->sel_org_range.In_Range (org)) {
 			if (!exe->sel_per_flag || exe->sel_per_range.In_Range (period + 1)) {
-				if (!exe->sel_mode_flag || exe->sel_mode_range.In_Range (mode)) {
-					exe->path_leg_file.Origin (org);
-					exe->path_leg_file.Period (period + 1);
-					exe->path_leg_file.Mode (exe->mode_names [mode]);
-					out_flag = true;
+				if (!exe->sel_iter_flag || exe->sel_iter_range.In_Range (exe->iter)) {
+					if (!exe->sel_mode_flag || exe->sel_mode_range.In_Range (mode)) {
+						exe->path_leg_file.Origin (org);
+						exe->path_leg_file.Period (period + 1);
+						exe->path_leg_file.Iteration (exe->iter);
+						exe->path_leg_file.Mode (exe->mode_names [mode]);
+						out_flag = true;
+					}
 				}
 			}
 		}
@@ -80,8 +87,12 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 			last_ptr->Next (bnode);
 			last_ptr = path_ptr;
 		}
+		time += first_ptr->Time ();
+		cost += first_ptr->Cost ();
+		length += first_ptr->Length ();
+
 		path_ptr->Imped (imp_b);
-		path_ptr->Time (start + time);
+		path_ptr->Time (time);
 		path_ptr->Cost (cost);
 		path_ptr->Length (length);
 		path_ptr->From (root);
@@ -186,10 +197,8 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 
 		leg_array.clear ();
 
-		for (bnode = des_node; bnode != root && bnode > 0; bnode = path_ptr->From ()) {
+		for (bnode = des_node; bnode >= 0; bnode = path_ptr->From ()) {
 			path_ptr = &path_array [bnode];
-
-			if (path_ptr->Link () < 0) break;
 
 			leg_rec.Node (bnode);
 			leg_rec.Link (path_ptr->Link ());
@@ -198,10 +207,12 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 			leg_rec.Length (path_ptr->Length ());
 
 			leg_array.push_back (leg_rec);
+
+			if (bnode == root) break;
 		}
 
 		//---- load the path ----
 
-		Load_Path (start, trips, leg_array);
+		Load_Path (trips, leg_array);
 	}
 }

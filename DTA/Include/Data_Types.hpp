@@ -222,23 +222,23 @@ typedef Toll_Array::pointer   Toll_Ptr;
 class Path_Data
 {
 public:
-	Path_Data (void)            { Clear (); }
+	Path_Data (void)             { Clear (); }
 
-	double Imped (void)         { return (imped); }
-	double Time (void)          { return (time); }
-	double Cost (void)          { return (cost); }
-	double Length (void)        { return (length); }
-	int   Next (void)           { return (next); }
-	int   From (void)           { return (from); }
-	int   Link (void)           { return (link); }
+	double Imped (void)          { return (imped); }
+	double Time (void)           { return (time); }
+	double Cost (void)           { return (cost); }
+	double Length (void)         { return (length); }
+	int    Next (void)           { return (next); }
+	int    From (void)           { return (from); }
+	int    Link (void)           { return (link); }
 
-	void  Imped (double value)  { imped = (float) value; }
-	void  Time (double value)   { time = (float) value; }
-	void  Cost (double value)   { cost = (float) value; }
-	void  Length (double value) { length = (float) value; }
-	void  Next (int value)      { next = value; }
-	void  From (int value)      { from = value; }
-	void  Link (int value)      { link = value; }
+	void   Imped (double value)  { imped = (float) value; }
+	void   Time (double value)   { time = (float) value; }
+	void   Cost (double value)   { cost = (float) value; }
+	void   Length (double value) { length = (float) value; }
+	void   Next (int value)      { next = value; }
+	void   From (int value)      { from = value; }
+	void   Link (int value)      { link = value; }
 
 	void  Clear (void) {
 		imped = cost = time = length = 0.0;  next = from = link = -1;
@@ -290,5 +290,91 @@ private:
 typedef vector <Path_Leg_Data>            Path_Leg_Array;
 typedef Path_Leg_Array::iterator          Path_Leg_Itr;
 typedef Path_Leg_Array::reverse_iterator  Path_Leg_RItr;
+
+//---------------------------------------------------------
+//	Gap_Data class definition
+//---------------------------------------------------------
+
+class Gap_Data
+{
+public:
+	Gap_Data (void)           { Clear (); }
+
+	double Gap (void);
+	double Max_Gap (void)     { return (max_gap); }
+	double Std_Dev (void);
+	double RMSE (void);
+	double Difference (void)  { return (diff); }
+	double Total (void)       { return (total); }
+	int    Count (void)       { return (count); }
+
+	void   Add (double previous, double current);
+
+	void   Clear (void) { total = diff = diff_sq = max_gap = 0; count = 0; }
+
+private:
+	double total;
+	double diff;
+	double diff_sq;
+	double max_gap;
+	int    count;
+};
+
+typedef vector <Gap_Data>    Gap_Array;
+typedef Gap_Array::iterator  Gap_Itr;
+typedef Gap_Array::pointer   Gap_Ptr;
+
+//---------------------------------------------------------
+//	Choice_Model class definition
+//---------------------------------------------------------
+
+class Choice_Model
+{
+public:
+	Choice_Model (void)                    { Clear (); }
+
+	double Time_Factor (void)              { return (time_fac); }
+	double Toll_Factor (void)              { return (toll_fac); }
+	double Rely_Ratio (void)               { return (rely_ratio); }
+	double Rely_Time (void)                { return (rely_time); }
+	double Rely_Dist (void)                { return (rely_dist); }
+	double Perceive_Time (void)            { return (perceive_time); }
+	double Perceive_Mid_VC (void)          { return (perceive_mid_vc); }
+	double Perceive_Max_VC (void)          { return (perceive_max_vc); }
+	double Express_Weight (void)           { return (express_weight); }
+	double Scale_Length (void)             { return (scale_len); }
+	double Scale_Alpha (void)              { return (scale_alpha); }
+	
+	void   Time_Factor (double value)      { time_fac = value; }
+	void   Toll_Factor (double value)      { toll_fac = value; }
+	void   Rely_Ratio (double value)       { rely_ratio = value; }
+	void   Rely_Time (double value)        { rely_time = value; }
+	void   Rely_Dist (double value)        { rely_dist = value; }
+	void   Perceive_Time (double value)    { perceive_time = value; }
+	void   Perceive_Mid_VC (double value)  { perceive_mid_vc = value; }
+	void   Perceive_Max_VC (double value)  { perceive_max_vc = value; }
+	void   Express_Weight (double value)   { express_weight = value; }
+	void   Scale_Length (double value)     { scale_len = value; }
+	void   Scale_Alpha (double value)      { scale_alpha = value; }
+
+	void   Clear (void) { time_fac = toll_fac = rely_ratio = rely_time = rely_dist = perceive_time = perceive_mid_vc = perceive_max_vc = express_weight = scale_len = scale_alpha; }
+
+private:
+	double time_fac;
+	double toll_fac;
+	double rely_ratio;
+	double rely_time;
+	double rely_dist;
+	double perceive_time;
+	double perceive_mid_vc;
+	double perceive_max_vc;
+	double express_weight;
+	double scale_len;
+	double scale_alpha;
+};
+
+typedef vector <Choice_Model>  Model_Array;
+typedef Model_Array::iterator  Model_Itr;
+typedef Model_Array::pointer   Model_Ptr;
 
 #endif

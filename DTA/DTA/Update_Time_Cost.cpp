@@ -10,15 +10,16 @@
 //	Update_Time_Cost
 //---------------------------------------------------------
 
-void DTA::Update_Time_Cost (int iteration)
+double DTA::Update_Time_Cost (int iteration)
 {
 	int link, period, mode, index;
-	double volume, vol, time, vc, factor, cost, toll;
+	double volume, vol, time, vc, factor, cost, toll, old_time, old_vol, old, max_time;
 
 	Volume_Itr vol_itr;
 	Volume_Ptr old_vol_ptr;
 	Link_Data *link_ptr;
 	Toll_Data *toll_ptr;
+	Gap_Data gap_data;
 
 	factor = 1.0 / iteration;
 
@@ -30,17 +31,23 @@ void DTA::Update_Time_Cost (int iteration)
 		}
 		link_ptr = &link_array [link];
 
+		max_time = link_ptr->Length () * 60.0 / min_speed;
+
 		for (period = 0; period < num_period; period++) {
-			volume = 0;
+			volume = old_vol = 0;
 
 			for (mode = 0; mode < num_mode; mode++) {
 				vol = vol_itr->Volume (mode, period);
 
 				if (iteration > 1) {
-					vol = vol * factor + (1.0 - factor) * old_vol_ptr->Volume (mode, period);
-					vol_itr->Volume (mode, period, vol);
-				}
+					old = old_vol_ptr->Volume (mode, period);
 
+					vol = vol * factor + (1.0 - factor) * old;
+					vol_itr->Volume (mode, period, vol);
+				} else {
+					old = 0;
+				}
+				old_vol += old;
 				volume += vol;
 			}
 			vc = (volume / link_ptr->Cap ());
@@ -49,7 +56,12 @@ void DTA::Update_Time_Cost (int iteration)
 				time = link_ptr->Time0 ();
 			} else {
 				time = link_ptr->Time0 () * (1 + link_ptr->Alpha () * pow ((volume / (link_ptr->Cap ())), link_ptr->Beta ()));
+				if (time > max_time) time = max_time;
 			}
+			old_time = link_ptr->TTime (period);
+
+			gap_data.Add (old_time * old_vol / 60.0, time * volume / 60.0);
+
 			link_ptr->TTime (period, time);
 
 			//---- adjust cost ----
@@ -86,5 +98,21 @@ void DTA::Update_Time_Cost (int iteration)
 			}
 		}
 	}
+	if (gap_flag) {
+		gap_array.push_back (gap_data);
+
+		if (gap_file.Is_Open ()) {
+			gap_file.Iteration (iteration);
+			gap_file.Gap (gap_data.Gap ());
+			gap_file.Std_Dev (gap_data.Std_Dev ());
+			gap_file.Maximum (gap_data.Max_Gap ());
+			gap_file.RMSE (gap_data.RMSE ());
+			gap_file.Difference (gap_data.Difference ());
+			gap_file.Total (gap_data.Total ());
+
+			gap_file.Write ();
+		}
+	}
+	return (gap_data.Gap ());
 }
 

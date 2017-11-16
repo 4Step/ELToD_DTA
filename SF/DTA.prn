@@ -1,9 +1,9 @@
 
 	********************************************
 	|                                          |
-	|           DTA - Version 7.1.4            |
+	|           DTA - Version 7.1.5            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Thu Nov 16 11:32:57 2017         |
+	|         Thu Nov 16 13:52:44 2017         |
 	|                                          |
 	********************************************
 
@@ -12,20 +12,21 @@
 
 	DTA
 
+
+	Warning: Control Key "EXPRESS_NODE_TYPES" was Not Used
 	Project Directory = .\
 	Default File Format = COMMA_DELIMITED
 	Model Start Time = 0
 	Model End Time = 24
 	Model Time Increment = 15
 	Number of Threads = 8
-	Random Number Seed = 1510849977
+	Random Number Seed = 1510858364
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
 	Express Facility Types = 96..98
 
 	Node File = .\NODE.CSV
-	Express Node Types = 90..91
 	Zone Node Type = 99
 
 	Toll File = .\Toll_Link.csv
@@ -56,14 +57,27 @@
 	Select Modes = SOV, HOV3, TRK
 
 	Number of Node Records = 4919
-	Number of Express Node Records = 9
+	Number of Express Entry Records = 5
+	Number of Express Exit Records = 0
+	Number of General Join Records = 4	DTA
+	Thu Nov 16 13:52:44 2017  DTA  page 2
+
 	Maximum Zone Number = 229
 
-	Number of Link Records = 9880	DTA
-	Thu Nov 16 11:33:09 2017  DTA  page 2
-
+	Number of Link Records = 9880
 	Number of Express Link Records = 31
 
 	Number of Toll Records = 125
 	Number of Express Toll Records = 2
 
+	Number of Assignment Threads = 8
+
+	Iteration 1 Gap 1.0000 Processing Time 0:00:29
+
+	Iteration 2 Gap 0.7857 Processing Time 0:00:29
+
+	Iteration 3 Gap 0.3252 Processing Time 0:00:29
+
+	Iteration 4 Gap 0.1574 Processing Time 0:00:29
+
+	Thu Nov 16 13:54:47 2017 -- Process Complete with 1 Warning (0:02:03)

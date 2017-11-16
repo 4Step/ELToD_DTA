@@ -8,7 +8,7 @@
 //	Alt_Path
 //---------------------------------------------------------
 
-void DTA::Assign_Trips::Alt_Path (double tod, double cost0, double len0, int from_node, int to_node, int skip_link, Path_Leg_Array &leg_array)
+void DTA::Assign_Trips::Alt_Path (Path_Leg_Data root_data, int from_node, int to_node, int skip_link, Path_Leg_Array &leg_array)
 {
 	int anode, bnode, link, period;
 	double vtime, vlen, time, length, cost, imp_a, imp_b, max_imp, cost_factor;
@@ -26,16 +26,21 @@ void DTA::Assign_Trips::Alt_Path (double tod, double cost0, double len0, int fro
 	leg_array.clear ();
 	path_root.Clear ();
 	path_array.assign (exe->num_node, path_root);
+	
+	path_root.Time (root_data.Time ());
+	path_root.Cost (root_data.Cost ());
+	path_root.Length (root_data.Length ());
 
 	first_ptr = &path_root;
 	first_ptr->Next (from_node);
 	last_ptr = &path_array [from_node];
+	
+	last_ptr->Link (root_data.Link ());
+	last_ptr->Time (root_data.Time ());
+	last_ptr->Cost (root_data.Cost ());
+	last_ptr->Length (root_data.Length ());
 
-	first_ptr->Time (tod);
-	first_ptr->Cost (cost0);
-	first_ptr->Length (len0);
-
-	period = exe->time_periods.Period ((int) tod);
+	period = exe->time_periods.Period ((int) first_ptr->Time ());
 
 	vtime = exe->value_time;
 	vlen = exe->value_len;
@@ -167,12 +172,8 @@ void DTA::Assign_Trips::Alt_Path (double tod, double cost0, double len0, int fro
 
 	//---- trace the paths ----
 
-	bnode = to_node;
-
-	while (bnode != from_node && bnode > 0) {
+	for (bnode = to_node; bnode >= 0; bnode = path_ptr->From ()) {
 		path_ptr = &path_array [bnode];
-
-		if (path_ptr->Link () < 0) break;
 
 		leg_rec.Node (bnode);
 		leg_rec.Link (path_ptr->Link ());
@@ -181,7 +182,5 @@ void DTA::Assign_Trips::Alt_Path (double tod, double cost0, double len0, int fro
 		leg_rec.Length (path_ptr->Length ());
 
 		leg_array.push_back (leg_rec);
-
-		bnode = path_ptr->From ();
 	}
 }

@@ -199,6 +199,7 @@ public:
 	int    Origin (void)           { return (Get_Integer (org)); }
 	int    Destination (void)      { return (Get_Integer (des)); }
 	int    Period (void)           { return (Get_Integer (period)); }
+	int    Iteration (void)        { return (Get_Integer (iteration)); }
 	string Mode (void)             { return (Get_String (mode)); }
 	int    Node_A (void)           { return (Get_Integer (node_a)); }
 	int    Node_B (void)           { return (Get_Integer (node_b)); }
@@ -210,6 +211,7 @@ public:
 	void   Origin (int value)      { Put_Field (org, value); }
 	void   Destination (int value) { Put_Field (des, value); }
 	void   Period (int value)      { Put_Field (period, value); }
+	void   Iteration (int value)   { Put_Field (iteration, value); }
 	void   Mode (string value)     { Put_Field (mode, value); }
 	void   Node_A (int value)      { Put_Field (node_a, value); }
 	void   Node_B (int value)      { Put_Field (node_b, value); }
@@ -224,7 +226,41 @@ protected:
 	virtual bool Set_Field_Numbers (void);
 
 private:
-	int org, des, period, mode, node_a, node_b, time, cost, length, trips;
+	int org, des, period, iteration, mode, node_a, node_b, time, cost, length, trips;
+};
+
+//---------------------------------------------------------
+//	Gap_File Class definition
+//---------------------------------------------------------
+
+class Gap_File : public Db_Header
+{
+public:
+	Gap_File (void);
+
+	int    Iteration (void)           { return (Get_Integer (iteration)); }
+	double Gap (void)                 { return (Get_Double (gap)); }
+	double Std_Dev (void)             { return (Get_Double (std_dev)); }
+	double Maximum (void)             { return (Get_Double (maximum)); }
+	double RMSE (void)                { return (Get_Double (rmse)); }
+	double Difference (void)          { return (Get_Double (diff)); }
+	double Total (void)               { return (Get_Double (total)); }
+
+	void   Iteration (int value)      { Put_Field (iteration, value); }
+	void   Gap (double value)         { Put_Field (gap, value); }
+	void   Std_Dev (double value)     { Put_Field (std_dev, value); }
+	void   Maximum (double value)     { Put_Field (maximum, value); }
+	void   RMSE (double value)        { Put_Field (rmse, value); }
+	void   Difference (double value)  { Put_Field (diff, value); }
+	void   Total (double value)       { Put_Field (total, value); }
+
+	virtual bool Create_Fields (void);
+
+protected:
+	virtual bool Set_Field_Numbers (void);
+
+private:
+	int iteration, gap, std_dev, maximum, rmse, diff, total;
 };
 
 #endif

@@ -13,11 +13,10 @@ MINIMUM_TRIP_SPLIT                      0.01
 
 NODE_FILE                               NODE.CSV
 NODE_FORMAT                             COMMA_DELIMITED
-EXPRESS_NODE_TYPES                      90..91
+EXPRESS_ENTRY_TYPES                     90
+EXPRESS_EXIT_TYPES                      92
+GENERAL_JOIN_TYPES                      91
 ZONE_NODE_TYPE                          99
-
-##TRIP_FILE                               TRIP_TABLE.bin
-##TRIP_FORMAT                             BINARY
 
 TRIP_FILE                               TRIP_TABLE.CSV
 TRIP_FORMAT                             COMMA_DELIMITED
@@ -25,13 +24,13 @@ TRIP_FORMAT                             COMMA_DELIMITED
 TOLL_FILE                               Toll_Link.csv
 TOLL_FORMAT                             COMMA_DELIMITED
 
-NUMBER_OF_THREADS                       8
-NUMBER_OF_ITERATIONS                    4
+NUMBER_OF_THREADS                       48
+NUMBER_OF_ITERATIONS                    10
 
 TIME_VALUE                              10.0
 DISTANCE_VALUE                          1.0
 COST_VALUE                              1.0
-MODE_COST_FACTORS                       1.0, 0.5, 4.0
+MODE_COST_FACTORS                       1.0, 0.2, 4.0
 
 TOLL_POLICY_CODES                       1, 5..6
 MINIMUM_TOLL                            0.25
@@ -50,6 +49,9 @@ NEW_PATH_LEG_FORMAT                     COMMA_DELIMITED
 SELECT_ORIGINS                          2
 SELECT_DESTINATIONS                     165
 SELECT_TIME_PERIODS                     24
+##SELECT_ITERATIONS                       1, 4..10
 SELECT_MODES                            SOV, HOV3, TRK
 
-##DTA_REPORT_1                        CONVERSION_SCRIPT
+NEW_CONVERGENCE_FILE                    gap_file.csv
+
+DTA_REPORT                              CONVERGENCE_REPORT

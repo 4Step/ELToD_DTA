@@ -3,7 +3,7 @@
 	|                                          |
 	|           DTA - Version 7.1.5            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Thu Nov 16 13:52:44 2017         |
+	|         Tue Nov 28 09:32:09 2017         |
 	|                                          |
 	********************************************
 
@@ -12,21 +12,22 @@
 
 	DTA
 
-
-	Warning: Control Key "EXPRESS_NODE_TYPES" was Not Used
 	Project Directory = .\
 	Default File Format = COMMA_DELIMITED
 	Model Start Time = 0
 	Model End Time = 24
 	Model Time Increment = 15
-	Number of Threads = 8
-	Random Number Seed = 1510858364
+	Number of Threads = 48
+	Random Number Seed = 1511879529
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
 	Express Facility Types = 96..98
 
 	Node File = .\NODE.CSV
+	Express Entry Types = 90
+	Express Exit Types = 92
+	General Join Types = 91
 	Zone Node Type = 99
 
 	Toll File = .\Toll_Link.csv
@@ -34,11 +35,11 @@
 	Trip File = .\TRIP_TABLE.CSV  (Modes=SOV, HOV3, TRK)
 	Minimum Trip Split = 0.01
 
-	Number of Iterations = 4
+	Number of Iterations = 10
 	Time Value = 10
 	Distance Value = 1
 	Cost Value = 1
-	Mode Cost Factors = SOV=1.00, HOV3=0.50, TRK=4.00
+	Mode Cost Factors = SOV=1.00, HOV3=0.20, TRK=4.00
 
 	Toll Policy Codes = 1, 5..6
 	Minimum Toll = 0.25
@@ -56,12 +57,16 @@
 	Select Time Periods = 24
 	Select Modes = SOV, HOV3, TRK
 
+	New Gap File = .\gap_file.csv
+
+	DTA Reports:  1. CONVERGENCE_REPORT	DTA
+	Tue Nov 28 09:32:09 2017  DTA  page 2
+
+
 	Number of Node Records = 4919
 	Number of Express Entry Records = 5
-	Number of Express Exit Records = 0
-	Number of General Join Records = 4	DTA
-	Thu Nov 16 13:52:44 2017  DTA  page 2
-
+	Number of Express Exit Records = 2
+	Number of General Join Records = 4
 	Maximum Zone Number = 229
 
 	Number of Link Records = 9880
@@ -70,14 +75,42 @@
 	Number of Toll Records = 125
 	Number of Express Toll Records = 2
 
-	Number of Assignment Threads = 8
+	Number of Assignment Threads = 48
 
-	Iteration 1 Gap 1.0000 Processing Time 0:00:29
+	Iteration 1 Gap 1.0000 Processing Time 0:00:13
 
-	Iteration 2 Gap 0.7857 Processing Time 0:00:29
+	Iteration 2 Gap 0.7859 Processing Time 0:00:12
 
-	Iteration 3 Gap 0.3252 Processing Time 0:00:29
+	Iteration 3 Gap 0.3256 Processing Time 0:00:12
 
-	Iteration 4 Gap 0.1574 Processing Time 0:00:29
+	Iteration 4 Gap 0.1575 Processing Time 0:00:12
 
-	Thu Nov 16 13:54:47 2017 -- Process Complete with 1 Warning (0:02:03)
+	Iteration 5 Gap 0.1029 Processing Time 0:00:13
+
+	Iteration 6 Gap 0.0698 Processing Time 0:00:12
+
+	Iteration 7 Gap 0.0516 Processing Time 0:00:13
+
+	Iteration 8 Gap 0.0418 Processing Time 0:00:13
+
+	Iteration 9 Gap 0.0341 Processing Time 0:00:13
+
+	Iteration 10 Gap 0.0287 Processing Time 0:00:12
+
+	Convergence Gap Report
+
+	          --------------- Link Gap ---------------      %     --------- Hours ---------
+	Iteration        Total       Std.Dev       Maximum     RMSE     Difference         Total
+
+	     1        1.000000     28.281656         1.000    2829.9      14654477      14654477
+	     2        0.785867     24.043804         1.000    2405.7      12715352      16180030
+	     3        0.325570      8.822362         1.000     882.8       1780808       5469812
+	     4        0.157524      1.855644         1.000     186.2        704120       4469917
+	     5        0.102874      1.060647         1.000     106.6        437879       4256481
+	     6        0.069813      0.867148         1.000      87.0        289229       4142903
+	     7        0.051623      0.607574         1.000      61.0        210828       4084007
+	     8        0.041754      0.505934         1.000      50.8        169116       4050320
+	     9        0.034088      0.366046         1.000      36.8        137275       4027085
+	    10        0.028747      0.314285         1.000      31.6        115280       4010123
+
+	Tue Nov 28 09:34:23 2017 -- Process Complete (0:02:14)

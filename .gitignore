@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+SF/Input/*
+SF/TRIP_TABLE.csv
+
 # User-specific files
 *.suo
 *.user
@@ -286,3 +289,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+TRIP_TABLE_actual\.zip

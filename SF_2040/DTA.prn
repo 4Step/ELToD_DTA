@@ -3,7 +3,7 @@
 	|                                          |
 	|           DTA - Version 7.1.5            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Tue Nov 28 14:26:16 2017         |
+	|         Tue Nov 28 14:41:32 2017         |
 	|                                          |
 	********************************************
 
@@ -18,7 +18,7 @@
 	Model End Time = 24
 	Model Time Increment = 15
 	Number of Threads = 48
-	Random Number Seed = 1511897176
+	Random Number Seed = 1511898092
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
@@ -60,36 +60,22 @@
 	New Gap File = .\gap_file.csv
 
 	DTA Reports:  1. CONVERGENCE_REPORT	DTA
-	Tue Nov 28 14:26:16 2017  DTA  page 2
+	Tue Nov 28 14:41:32 2017  DTA  page 2
 
 
 	Number of Node Records = 7691
-	Number of Express Entry Records = 20
-	Number of Express Exit Records = 12
+	Number of Express Entry Records = 21
+	Number of Express Exit Records = 13
 	Number of General Join Records = 18
 	Maximum Zone Number = 229
 
 	Number of Link Records = 14465
-	Number of Express Link Records = 159
+	Number of Express Link Records = 167
 
-	Number of Toll Records = 16
-	Number of Express Toll Records = 16
+	Number of Toll Records = 17
+	Number of Express Toll Records = 17
 
 	Number of Assignment Threads = 48
 
-	Iteration 1 Gap 1.0000 Processing Time 0:00:33
+	Iteration 1 Gap 1.0000 Processing Time 0:00:37
 
-	Iteration 2 Gap 0.8462 Processing Time 0:00:29
-
-	Iteration 3 Gap 0.5370 Processing Time 0:00:27
-
-	Convergence Gap Report
-
-	          --------------- Link Gap ---------------      %     --------- Hours ---------
-	Iteration        Total       Std.Dev       Maximum     RMSE     Difference         Total
-
-	     1        1.000000     13.772672         1.000    1380.9      57173470      57173470
-	     2        0.846170     11.258436         1.000    1129.0      55686032      65809515
-	     3        0.537030      9.466366         1.000     948.2      11504000      21421525
-
-	Tue Nov 28 14:27:54 2017 -- Process Complete (0:01:38)

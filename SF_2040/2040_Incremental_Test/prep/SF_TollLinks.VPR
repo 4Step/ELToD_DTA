@@ -2,7 +2,7 @@
 PROJECT=NETWORK
 
 [HWYLAYER]
-FileName=C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test6\prep\SF_TollLinks.net
+FileName=C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test5\prep\SF_TollLinks.net
 Visible=1
 ActiveLinkColorGroup=14
 LinkColorGroup1=XL, GUL, Tolls
@@ -382,7 +382,7 @@ Set1HeaderAlignment=Left
 Set1FooterAlignment=Left
 
 [LEGEND]
-LegendDisplay=1
+LegendDisplay=0
 Set1Legend1UnitType=0
 Set1Legend1Anchor=0,0
 Set1Legend1Loc=0,0
@@ -421,7 +421,7 @@ Set1Legend4Item1Auto=
 
 [SAVEVIEWS]
 RestoreLastView=0
-ViewLast=906611.892337383,944118.189341695,642422.93241593,658014.097236386
+ViewLast=923397.29523123,932829.440930272,634169.01136583,638089.903321318
 View0=920808.135175991,925312.057748702,584936.200974494,586988.413568379,Miami Gardens Drive
 View1=924646.1896817,931284.886380129,649306.449332163,652702.429052744,Park-n-Ride
 View2=869632.415008021,873422.646469878,648483.161133761,650422.028017651,Ramps I-75

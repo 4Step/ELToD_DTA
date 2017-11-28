@@ -1,0 +1,193 @@
+Page 1  (VOYAGER PILOT) Model Run
+Florida Department of Transportation
+------------------------------------
+PILOT (v.09/23/2016 [6.4.2 x64]) Tue Nov 28 14:45:11 2017
+
+Args: C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test\prep\Export_NET_to_CSV.000 -SC:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test\prep -Pelto -PH:58 -PW:80 -IModel Run
+Input:   C:...DTA\SF_2040\2040_Incremental_Test\prep\Export_NET_to_CSV.000
+
+RUN PGM=NETWORK,114 MSG='Export Network'
+
+PILOT Stack Size = 70 bytes.
+................................................................................
+Page 2  (VOYAGER NETWORK) Model Run
+Florida Department of Transportation
+------------------------------------
+NETWORK (v.09/23/2016 [6.4.2 x64])  Tue Nov 28 14:45:11 2017
+
+FILEI NODEI[1] = "SF_TollLinks.NET"
+FILEI LINKI[1] = "SF_TollLinks.NET"
+FILEO PRINTO[2] = "NODE.CSV"
+FILEO PRINTO[1] = "LINK.CSV"
+FILEO PRINTO[3] = "TOLL_LINK.CSV"
+MERGE RECORD=FALSE
+
+PROCESS PHASE=NODEMERGE
+  ; Print Node File header
+  IF (_FIterNode = 0)
+    PRINT CSV=T, LIST='N,DTA_Type,VCOST',PRINTO=2
+    _FIterNode = 1
+  ENDIF
+
+
+
+  ; ELTOD 4.0 C++ code additions
+  DTA_Type=0
+  IF (N<=229)
+    DTA_Type = 99
+  ELSEIF (N.1.INCLUDE = 1 || N.1.DTA_TYPE > 0)  ; Test portion of the network
+    DTA_Type = N.1.TYPE
+    ; DTA_Type = N.1.DTA_TYPE   ; Test portion of the network
+  ENDIF
+
+  VCOST = 10
+
+  PRINT CSV=T, LIST=N(10.0L),DTA_Type(5.0L),VCOST(4.0),PRINTO=2
+
+ENDPROCESS
+
+; Print File header
+IF (_FIterLink = 0)
+  ; Print Link file header
+  PRINT CSV=T, LIST='A,B,DISTANCE,CAPACITY,NUM_LANES,FTYPE,FFSPEED,ALPHA,BETA',PRINTO=1
+
+  ; Print Toll Link File header
+  PRINT CSV=T, LIST='A,B,TOLLSEGNUM,TOLL_POLICY,TOLL,SEG_DISTANCE',PRINTO=3
+  _FIterLink = 1
+ENDIF
+
+IF (LI.1.INCLUDE = 1 || LI.1.FTYPE > 0)
+   FTYPE = LI.1.FTC2
+ENDIF
+
+ALPHA = 0.75
+BETA = 4
+
+; Print Links
+; PRINT CSV=T, LIST=A(10.0L),B(10.0L),1(10.4L),CAPACITY_E_LANE(10.0L),NUM_LANES(5.0L),FTC2(5.0L),FFSPD(5.1L),ALPHA(5.2L),BETA(5.2L),PRINTO=1
+PRINT CSV=T, LIST=A(10.0L),B(10.0L),1(10.4L),CAPACITY_E_LANE(10.0L),NUM_LANES(5.0L),FTYPE(5.0L),FFSPD(5.1L),ALPHA(5.2L),BETA(5.2L),PRINTO=1
+Page 3  (VOYAGER NETWORK) Model Run
+Florida Department of Transportation
+------------------------------------
+; Print Toll Links
+IF (TOLLSEGNUM > 0 & FTYPE > 0)
+  PRINT CSV=T, LIST=A(10.0L),B(10.0L),TOLLSEGNUM(10.0L),TOLL_POLIC(5.0L),TOLL(5.2L),SEG_DISTAN(5.0L), PRINTO=3
+ENDIF
+
+PHASE=SUMMARY
+  IF (_ERR=1)
+    ABORT MSG='ERROR! Facility Type in network does not match keys. Please check ERROR_LINK.CSV for link list.'
+  ENDIF
+ENDPHASE
+
+NETWORK Stack Size = 3006 bytes.
+................................................................................
+
+
+
+
+SF_TollLinks.NET   (VOYAGER):
+
+NET PGM=CUBE   DATE=Tue Nov 28 14:45:04 2017
+ID=Model Run
+PAR Zones=229   Nodes=100735 Links=14465  NodeRecs=7691 
+NVR 9    N    X    Y    DMN    SEGNUMID    PROHIBITED=13    TYPE
+    DTA_TYPE    INCLUDE
+LVR 28    A    B    DISTANCE    FTC2    NUM_LANES    FFSPD
+    CAPACITY_E_LANE    CARTOLL    TOLLTYPE    FLAG    ROADNAME=20    SEGMENT_ID
+    TOLLLINK_ID    DISTID    DISTIDSB    DIR_ID    DIR1    DIR2    DIR3    DIR4
+    DIRECTION    PRINT    FTYPE    TOLLSEGNUM    TOLL_POLIC    TOLL
+    SEG_DISTAN    INCLUDE
+
+
+
+Begin PROCESS PHASE NODEMERGE
+       7,691 records merged from NODEI[1]: SF_TollLinks.NET
+       7,691 data base records.
+
+Variable    Obs<>0             Total         Ave         Min         Max         RMS  
+--------    ------             -----         ---         ---         ---         ---  
+N            7,691                --          --        1     100,735             --
+X            7,691  6,938,365,603.44  902,140.89  685,987.41  968,913.59  902,773.93
+Y            7,691  4,746,404,063.34  617,137.44  380,477.8   966,937.36  628,034.27
+DMN            135            135           1           1           1           1   
+SEGNUMID       135          2,780          20.59        1          48          24.24
+PROHIBITED      52                                (100293_1)  (CHECK   )
+TYPE           217         19,729          90.92       90          92          90.92
+DTA_TYPE       283         27,578          97.45       90          99          97.5 
+INCLUDE         22             22           1           1           1           1   
+VCOST        7,691         76,910          10          10          10          10   
+Page 4  (VOYAGER NETWORK) Model Run
+Florida Department of Transportation
+------------------------------------
+_Variables with values:
+
+_ZONES                229      
+_FITERNODE              1      
+
+End   PROCESS PHASE NODEMERGE
+
+
+Begin PROCESS PHASE LINKMERGE
+      14,465 records merged from NETI[1]: SF_TollLinks.NET
+      14,465 data base records.
+
+Variable          Obs<>0          Total       Ave     Min         Max       RMS  
+--------          ------          -----       ---     ---         ---       ---  
+A                 14,465             --        --    1     100,735           --
+B                 14,465             --        --    1     100,735           --
+DISTANCE          14,465       5,553.96      0.38    0          18.59      0.8 
+FTC2              14,465     768,069        53.1    11          98        57.73
+NUM_LANES         14,465      33,456         2.31    1           9         2.54
+FFSPD             14,465     572,043.05     39.55   10          75.73     42.29
+CAPACITY_E_LANE   14,465  29,292,045     2,025.03  488      30,000     3,293.76
+CARTOLL              163          66.15      0.41    0.1         1.25      0.47
+TOLLTYPE             186         471         2.53    1           3         2.65
+FLAG               1,055      93,881        88.99    2         167       108.02
+ROADNAME              89                           (0       )  (Yamato R)
+SEGMENT_ID           152       3,160        20.79    1          43        24.15
+TOLLLINK_ID           76          76         1       1           1         1   
+DISTID                69         729        10.57    1          19        11.78
+DISTIDSB              74         782        10.57    1          20        11.9 
+DIR_ID                19          31         1.63    1           2         1.7 
+DIR1                 424         424         1       1           1         1   
+DIR2                 387         387         1       1           1         1   
+DIR3                 261         261         1       1           1         1   
+DIR4                 276         276         1       1           1         1   
+DIRECTION            152         380         2.5     1           4         2.74
+PRINT                224       5,606        25.03    1         124        28.25
+FTYPE                173      16,664        96.32   91          98        96.33
+TOLLSEGNUM            76       1,580        20.79    1          43        24.15
+TOLL_POLIC           225         855         3.8     1           6         3.99
+TOLL                 160          69.4       0.43    0.1         1.25      0.49
+SEG_DISTAN           225         335.99      1.49    0.24        9.54      2.09
+INCLUDE               69          69         1       1           1         1   
+ALPHA             14,465      10,848.75      0.75    0.75        0.75      0.75
+BETA              14,465      57,860         4       4           4         4   
+
+_Variables with values:
+
+_ZONES                229      
+_FITERNODE              1      
+_FITERLINK              1      
+
+End   PROCESS PHASE LINKMERGEPage 5  (VOYAGER NETWORK) Model Run
+Florida Department of Transportation
+------------------------------------
+
+
+Begin PROCESS PHASE SUMMARY
+
+_Variables with values:
+
+_ZONES                229      
+_FITERNODE              1      
+_FITERLINK              1      
+
+End   PROCESS PHASE SUMMARY
+
+NETWORK  ReturnCode = 0  Elapsed Time = 00:00:00
+################################################################################
+
+
+VOYAGER  ReturnCode = 0  Elapsed Time = 00:00:00

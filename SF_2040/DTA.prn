@@ -3,7 +3,7 @@
 	|                                          |
 	|           DTA - Version 7.1.5            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Tue Nov 28 16:35:08 2017         |
+	|         Tue Nov 28 16:57:32 2017         |
 	|                                          |
 	********************************************
 
@@ -18,7 +18,7 @@
 	Model End Time = 24
 	Model Time Increment = 15
 	Number of Threads = 48
-	Random Number Seed = 1511904908
+	Random Number Seed = 1511906252
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
@@ -60,20 +60,20 @@
 	New Gap File = .\gap_file.csv
 
 	DTA Reports:  1. CONVERGENCE_REPORT	DTA
-	Tue Nov 28 16:35:08 2017  DTA  page 2
+	Tue Nov 28 16:57:32 2017  DTA  page 2
 
 
 	Number of Node Records = 7691
-	Number of Express Entry Records = 38
-	Number of Express Exit Records = 25
-	Number of General Join Records = 35
+	Number of Express Entry Records = 47
+	Number of Express Exit Records = 31
+	Number of General Join Records = 43
 	Maximum Zone Number = 229
 
-	Number of Link Records = 14465
-	Number of Express Link Records = 298
+	Number of Link Records = 14463
+	Number of Express Link Records = 380
 
-	Number of Toll Records = 34
-	Number of Express Toll Records = 34
+	Number of Toll Records = 42
+	Number of Express Toll Records = 42
 
 	Number of Assignment Threads = 48
 

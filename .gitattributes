@@ -1,0 +1,27 @@
+# Auto detect text files and perform LF normalization
+* text eol=crlf
+
+# Custom for Visual Studio
+*.cs     diff=csharp
+
+# Standard to msysgit
+*.doc diff=word
+*.DOC diff=word
+*.docx diff=word
+*.DOCX diff=word
+*.dot diff=astextplain
+*.DOT diff=astextplain
+*.pdf diff=astextplain
+*.PDF diff=astextplain
+*.rtf diff=astextplain
+*.RTF diff=astextplain
+
+# Network, catalog and App files as binary
+*.CAT binary
+*.cat binary
+*.NET binary
+*.net binary
+*.MAT binary
+*.mat binary
+*.REP binary
+*.bmp binary

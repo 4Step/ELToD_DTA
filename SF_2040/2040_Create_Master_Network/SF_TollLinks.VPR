@@ -1,0 +1,509 @@
+[TPPLUS]
+PROJECT=NETWORK
+
+[HWYLAYER]
+FileName=C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test1\SF_TollLinks.net
+Visible=1
+ActiveLinkColorGroup=15
+LinkColorGroup1=XL, GUL, Tolls
+LinkColorPaletteIndex1=0
+LinkDrawOffset1=0
+LinkColor1_1=65280,0,3,FTC2=96 ; Express Lanes
+FileName2=
+DistScale=0.000189567566051027
+DistScaleOption=3
+SearchLimit=5
+TransitWidth=2
+TransitGap=3
+TransitMaxDraw=10
+PathTraceWidth=5
+PromptUnDo=0
+ClearLinkText=0
+ClearNodeText=0
+LeftHandDrive=0
+NoVprWarning=0
+AnimationStart=1
+AnimationStop=5
+AnimationSpeed=10
+AnimationIncr=1
+AnimationDay=-1
+AnimationRepeat=0
+AnimationDisplayTime=0
+AnimationStartTime=12/30/1899 8:00:00 AM
+AniDotSize=3
+AniDotStyle=0
+AniDotSizeStyle=0
+AniDotLength=12
+AniDotWidth=5
+AniDotSpacing=16
+AniSelectAnd=1
+AniColorAnd=1
+AniSelOrigins=
+AniSelDest=
+AniSelNodes=
+AniSelLinks=
+AniSelStarts=
+AniSelEnds=
+AniColorOrigins=
+AniColorDest=
+AniColorNodes=
+AniColorLinks=
+AniColorStarts=
+AniColorEnds=
+AniSelectedColor=255
+AniOtherColor=16711680
+AniVSetFromColor=255
+AniVSetToColor=16711680
+AniColorByVolSet=0
+AniVSetNumColor=0
+AniSpeedFromColor=255
+AniSpeedToColor=65280
+AniColorBySpeed=0
+AniSpeedNumColor=7
+AniSpeedColor1=255
+AniSpeedRange1=10
+AniSpeedColor2=8388736
+AniSpeedRange2=20
+AniSpeedColor3=8421504
+AniSpeedRange3=30
+AniSpeedColor4=16711680
+AniSpeedRange4=40
+AniSpeedColor5=8421376
+AniSpeedRange5=50
+AniSpeedColor6=32768
+AniSpeedRange6=60
+AniSpeedColor7=65280
+AniSpeedRange7=70
+DefaultCentroidColor=8421504,0,3
+DefaultNodeColor=16711680,0,0
+DefaultCentroidLinkColor=8421504,0,1
+DefaultLinkColor=16711680,0,1
+BaseX=0
+BaseY=0
+ScaleX=1
+ScaleY=1
+LayerMinScale=0
+LayerMaxScale=0
+LinkPostMinScale=0
+LinkPostMaxScale=0
+NodePostMinScale=0
+NodePostMaxScale=0
+BoundingBox=685987.4097,380477.8037,968913.5855,966937.3553
+ExternalDBF=
+ExternalLinkage=
+NodeOrderListIndex=1
+NodeOrderListName1=
+NodeOrderListValue1=
+NodeOrderListName2=
+NodeOrderListValue2=
+NodeOrderListName3=
+NodeOrderListValue3=
+NodeOrderListName4=
+NodeOrderListValue4=
+NodeOrderListName5=
+NodeOrderListValue5=
+NodeOrderListName6=
+NodeOrderListValue6=
+NodeOrderListName7=
+NodeOrderListValue7=
+NodeOrderListName8=
+NodeOrderListValue8=
+NodeOrderListName9=
+NodeOrderListValue9=
+NodeOrderListName10=
+NodeOrderListValue10=
+NodeOrderListName11=
+NodeOrderListValue11=
+NodeOrderListName12=
+NodeOrderListValue12=
+NodeOrderListName13=
+NodeOrderListValue13=
+NodeOrderListName14=
+NodeOrderListValue14=
+NodeOrderListName15=
+NodeOrderListValue15=
+NodeOrderListName16=
+NodeOrderListValue16=
+NodePopUpDisplayOrder=0
+ActiveNodeColorGroup=5
+NodeColorGroup1=DMNs
+NodeColorPaletteIndex1=0
+LinkOrderListIndex=1
+LinkOrderListName1=
+LinkOrderListValue1=
+LinkOrderListName2=
+LinkOrderListValue2=
+LinkOrderListName3=
+LinkOrderListValue3=
+LinkOrderListName4=
+LinkOrderListValue4=
+LinkOrderListName5=
+LinkOrderListValue5=
+LinkOrderListName6=
+LinkOrderListValue6=
+LinkOrderListName7=
+LinkOrderListValue7=
+LinkOrderListName8=
+LinkOrderListValue8=
+LinkOrderListName9=
+LinkOrderListValue9=
+LinkOrderListName10=
+LinkOrderListValue10=
+LinkOrderListName11=
+LinkOrderListValue11=
+LinkOrderListName12=
+LinkOrderListValue12=
+LinkOrderListName13=
+LinkOrderListValue13=
+LinkOrderListName14=
+LinkOrderListValue14=
+LinkOrderListName15=
+LinkOrderListValue15=
+LinkOrderListName16=
+LinkOrderListValue16=
+LinkPopUpDisplayOrder=0
+ActiveSelectGroup=0
+SelectGroup1=
+Select1=
+LinkColor1_2=255,0,3,FTC2=91 ; GUL
+ActiveLinkCalcGroup=0
+LinkCalcGroup1=Flag
+LinkCalc1_1=FLAG=1
+LinkCalcApply1=2
+LinkCalcCondition1=
+LinkColorGroup2=FFSPD
+LinkColorPaletteIndex2=0
+LinkDrawOffset2=0
+LinkColor2_1=255,0,6,FFSPD<35
+LinkColorGroup3=Flag 9
+LinkColorPaletteIndex3=0
+LinkDrawOffset3=0
+LinkColor1_3=32768,0,8,CARTOLL>0 ; Tolls
+LinkColor1_4=16711680,0,6,FTC2=97 ; Entry
+LinkColor1_5=255,0,6,FTC2=98 ; Exit
+LinkColor1_6=16711680,0,1,FLAG=75 ; Ramps go back to original
+NodeColor1_1=33023,0,12,DMN=1
+ActiveNodeCalcGroup=0
+NodeCalcGroup1=
+NodeCalc1_1=$DELETE=T
+NodeCalcApply1=1
+NodeCalcCondition1=_FLAG=1
+LinkColor3_1=255,0,3,FLAG=9
+ActiveLinkPostGroup=3
+LinkPostGroup1=Check
+LinkPost1_1=CAPACITY_E_LANE,-1,0
+LinkPost1_2=NUM_LANES,0,0
+LinkPost1_3=FFSPD,16711935,-2
+LinkPostSelectStr1=FLAG=9,3
+LinkCalcGroup2=
+LinkCalc2_1=FLAG=9
+LinkCalcApply2=2
+LinkCalcCondition2=
+LinkCalcGroup3=Flag 9 to FTC2=91
+LinkCalc3_1=FTC2=91
+LinkCalcApply3=1
+LinkCalcCondition3=FLAG=9
+LinkColorGroup4=XL; GUL
+LinkColorPaletteIndex4=0
+LinkDrawOffset4=0
+LinkColor4_1=65280,0,3,FTC2=96
+LinkColor4_2=255,0,3,FTC2=91
+LinkCalcGroup4=FTC2=20
+LinkCalc4_1=$DELETE=T
+LinkCalcApply4=1
+LinkCalcCondition4=FLAG=20
+LinkPostGroup2=ROADNAME
+LinkPost2_1=ROADNAME,0,0
+LinkPostSelectStr2=
+LinkCalcGroup5=FTC2=30
+LinkCalc5_1=$DELETE=T
+LinkCalcApply5=1
+LinkCalcCondition5=FLAG=30
+LinkColorGroup5=Pull Link and Toll Link
+LinkColorPaletteIndex5=0
+LinkDrawOffset5=0
+LinkColor5_1=33023,0,3,GU_NB_EB=1  ; GUL Northbound or Eastbound
+LinkPostGroup3=SEGMENT ID & DIRECTION
+LinkPost3_1=SEGMENT_ID,-1,0
+LinkPostSelectStr3=SEGMENT_ID>0
+LinkColor5_2=33023,0,3,GU_SB_WB=1 ; GUL Southbound or Westbound
+LinkColor5_3=65280,0,3,TOLLLINK_ID=1 ; Toll Link & Pull Link for XL Lanes
+LinkColor5_4=16711680,0,6,FTC2=97 ; Entry
+LinkColor5_5=255,0,6,FTC2=98 ; Exit
+ActiveNodePostGroup=2
+NodePostGroup1=SEGNUMID
+NodePost1_1=SEGNUMID,-1,0
+NodePostSelectStr1=SEGNUMID>0
+LinkPostGroup4=DISTID
+LinkPost4_1=DISTID,-1,0
+LinkPostSelectStr4=DISTID>0
+LinkColorGroup6=DISTID
+LinkColorPaletteIndex6=0
+LinkDrawOffset6=0
+LinkColor6_1=65280,0,3,DISTIDSB>0
+LinkColor6_2=255,0,3,DISTID>0
+LinkColor6_3=255,0,6,FTC2=98
+LinkColor6_4=16711680,0,6,FTC2=97
+LinkColor6_5=16776960,0,12,SEGMENT_ID>0
+LinkColorGroup7=DISTID Visualization
+LinkColorPaletteIndex7=0
+LinkDrawOffset7=0
+LinkColor7_1=65535,0,6,FTC2=96
+LinkColor7_2=65280,0,3,DISTIDSB>0
+LinkColor7_3=255,0,3,DISTID>0
+LinkColorGroup8=Cartoll>0
+LinkColorPaletteIndex8=0
+LinkDrawOffset8=0
+LinkColor8_1=16384,0,16,CARTOLL>0
+NodePostGroup2=Nodes
+NodePost2_1=N,-1,0
+NodePostSelectStr2=TYPE > 0
+NodeColorGroup2=Nodes
+NodeColorPaletteIndex2=0
+NodeColor2_1=255,0,16,N>0
+LinkColorGroup9=Dir 1 to Dir 4
+LinkColorPaletteIndex9=0
+LinkDrawOffset9=0
+LinkPostGroup5=DISTIDSB
+LinkPost5_1=DISTIDSB,-1,0
+LinkPostSelectStr5=DISTIDSB>0
+LinkPostGroup6=DIR_ID
+LinkPost6_1=DIR_ID,-1,0
+LinkPostSelectStr6=DIR_ID>0
+LinkColor9_1=255,0,3,DIR1=1 ; GUL NB or EB
+LinkColor9_2=65280,0,3,DIR2=1 ; GUL SB or WB
+LinkColor9_3=16776960,5,3,DIR3=1 ; XL NB or EB
+LinkColor9_4=16711808,5,3,DIR4=1 ; XL SB or WB
+LinkColorGroup10=HOV Flag
+LinkColorPaletteIndex10=0
+LinkDrawOffset10=0
+LinkColor10_1=255,0,3,FTC2=81
+LinkPostGroup7=NUM_LANES
+LinkPost7_1=NUM_LANES,-1,0
+LinkPostSelectStr7=NUM_LANES>1
+LinkPost7_2=ROADNAME,0,0
+LinkColor10_2=32768,0,3,FLAG=200
+LinkColorGroup11=Segment_ID & Direction
+LinkColorPaletteIndex11=0
+LinkDrawOffset11=0
+LinkColor11_1=12615935,5,8,SEGMENT_ID>0 & DIRECTION=1 ; XL NB/EB
+LinkColor11_2=65280,5,8,SEGMENT_ID>0 & DIRECTION=2 ; XL SB/WB
+LinkColor11_3=16711808,7,8,SEGMENT_ID>0 & DIRECTION=3 ; GUL NB/EB
+LinkColor11_4=33023,7,8,SEGMENT_ID>0 & DIRECTION=4 ; XL SB/WB
+LinkPostGroup8=
+LinkPost8_1=SEGMENT_ID,-1,0
+LinkPostSelectStr8=SEGMENT_ID>0
+NodeColorGroup3=All DMMs
+NodeColorPaletteIndex3=0
+NodeColor3_1=33023,0,10,DMN=1
+NodeColor3_2=255,0,10,N=28125,30352,31195,34908,35434,100335,28127,100337,21780,31347,31429,21798,28131,21696,26615,21714,21646,21694,21580,21846,21608,26046,21540,100341,21468,21492,100346,21411,21463,100349,21432,12605,12733,12749,100344,26250,100290,100241,20802,100246,21320,100305,100214,100306,100312,100217,100186,100191,20447,100314,26219,100321,100107,100124,13537,100302,100282,100296,100299,100286,100056,12165,100293,100063,20834,25130,100330
+NodeColorGroup4=Check
+NodeColorPaletteIndex4=0
+NodeColor4_1=8388736,4,16,N=28330,33594,33633,34115,40346,100413,100439,100638,100607,33456,100426,35068,100538
+LinkColorGroup12=Turn Penalties
+LinkColorPaletteIndex12=0
+LinkDrawOffset12=0
+LinkColor12_1=255,5,12,A=20834,25130,100190,100638 & B=20825,20732,100192,100636
+ActiveNodeBandGroup=1
+NodeBandGroup1=
+NodeBand1_1=DMN,-1,0.0667
+NodeBand1Key1=1,1
+NodeBand1Key2=1,1
+NodeBand1Key3=1,1
+NodeBand1Key4=1,1
+NodeBandSelectStr1=DMN=1
+NodeChartSizeStr1=
+NodeChartType1=0
+NodeBandMinScale1=0
+NodeBandMaxScale1=0
+NodeBandCenterColor1=8421504
+NodeBandQueueBarWidth1=-2
+ActiveLinkBandGroup=1
+LinkBandGroup1=
+LinkBand1_1=PRINT,0,8.2667
+LinkBand1Key1=1,1
+LinkBand1Key2=1,1
+LinkBand1Key3=1,1
+LinkBand1Key4=1,1
+LinkBandSelectStr1=
+LinkChartSizeStr1=
+LinkChartType1=0
+LinkBandMinScale1=0
+LinkBandMaxScale1=0
+LinkBandCenterColor1=8421504
+LinkBandQueueBarWidth1=-2
+LinkColor11_5=16711680,0,6,FTC2=97
+LinkColor11_6=255,0,6,FTC2=98
+LinkColorGroup13=PRINT
+LinkColorPaletteIndex13=0
+LinkDrawOffset13=0
+LinkColor13_1=255,0,6,PRINT>0
+LinkColorGroup14=FTYPE
+LinkColorPaletteIndex14=0
+LinkDrawOffset14=0
+NodeColorGroup5=
+NodeColorPaletteIndex5=0
+NodeColor5_1=16711935,0,12,TYPE = 91
+LinkColor11_7=32768,0,3,FTC2=95
+NodeColor5_2=32768,0,12,TYPE = 92
+NodeColor5_3=33023,0,12,TYPE = 90
+LinkColor14_1=32768,0,3,FTC2 = 96
+LinkColor14_2=65280,0,4,FTYPE = 96
+LinkColor14_3=33023,0,3,FTC2 = 97
+LinkColor14_4=16711935,0,3,FTC2 = 98
+LinkColorGroup15=
+LinkColorPaletteIndex15=0
+LinkDrawOffset15=0
+LinkColor15_1=255,0,4,TOLLSEGNUM > 0
+
+[PLOT]
+ActiveSetUp=1
+Set1=Set1
+Set1ScalePrtLineWidth=0
+Set1DrawAlwaysOnTop=0
+Set1PrintBackColor=0
+Set1FixedScale=0
+Set1LMargin=0
+Set1RMargin=0
+Set1TMargin=0
+Set1BMargin=0
+Set1Header1=
+Set1Footer1=
+Set1Header2=
+Set1Footer2=
+Set1Header3=
+Set1Footer3=
+Set1Header4=
+Set1Footer4=
+Set1HeaderFont=Tahoma,0,8
+Set1FooterFont=Tahoma,0,8
+Set1HeaderAlignment=Left
+Set1FooterAlignment=Left
+
+[LEGEND]
+LegendDisplay=0
+Set1Legend1UnitType=0
+Set1Legend1Anchor=0,0
+Set1Legend1Loc=0,0
+Set1Legend1Size=0,0
+Set1Legend1FullHeight=0
+Set1Legend1NumItems=1
+Set1Legend2UnitType=0
+Set1Legend2Anchor=2,0
+Set1Legend2Loc=0,0
+Set1Legend2Size=0,0
+Set1Legend2FullHeight=0
+Set1Legend2NumItems=1
+Set1Legend3UnitType=0
+Set1Legend3Anchor=0,2
+Set1Legend3Loc=0,0
+Set1Legend3Size=0,0
+Set1Legend3FullHeight=0
+Set1Legend3NumItems=1
+Set1Legend4UnitType=0
+Set1Legend4Anchor=2,2
+Set1Legend4Loc=0,0
+Set1Legend4Size=0,0
+Set1Legend4FullHeight=0
+Set1Legend4NumItems=1
+Set1Legend4Item1AutoComment=0
+Set1Legend1Item1Font=Tahoma,0,8
+Set1Legend1Item1=0,0,0,0,0,0,
+Set1Legend2Item1Font=Arial,0,10
+Set1Legend2Item1=2,0,0,0,0,0,
+Set1Legend2Item1Draw=2,0,0,0,0,0,
+Set1Legend3Item1Font=Tahoma,0,8
+Set1Legend3Item1=0,0,0,0,0,0,
+Set1Legend4Item1Font=Arial,0,10
+Set1Legend4Item1=1,0,0,0,0,0,
+Set1Legend4Item1Auto=
+
+[SAVEVIEWS]
+RestoreLastView=0
+ViewLast=850004.562194524,853579.202252345,429221.32303868,430707.281578093
+View0=920808.135175991,925312.057748702,584936.200974494,586988.413568379,Miami Gardens Drive
+View1=924646.1896817,931284.886380129,649306.449332163,652702.429052744,Park-n-Ride
+View2=869632.415008021,873422.646469878,648483.161133761,650422.028017651,Ramps I-75
+View3=867595.955803186,870300.902117772,622939.402230748,624323.098948172,DMN I-75
+View4=918187.375850003,945182.028241599,667111.683277561,679411.798279808,Segmnent 20
+View5=916768.681499986,919037.363560628,679990.709135601,681024.434254363,FTC2 = 95
+View6=845786.952439124,873285.554774803,474659.050259426,487806.923915671,Don Shula Expy
+View7=863878.305609943,878033.886143155,644487.055911036,651255.246603404,I-75 Reversible Lanes
+View8=924252.769004866,931875.171173013,715745.179936298,719389.669915844,Deerfield Toll Plaza Area
+
+[DYNASIM]
+DynaFieldIsSpeed=1
+DynaUnitInMiles=1
+DynaRTOR=1
+DynaFileName=
+DynaPathFileName=
+DynaLaneFieldName=
+DynaSpeedFieldName=
+DynaOffsetFieldName=
+DynaCenterOffset=1.75
+DynaLaneWidth=0.5
+DynaLaneSpacing=3.5
+DynaMaxSpeed=115
+DynaScale=1
+DynaTripScale=1
+DynaAddRadius=6.25
+DynaLayerNumber=1
+DXFFileName=
+DynaBusModes=1-999
+DynaArtBusModes=
+DynaTramModes=
+DynaTramTRModes=
+DynaHeadwayPeriod=1
+DynaPTStopMin=20
+DynaPTStopMax=30
+DynaPTStopMean=25
+DynaPTStopStdDev=4
+DynaPathSet=0
+DynaVolSet=1,2,0,0,0,0,0,0
+
+[POLYGONS]
+Polygon0=1,0
+Polygon0Line1=950499.244875626,955065.564815216,958750.243896107,959699.687552746,982033.884967602,910645.802965228,974913.159785543,904655.351621591,960897.764189109,910080.666046017,957393.915290001,917201.391228076,949821.080572573,924774.225945504,955472.449764684,929973.485602246,949481.998421046,931442.841592194,945639.067370412,947266.675330104,950499.244875626,955065.564815216
+Polygon1=1,1
+Polygon1Line1=934861.665156978,927018.737252984,936026.727723099,926878.929745049,936166.535231033,919049.70930072,939615.12042675,918723.491782206,939242.300405591,914109.84402037,938217.045347405,911919.526396063,937098.58528393,911733.116385484,936912.17527335,913690.421496566,938543.262865919,916766.186671124,930574.234913655,918397.274263693,934861.665156978,927018.737252984
+
+[LINLAYER]
+Visible=0
+FileName=U:\_Projects\ELToD v3.0\_2040 Mega Model Network\_Network_Additional_XL\XL SF2040_revised_1.6.17\SF_Y2040_v1.8\NetOutput.shp
+FileName2=
+DefaultCentroidColor=8421504,0,0
+DefaultNodeColor=16776960,0,0
+DefaultCentroidLinkColor=8421504,0,1
+DefaultLinkColor=16776960,0,1
+BaseX=0
+BaseY=0
+ScaleX=1
+ScaleY=1
+LayerMinScale=0
+LayerMaxScale=0
+LinkPostMinScale=0
+LinkPostMaxScale=0
+NodePostMinScale=0
+NodePostMaxScale=0
+BoundingBox=685987.4097,380477.8037,968913.5855,966937.3553
+ExternalDBF=
+ExternalLinkage=
+ActiveNodeColorGroup=0
+NodeColorGroup1=
+NodeColorPaletteIndex1=0
+ActiveLinkColorGroup=0
+LinkColorGroup1=
+LinkColorPaletteIndex1=0
+LinkDrawOffset1=0
+ActiveSelectGroup=0
+SelectGroup1=
+Select1=
+
+[LayerOrder]
+NumRecords=1
+ScreenColor=16777215
+FreewayOutlineColor=5263440
+NumDisplayDec=-1
+ScreenFont=Tahoma,32768,12
+Order=HWYLAYER,TRNLAYER,PTSLAYER,LINLAYER,BDYLAYER,IMGLAYER,DRWLAYER
+

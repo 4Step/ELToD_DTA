@@ -5,6 +5,11 @@
 
 SF/Input/*
 SF/TRIP_TABLE.csv
+SF_2040/TRIP_TABLE.csv
+SF_2040/gap_file.csv
+SF_2040/Volume.csv
+SF_2040/Path_Leg.csv
+SF_2040/*.def
 
 # User-specific files
 *.suo

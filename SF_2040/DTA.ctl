@@ -25,7 +25,7 @@ TOLL_FILE                               Toll_Link.csv
 TOLL_FORMAT                             COMMA_DELIMITED
 
 NUMBER_OF_THREADS                       48
-NUMBER_OF_ITERATIONS                    3
+NUMBER_OF_ITERATIONS                    100
 
 TIME_VALUE                              10.0
 DISTANCE_VALUE                          1.0

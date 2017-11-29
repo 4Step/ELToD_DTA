@@ -2,7 +2,7 @@
 PROJECT=NETWORK
 
 [HWYLAYER]
-FileName=C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test5\prep\SF_TollLinks.net
+FileName=C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test\prep\SF_TollLinks.net
 Visible=1
 ActiveLinkColorGroup=14
 LinkColorGroup1=XL, GUL, Tolls
@@ -165,7 +165,7 @@ LinkPopUpDisplayOrder=0
 ActiveSelectGroup=0
 SelectGroup1=
 Select1=
-LinkColor1_2=255,0,3,FTC2=91 ; GUL
+LinkColor1_2=16711680,0,3,FTC2=91 ; GUL
 ActiveLinkCalcGroup=0
 LinkCalcGroup1=Flag
 LinkCalc1_1=FLAG=1
@@ -179,9 +179,9 @@ LinkColorGroup3=Flag 9
 LinkColorPaletteIndex3=0
 LinkDrawOffset3=0
 LinkColor1_3=32768,0,8,CARTOLL>0 ; Tolls
-LinkColor1_4=16711680,0,6,FTC2=97 ; Entry
-LinkColor1_5=255,0,6,FTC2=98 ; Exit
-LinkColor1_6=16711680,0,1,FLAG=75 ; Ramps go back to original
+LinkColor1_4=33023,0,6,FTC2=97 ; Entry
+LinkColor1_5=16711935,0,6,FTC2=98 ; Exit
+LinkColor1_6=16711808,0,1,FLAG=75 ; Ramps go back to original
 NodeColor1_1=33023,0,12,DMN=1
 ActiveNodeCalcGroup=0
 NodeCalcGroup1=
@@ -224,7 +224,7 @@ LinkColorPaletteIndex5=0
 LinkDrawOffset5=0
 LinkColor5_1=33023,0,3,GU_NB_EB=1  ; GUL Northbound or Eastbound
 LinkPostGroup3=SEGMENT ID & DIRECTION
-LinkPost3_1=SEGMENT_ID,-1,0
+LinkPost3_1=SEGMENT_ID,0,0
 LinkPostSelectStr3=SEGMENT_ID>0
 LinkColor5_2=33023,0,3,GU_SB_WB=1 ; GUL Southbound or Westbound
 LinkColor5_3=65280,0,3,TOLLLINK_ID=1 ; Toll Link & Pull Link for XL Lanes
@@ -421,7 +421,7 @@ Set1Legend4Item1Auto=
 
 [SAVEVIEWS]
 RestoreLastView=0
-ViewLast=923397.29523123,932829.440930272,634169.01136583,638089.903321318
+ViewLast=785149.718224395,1032295.74469109,517460.902847657,620198.169417058
 View0=920808.135175991,925312.057748702,584936.200974494,586988.413568379,Miami Gardens Drive
 View1=924646.1896817,931284.886380129,649306.449332163,652702.429052744,Park-n-Ride
 View2=869632.415008021,873422.646469878,648483.161133761,650422.028017651,Ramps I-75

@@ -3,7 +3,7 @@
 	|                                          |
 	|           DTA - Version 7.1.5            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Wed Nov 29 09:56:02 2017         |
+	|         Wed Nov 29 11:30:29 2017         |
 	|                                          |
 	********************************************
 
@@ -18,7 +18,7 @@
 	Model End Time = 24
 	Model Time Increment = 15
 	Number of Threads = 48
-	Random Number Seed = 1511967362
+	Random Number Seed = 1511973029
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
@@ -35,7 +35,7 @@
 	Trip File = .\TRIP_TABLE.CSV  (Modes=SOV, HOV3, TRK)
 	Minimum Trip Split = 0.01
 
-	Number of Iterations = 3
+	Number of Iterations = 100
 	Time Value = 10
 	Distance Value = 1
 	Cost Value = 1
@@ -60,7 +60,7 @@
 	New Gap File = .\gap_file.csv
 
 	DTA Reports:  1. CONVERGENCE_REPORT	DTA
-	Wed Nov 29 09:56:02 2017  DTA  page 2
+	Wed Nov 29 11:30:29 2017  DTA  page 2
 
 
 	Number of Node Records = 7691
@@ -77,19 +77,49 @@
 
 	Number of Assignment Threads = 48
 
-	Iteration 1 Gap 1.0000 Processing Time 0:01:51
+	Iteration 1 Gap 1.0000 Processing Time 0:01:47
 
-	Iteration 2 Gap 0.8445 Processing Time 0:03:03
+	Iteration 2 Gap 0.8445 Processing Time 0:01:32
 
-	Iteration 3 Gap 0.5302 Processing Time 0:01:48
+	Iteration 3 Gap 0.5302 Processing Time 0:15:25
 
-	Convergence Gap Report
+	Iteration 4 Gap 0.2881 Processing Time 0:01:50
 
-	          --------------- Link Gap ---------------      %     --------- Hours ---------
-	Iteration        Total       Std.Dev       Maximum     RMSE     Difference         Total
+	Iteration 5 Gap 0.1796 Processing Time 0:01:48
 
-	     1        1.000000     14.508080         1.000    1454.2      62650833      62650833
-	     2        0.844525     11.906530         1.000    1193.6      59748179      70747642
-	     3        0.530242      9.206699         1.000     922.2      11371560      21445976
+	Iteration 6 Gap 0.1205 Processing Time 0:01:50
 
-	Wed Nov 29 10:02:53 2017 -- Process Complete (0:06:51)
+	Iteration 7 Gap 0.0928 Processing Time 0:01:51
+
+	Iteration 8 Gap 0.0722 Processing Time 0:01:51
+
+	Iteration 9 Gap 0.0601 Processing Time 0:01:51
+
+	Iteration 10 Gap 0.0509 Processing Time 0:01:51
+
+	Iteration 11 Gap 0.0450 Processing Time 0:01:51
+
+	Iteration 12 Gap 0.0385 Processing Time 0:01:52
+
+	Iteration 13 Gap 0.0351 Processing Time 0:01:53
+
+	Iteration 14 Gap 0.0326 Processing Time 0:01:52
+
+	Iteration 15 Gap 0.0290 Processing Time 0:36:34
+
+	Iteration 16 Gap 0.0291 Processing Time 0:09:58
+
+	Iteration 17 Gap 0.0253 Processing Time 0:01:52
+
+	Iteration 18 Gap 0.0237 Processing Time 0:54:06
+
+	Iteration 19 Gap 0.0229 Processing Time 0:04:22
+
+	Iteration 20 Gap 0.0215 Processing Time 0:01:49
+
+	Iteration 21 Gap 0.0203 Processing Time 0:45:36
+
+	Iteration 22 Gap 0.0193 Processing Time 0:01:48
+
+	Iteration 23 Gap 0.0179 Processing Time 0:01:50
+

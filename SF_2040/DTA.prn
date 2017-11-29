@@ -3,7 +3,7 @@
 	|                                          |
 	|           DTA - Version 7.1.5            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Wed Nov 29 08:43:31 2017         |
+	|         Wed Nov 29 09:38:14 2017         |
 	|                                          |
 	********************************************
 
@@ -18,7 +18,7 @@
 	Model End Time = 24
 	Model Time Increment = 15
 	Number of Threads = 48
-	Random Number Seed = 1511963011
+	Random Number Seed = 1511966294
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
@@ -60,36 +60,22 @@
 	New Gap File = .\gap_file.csv
 
 	DTA Reports:  1. CONVERGENCE_REPORT	DTA
-	Wed Nov 29 08:43:31 2017  DTA  page 2
+	Wed Nov 29 09:38:14 2017  DTA  page 2
 
 
 	Number of Node Records = 7691
-	Number of Express Entry Records = 61
-	Number of Express Exit Records = 45
-	Number of General Join Records = 60
+	Number of Express Entry Records = 70
+	Number of Express Exit Records = 51
+	Number of General Join Records = 67
 	Maximum Zone Number = 229
 
 	Number of Link Records = 14463
-	Number of Express Link Records = 557
+	Number of Express Link Records = 668
 
-	Number of Toll Records = 61
-	Number of Express Toll Records = 61
+	Number of Toll Records = 68
+	Number of Express Toll Records = 68
 
 	Number of Assignment Threads = 48
 
-	Iteration 1 Gap 1.0000 Processing Time 0:01:33
+	Iteration 1 Gap 1.0000 Processing Time 0:01:30
 
-	Iteration 2 Gap 0.8457 Processing Time 0:01:16
-
-	Iteration 3 Gap 0.5312 Processing Time 0:01:29
-
-	Convergence Gap Report
-
-	          --------------- Link Gap ---------------      %     --------- Hours ---------
-	Iteration        Total       Std.Dev       Maximum     RMSE     Difference         Total
-
-	     1        1.000000     14.467838         1.000    1450.2      63010289      63010289
-	     2        0.845667     11.883323         1.000    1191.3      60169962      71150855
-	     3        0.531183      9.228925         1.000     924.4      11400083      21461696
-
-	Wed Nov 29 08:47:57 2017 -- Process Complete (0:04:26)

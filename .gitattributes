@@ -25,3 +25,5 @@
 *.mat binary
 *.REP binary
 *.bmp binary
+*.zip binary
+*.exe binary

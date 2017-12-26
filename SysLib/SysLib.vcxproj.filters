@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Dbfile">
+      <UniqueIdentifier>{7724cfd4-866d-4597-b710-5fe9a7b34b9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Service">
+      <UniqueIdentifier>{4c4c241c-d79b-40b7-abd1-f9922ae94781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{c9c07a0d-d400-43e7-8fbc-20fa82135576}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dbfile\Header Files">
+      <UniqueIdentifier>{d7b61536-e811-4a63-bd61-0614d884c1de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dbfile\Source Files">
+      <UniqueIdentifier>{067c1aa9-e368-413b-8ee6-db844c93de09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Header Files">
+      <UniqueIdentifier>{59092463-fc53-48e0-b106-8872b815eb85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Source Files">
+      <UniqueIdentifier>{cbd03739-278a-46ad-ab22-2a90d6df159d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Service\Header Files">
+      <UniqueIdentifier>{dae5fbaf-9115-4e57-b4ec-c7462a863f4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Service\Source Files">
+      <UniqueIdentifier>{11747c63-2bfe-4430-a0a7-accf3ebc4796}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\System_Defines.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TypeDefs.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Db_Base.hpp">
+      <Filter>Dbfile\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Db_Field.hpp">
+      <Filter>Dbfile\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Db_File.hpp">
+      <Filter>Dbfile\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Db_Header.hpp">
+      <Filter>Dbfile\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Db_Record.hpp">
+      <Filter>Dbfile\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Db_Status.hpp">
+      <Filter>Dbfile\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Control_Service.hpp">
+      <Filter>Service\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Execution_Service.hpp">
+      <Filter>Service\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Message_Service.hpp">
+      <Filter>Service\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Static_Service.hpp">
+      <Filter>Service\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Report_Service.hpp">
+      <Filter>Service\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Buffer.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Data_Buffer.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Data_Range.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Random.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Range_Data.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Time_Periods.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Bounded_Queue.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Threads.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Streams.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\String.hpp">
+      <Filter>Tools\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dbfile\Db_Base.cpp">
+      <Filter>Dbfile\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dbfile\Db_Field.cpp">
+      <Filter>Dbfile\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dbfile\Db_File.cpp">
+      <Filter>Dbfile\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dbfile\Db_Header.cpp">
+      <Filter>Dbfile\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dbfile\Db_Record.cpp">
+      <Filter>Dbfile\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dbfile\Db_Status.cpp">
+      <Filter>Dbfile\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Buffer.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Data_Buffer.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Data_Range.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Random.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Range_Data.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Streams.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\String.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Time_Periods.cpp">
+      <Filter>Tools\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\Control_Service.cpp">
+      <Filter>Service\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\Execution_Service.cpp">
+      <Filter>Service\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\Message_Service.cpp">
+      <Filter>Service\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\Report_Service.cpp">
+      <Filter>Service\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\Static_Service.cpp">
+      <Filter>Service\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

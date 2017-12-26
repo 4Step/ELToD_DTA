@@ -3,7 +3,7 @@
 	|                                          |
 	|           DTA - Version 7.1.5            |
 	|  Copyright 2017 by TRANSIMS Open-Source  |
-	|         Wed Nov 29 11:30:29 2017         |
+	|         Wed Dec  6 16:34:36 2017         |
 	|                                          |
 	********************************************
 
@@ -17,8 +17,8 @@
 	Model Start Time = 0
 	Model End Time = 24
 	Model Time Increment = 15
-	Number of Threads = 48
-	Random Number Seed = 1511973029
+	Number of Threads = 56
+	Random Number Seed = 1512596076
 
 	DTA Control Keys:
 	Link File = .\LINK.CSV
@@ -60,7 +60,7 @@
 	New Gap File = .\gap_file.csv
 
 	DTA Reports:  1. CONVERGENCE_REPORT	DTA
-	Wed Nov 29 11:30:29 2017  DTA  page 2
+	Wed Dec  6 16:34:36 2017  DTA  page 2
 
 
 	Number of Node Records = 7691
@@ -75,326 +75,326 @@
 	Number of Toll Records = 76
 	Number of Express Toll Records = 76
 
-	Number of Assignment Threads = 48
+	Number of Assignment Threads = 56
 
-	Iteration 1 Gap 1.0000 Processing Time 0:01:47
+	Iteration 1 Gap 1.0000 Processing Time 0:00:30
 
-	Iteration 2 Gap 0.8445 Processing Time 0:01:32
+	Iteration 2 Gap 0.8430 Processing Time 0:00:25
 
-	Iteration 3 Gap 0.5302 Processing Time 0:15:25
+	Iteration 3 Gap 0.5261 Processing Time 0:00:27
 
-	Iteration 4 Gap 0.2881 Processing Time 0:01:50
+	Iteration 4 Gap 0.2835 Processing Time 0:00:28
 
-	Iteration 5 Gap 0.1796 Processing Time 0:01:48
+	Iteration 5 Gap 0.1751 Processing Time 0:00:28
 
-	Iteration 6 Gap 0.1205 Processing Time 0:01:50
+	Iteration 6 Gap 0.1178 Processing Time 0:00:30
 
-	Iteration 7 Gap 0.0928 Processing Time 0:01:51
+	Iteration 7 Gap 0.0873 Processing Time 0:00:29
 
-	Iteration 8 Gap 0.0722 Processing Time 0:01:51
+	Iteration 8 Gap 0.0699 Processing Time 0:00:29
 
-	Iteration 9 Gap 0.0601 Processing Time 0:01:51
+	Iteration 9 Gap 0.0581 Processing Time 0:00:29
 
-	Iteration 10 Gap 0.0509 Processing Time 0:01:51
+	Iteration 10 Gap 0.0506 Processing Time 0:00:31
 
-	Iteration 11 Gap 0.0450 Processing Time 0:01:51
+	Iteration 11 Gap 0.0443 Processing Time 0:00:30
 
-	Iteration 12 Gap 0.0385 Processing Time 0:01:52
+	Iteration 12 Gap 0.0392 Processing Time 0:00:30
 
-	Iteration 13 Gap 0.0351 Processing Time 0:01:53
+	Iteration 13 Gap 0.0351 Processing Time 0:00:29
 
-	Iteration 14 Gap 0.0326 Processing Time 0:01:52
+	Iteration 14 Gap 0.0308 Processing Time 0:00:30
 
-	Iteration 15 Gap 0.0290 Processing Time 0:36:34
+	Iteration 15 Gap 0.0288 Processing Time 0:00:29
 
-	Iteration 16 Gap 0.0291 Processing Time 0:09:58
+	Iteration 16 Gap 0.0265 Processing Time 0:00:31
 
-	Iteration 17 Gap 0.0253 Processing Time 0:01:52
+	Iteration 17 Gap 0.0248 Processing Time 0:00:31
 
-	Iteration 18 Gap 0.0237 Processing Time 0:54:06
+	Iteration 18 Gap 0.0230 Processing Time 0:00:30
 
-	Iteration 19 Gap 0.0229 Processing Time 0:04:22
+	Iteration 19 Gap 0.0220 Processing Time 0:00:30
 
-	Iteration 20 Gap 0.0215 Processing Time 0:01:49
+	Iteration 20 Gap 0.0204 Processing Time 0:00:30
 
-	Iteration 21 Gap 0.0203 Processing Time 0:45:36
+	Iteration 21 Gap 0.0191 Processing Time 0:00:31
 
-	Iteration 22 Gap 0.0193 Processing Time 0:01:48
+	Iteration 22 Gap 0.0185 Processing Time 0:00:30
 
-	Iteration 23 Gap 0.0179 Processing Time 0:01:50
+	Iteration 23 Gap 0.0172 Processing Time 0:00:28
 
-	Iteration 24 Gap 0.0170 Processing Time 0:01:49	DTA
-	Wed Nov 29 15:49:30 2017  DTA  page 3
+	Iteration 24 Gap 0.0165 Processing Time 0:00:30	DTA
+	Wed Dec  6 16:47:04 2017  DTA  page 3
 
 
-	Iteration 25 Gap 0.0158 Processing Time 0:59:59
+	Iteration 25 Gap 0.0157 Processing Time 0:00:29
 
-	Iteration 26 Gap 0.0154 Processing Time 0:01:49
+	Iteration 26 Gap 0.0151 Processing Time 0:00:30
 
-	Iteration 27 Gap 0.0148 Processing Time 0:01:49
+	Iteration 27 Gap 0.0141 Processing Time 0:00:30
 
-	Iteration 28 Gap 0.0143 Processing Time 0:01:44
+	Iteration 28 Gap 0.0141 Processing Time 0:00:29
 
-	Iteration 29 Gap 0.0139 Processing Time 0:01:45
+	Iteration 29 Gap 0.0134 Processing Time 0:00:33
 
-	Iteration 30 Gap 0.0137 Processing Time 0:05:13
+	Iteration 30 Gap 0.0129 Processing Time 0:00:29
 
-	Iteration 31 Gap 0.0130 Processing Time 0:01:47
+	Iteration 31 Gap 0.0124 Processing Time 0:00:29
 
-	Iteration 32 Gap 0.0123 Processing Time 0:01:43
+	Iteration 32 Gap 0.0121 Processing Time 0:00:28
 
-	Iteration 33 Gap 0.0119 Processing Time 0:01:44
+	Iteration 33 Gap 0.0121 Processing Time 0:00:29
 
-	Iteration 34 Gap 0.0118 Processing Time 0:01:47
+	Iteration 34 Gap 0.0118 Processing Time 0:00:29
 
-	Iteration 35 Gap 0.0114 Processing Time 0:01:48
+	Iteration 35 Gap 0.0114 Processing Time 0:00:28
 
-	Iteration 36 Gap 0.0111 Processing Time 0:01:48
+	Iteration 36 Gap 0.0110 Processing Time 0:00:30
 
-	Iteration 37 Gap 0.0109 Processing Time 0:06:28
+	Iteration 37 Gap 0.0106 Processing Time 0:00:30
 
-	Iteration 38 Gap 0.0104 Processing Time 0:01:47
+	Iteration 38 Gap 0.0102 Processing Time 0:00:29
 
-	Iteration 39 Gap 0.0104 Processing Time 0:01:46
+	Iteration 39 Gap 0.0099 Processing Time 0:00:28
 
-	Iteration 40 Gap 0.0105 Processing Time 0:01:46
+	Iteration 40 Gap 0.0100 Processing Time 0:00:30
 
-	Iteration 41 Gap 0.0097 Processing Time 0:01:48
+	Iteration 41 Gap 0.0093 Processing Time 0:00:30
 
-	Iteration 42 Gap 0.0096 Processing Time 0:01:46
+	Iteration 42 Gap 0.0094 Processing Time 0:00:28
 
-	Iteration 43 Gap 0.0089 Processing Time 0:01:46
+	Iteration 43 Gap 0.0092 Processing Time 0:00:30
 
-	Iteration 44 Gap 0.0090 Processing Time 0:01:47
+	Iteration 44 Gap 0.0090 Processing Time 0:00:28
 
-	Iteration 45 Gap 0.0092 Processing Time 0:01:43
+	Iteration 45 Gap 0.0087 Processing Time 0:00:29
 
-	Iteration 46 Gap 0.0089 Processing Time 0:01:40
+	Iteration 46 Gap 0.0085 Processing Time 0:00:29
 
-	Iteration 47 Gap 0.0088 Processing Time 0:01:45
+	Iteration 47 Gap 0.0083 Processing Time 0:00:28
 
-	Iteration 48 Gap 0.0088 Processing Time 0:01:43
+	Iteration 48 Gap 0.0083 Processing Time 0:00:29
 
-	Iteration 49 Gap 0.0084 Processing Time 0:01:41
+	Iteration 49 Gap 0.0080 Processing Time 0:00:29
 
-	Iteration 50 Gap 0.0084 Processing Time 0:01:41
+	Iteration 50 Gap 0.0079 Processing Time 0:00:28
 
-	Iteration 51 Gap 0.0083 Processing Time 0:07:59
+	Iteration 51 Gap 0.0077 Processing Time 0:00:27
 
-	Iteration 52 Gap 0.0081 Processing Time 0:01:44
+	Iteration 52 Gap 0.0079 Processing Time 0:00:26
 
-	Iteration 53 Gap 0.0075 Processing Time 0:01:45
+	Iteration 53 Gap 0.0074 Processing Time 0:00:27
 
-	Iteration 54 Gap 0.0075 Processing Time 0:01:42
+	Iteration 54 Gap 0.0074 Processing Time 0:00:27
 
-	Iteration 55 Gap 0.0074 Processing Time 0:01:46	DTA
-	Wed Nov 29 16:58:33 2017  DTA  page 4
+	Iteration 55 Gap 0.0071 Processing Time 0:00:28	DTA
+	Wed Dec  6 17:02:06 2017  DTA  page 4
 
 
-	Iteration 56 Gap 0.0071 Processing Time 0:01:46
+	Iteration 56 Gap 0.0073 Processing Time 0:00:26
 
-	Iteration 57 Gap 0.0071 Processing Time 0:01:45
+	Iteration 57 Gap 0.0070 Processing Time 0:00:26
 
-	Iteration 58 Gap 0.0070 Processing Time 0:01:39
+	Iteration 58 Gap 0.0069 Processing Time 0:00:26
 
-	Iteration 59 Gap 0.0067 Processing Time 0:01:39
+	Iteration 59 Gap 0.0069 Processing Time 0:00:27
 
-	Iteration 60 Gap 0.0068 Processing Time 0:01:39
+	Iteration 60 Gap 0.0068 Processing Time 0:00:27
 
-	Iteration 61 Gap 0.0066 Processing Time 0:01:39
+	Iteration 61 Gap 0.0067 Processing Time 0:00:28
 
-	Iteration 62 Gap 0.0066 Processing Time 0:01:42
+	Iteration 62 Gap 0.0065 Processing Time 0:00:29
 
-	Iteration 63 Gap 0.0064 Processing Time 0:01:40
+	Iteration 63 Gap 0.0064 Processing Time 0:00:30
 
-	Iteration 64 Gap 0.0063 Processing Time 0:01:40
+	Iteration 64 Gap 0.0062 Processing Time 0:00:29
 
-	Iteration 65 Gap 0.0060 Processing Time 0:01:39
+	Iteration 65 Gap 0.0063 Processing Time 0:00:29
 
-	Iteration 66 Gap 0.0059 Processing Time 0:01:43
+	Iteration 66 Gap 0.0066 Processing Time 0:00:28
 
-	Iteration 67 Gap 0.0060 Processing Time 0:01:42
+	Iteration 67 Gap 0.0062 Processing Time 0:00:27
 
-	Iteration 68 Gap 0.0060 Processing Time 0:01:44
+	Iteration 68 Gap 0.0061 Processing Time 0:00:27
 
-	Iteration 69 Gap 0.0059 Processing Time 0:01:42
+	Iteration 69 Gap 0.0062 Processing Time 0:00:27
 
-	Iteration 70 Gap 0.0059 Processing Time 0:01:42
+	Iteration 70 Gap 0.0060 Processing Time 0:00:27
 
-	Iteration 71 Gap 0.0057 Processing Time 0:01:45
+	Iteration 71 Gap 0.0058 Processing Time 0:00:27
 
-	Iteration 72 Gap 0.0059 Processing Time 0:01:42
+	Iteration 72 Gap 0.0059 Processing Time 0:00:27
 
-	Iteration 73 Gap 0.0053 Processing Time 0:01:45
+	Iteration 73 Gap 0.0062 Processing Time 0:00:28
 
-	Iteration 74 Gap 0.0052 Processing Time 0:01:44
+	Iteration 74 Gap 0.0058 Processing Time 0:00:27
 
-	Iteration 75 Gap 0.0054 Processing Time 0:01:43
+	Iteration 75 Gap 0.0060 Processing Time 0:00:26
 
-	Iteration 76 Gap 0.0054 Processing Time 0:01:42
+	Iteration 76 Gap 0.0055 Processing Time 0:00:26
 
-	Iteration 77 Gap 0.0053 Processing Time 0:01:40
+	Iteration 77 Gap 0.0054 Processing Time 0:00:26
 
-	Iteration 78 Gap 0.0052 Processing Time 0:01:41
+	Iteration 78 Gap 0.0056 Processing Time 0:00:26
 
-	Iteration 79 Gap 0.0049 Processing Time 0:01:42
+	Iteration 79 Gap 0.0053 Processing Time 0:00:27
 
-	Iteration 80 Gap 0.0051 Processing Time 0:01:42
+	Iteration 80 Gap 0.0053 Processing Time 0:00:27
 
-	Iteration 81 Gap 0.0050 Processing Time 0:01:44
+	Iteration 81 Gap 0.0055 Processing Time 0:00:27
 
-	Iteration 82 Gap 0.0049 Processing Time 0:01:42
+	Iteration 82 Gap 0.0053 Processing Time 0:00:27
 
-	Iteration 83 Gap 0.0050 Processing Time 0:01:41
+	Iteration 83 Gap 0.0053 Processing Time 0:00:27
 
-	Iteration 84 Gap 0.0049 Processing Time 0:01:40
+	Iteration 84 Gap 0.0053 Processing Time 0:00:27
 
-	Iteration 85 Gap 0.0048 Processing Time 0:01:41
+	Iteration 85 Gap 0.0051 Processing Time 0:00:29
 
-	Iteration 86 Gap 0.0046 Processing Time 0:01:41	DTA
-	Wed Nov 29 17:51:18 2017  DTA  page 5
+	Iteration 86 Gap 0.0052 Processing Time 0:00:29	DTA
+	Wed Dec  6 17:16:29 2017  DTA  page 5
 
 
-	Iteration 87 Gap 0.0047 Processing Time 0:01:40
+	Iteration 87 Gap 0.0053 Processing Time 0:00:26
 
-	Iteration 88 Gap 0.0047 Processing Time 0:01:41
+	Iteration 88 Gap 0.0048 Processing Time 0:00:26
 
-	Iteration 89 Gap 0.0047 Processing Time 0:01:41
+	Iteration 89 Gap 0.0050 Processing Time 0:00:27
 
-	Iteration 90 Gap 0.0045 Processing Time 0:01:40
+	Iteration 90 Gap 0.0048 Processing Time 0:00:27
 
-	Iteration 91 Gap 0.0044 Processing Time 0:01:41
+	Iteration 91 Gap 0.0047 Processing Time 0:00:28
 
-	Iteration 92 Gap 0.0045 Processing Time 0:01:40
+	Iteration 92 Gap 0.0046 Processing Time 0:00:27
 
-	Iteration 93 Gap 0.0046 Processing Time 0:01:40
+	Iteration 93 Gap 0.0047 Processing Time 0:00:27
 
-	Iteration 94 Gap 0.0044 Processing Time 0:01:40
+	Iteration 94 Gap 0.0046 Processing Time 0:00:27
 
-	Iteration 95 Gap 0.0044 Processing Time 0:01:43
+	Iteration 95 Gap 0.0046 Processing Time 0:00:28
 
-	Iteration 96 Gap 0.0043 Processing Time 0:01:40
+	Iteration 96 Gap 0.0046 Processing Time 0:00:27
 
-	Iteration 97 Gap 0.0042 Processing Time 0:01:43
+	Iteration 97 Gap 0.0046 Processing Time 0:00:28
 
-	Iteration 98 Gap 0.0044 Processing Time 0:01:40
+	Iteration 98 Gap 0.0046 Processing Time 0:00:27
 
-	Iteration 99 Gap 0.0043 Processing Time 0:01:40
+	Iteration 99 Gap 0.0043 Processing Time 0:00:27
 
-	Iteration 100 Gap 0.0043 Processing Time 0:01:41	DTA
-	Wed Nov 29 18:13:21 2017  DTA  page 6
+	Iteration 100 Gap 0.0043 Processing Time 0:00:28	DTA
+	Wed Dec  6 17:22:37 2017  DTA  page 6
 
 	Convergence Gap Report
 
 	          --------------- Link Gap ---------------      %     --------- Hours ---------
 	Iteration        Total       Std.Dev       Maximum     RMSE     Difference         Total
 
-	     1        1.000000     14.508080         1.000    1454.2      62650833      62650833
-	     2        0.844525     11.906530         1.000    1193.6      59748178      70747641
-	     3        0.530242      9.206700         1.000     922.2      11371560      21445975
-	     4        0.288134      5.292930         1.000     530.1       3970303      13779346
-	     5        0.179614      3.341120         1.000     334.6       2157334      12010919
-	     6        0.120473      2.340294         1.000     234.3       1354601      11244002
-	     7        0.092775      3.504273         1.000     350.6       1011134      10898778
-	     8        0.072170      2.021388         1.000     202.3        771683      10692601
-	     9        0.060145      1.223553         1.000     122.5        634589      10550930
-	    10        0.050894      1.190872         1.000     119.2        532060      10454379
-	    11        0.044987      0.882760         1.000      88.4        467599      10394014
-	    12        0.038532      0.667340         1.000      66.8        398370      10338662
-	    13        0.035059      0.633065         1.000      63.4        361199      10302600
-	    14        0.032573      0.641455         1.000      64.2        334881      10281017
-	    15        0.028951      0.547662         0.850      54.8        297006      10258808
-	    16        0.029122      1.076810         0.985     107.7        298927      10264694
-	    17        0.025339      0.547305         0.905      54.8        259665      10247454
-	    18        0.023652      0.569493         1.000      57.0        242079      10235026
-	    19        0.022899      0.575048         1.000      57.6        234323      10233018
-	    20        0.021525      0.512739         1.000      51.3        220183      10229405
-	    21        0.020333      0.461126         0.814      46.2        207901      10224831
-	    22        0.019284      0.625331         0.764      62.6        197075      10219698
-	    23        0.017945      0.399132         0.812      40.0        183272      10213096
-	    24        0.016951      0.393726         0.848      39.4        173065      10209580
-	    25        0.015838      0.318696         0.776      31.9        161639      10205563
-	    26        0.015449      0.316879         0.736      31.7        157652      10204582
-	    27        0.014761      0.275729         0.686      27.6        150607      10202727
-	    28        0.014309      0.286725         0.690      28.7        145979      10202230
-	    29        0.013873      0.307190         0.618      30.8        141527      10201677
-	    30        0.013682      0.366430         0.725      36.7        139582      10202091
-	    31        0.012982      0.301615         0.737      30.2        132424      10200527
-	    32        0.012322      0.270139         0.753      27.0        125658      10198147
-	    33        0.011895      0.298527         0.751      29.9        121287      10196102
-	    34        0.011796      0.261286         0.647      26.2        120291      10197867
-	    35        0.011411      0.256703         0.685      25.7        116390      10200134
-	    36        0.011104      0.282635         0.662      28.3        113302      10203437
-	    37        0.010916      0.269598         0.808      27.0        111425      10207230
-	    38        0.010377      0.252798         0.740      25.3        105934      10208682
-	    39        0.010440      0.256439         0.567      25.7        106618      10212296
-	    40        0.010470      0.375111         0.587      37.5        106964      10216145
-	    41        0.009738      0.305369         0.835      30.6         99492      10217397
-	    42        0.009593      0.267709         0.636      26.8         98056      10221647
-	    43        0.008940      0.246502         0.676      24.7         91380      10221894
-	    44        0.009018      0.255216         0.596      25.5         92213      10225758
-	    45        0.009230      0.283462         0.592      28.4         94423      10230412
-	    46        0.008903      0.253093         0.702      25.3         91092      10231832
-	    47        0.008758      0.250272         0.898      25.0         89624      10233954
-	    48        0.008786      0.235595         0.624      23.6         89944      10237112
-	    49        0.008371      0.270924         0.640      27.1         85703      10238223
-	    50        0.008395      0.251568         0.600      25.2         85979      10241488
-	    51        0.008252      0.226457         0.529      22.7         84533      10244325
-	    52        0.008086      0.220874         0.613      22.1         82851      10245762
-	    53        0.007485      0.188032         0.460      18.8         76679      10244098
-	    54        0.007535      0.199449         0.685      20.0         77215      10247393
-	    55        0.007433      0.232419         0.565      23.3         76188      10249792
-	    56        0.007084      0.222824         0.408      22.3         72603      10249536
-	    57        0.007064      0.219068         0.596      21.9         72417      10251489	DTA
-	Wed Nov 29 18:13:21 2017  DTA  page 7
+	     1        1.000000     14.601815         1.000    1463.6      60263059      60263059
+	     2        0.842960     11.991930         1.000    1202.2      57356843      68042155
+	     3        0.526143      9.232596         1.000     924.8      10917658      20750382
+	     4        0.283483      5.230337         1.000     523.8       3803640      13417510
+	     5        0.175067      3.066170         1.000     307.1       2048040      11698631
+	     6        0.117837      2.064951         1.000     206.8       1292071      10964858
+	     7        0.087268      1.628235         1.000     163.1        926142      10612641
+	     8        0.069858      1.279971         1.000     128.2        728371      10426492
+	     9        0.058074      0.937041         1.000      93.9        598465      10305170
+	    10        0.050590      0.837837         1.000      83.9        517620      10231709
+	    11        0.044346      0.777905         1.000      77.9        451356      10178003
+	    12        0.039237      0.647331         1.000      64.9        397772      10137606
+	    13        0.035064      0.603619         1.000      60.5        354318      10104812
+	    14        0.030797      0.507907         1.000      50.9        310236      10073609
+	    15        0.028829      0.481712         1.000      48.3        289913      10056365
+	    16        0.026547      0.431424         1.000      43.2        266500      10038878
+	    17        0.024832      0.497385         0.934      49.8        249002      10027516
+	    18        0.023048      0.415722         0.754      41.6        230878      10017079
+	    19        0.021974      0.445602         0.860      44.6        220000      10011619
+	    20        0.020433      0.414671         0.968      41.5        204435      10005199
+	    21        0.019072      0.323938         1.000      32.4        190704       9999332
+	    22        0.018474      0.381133         0.804      38.2        184706       9998035
+	    23        0.017207      0.312525         0.753      31.3        171935       9992354
+	    24        0.016479      0.313824         0.743      31.4        164635       9990691
+	    25        0.015650      0.287398         0.675      28.8        156341       9989715
+	    26        0.015087      0.315487         0.775      31.6        150708       9989103
+	    27        0.014123      0.263577         0.792      26.4        141047       9987024
+	    28        0.014141      0.349526         0.773      35.0        141276       9990649
+	    29        0.013448      0.275796         0.668      27.6        134347       9989896
+	    30        0.012932      0.263615         0.693      26.4        129171       9988312
+	    31        0.012404      0.217414         0.562      21.8        123885       9987774
+	    32        0.012123      0.271591         0.622      27.2        121104       9989925
+	    33        0.012060      0.295086         0.662      29.5        120518       9992992
+	    34        0.011786      0.258392         0.622      25.9        117796       9994606
+	    35        0.011376      0.266896         0.599      26.7        113708       9995081
+	    36        0.011017      0.262330         0.811      26.3        110128       9996383
+	    37        0.010617      0.248768         0.569      24.9        106141       9997638
+	    38        0.010248      0.220875         0.657      22.1        102457       9998049
+	    39        0.009893      0.253629         0.539      25.4         98926       9999258
+	    40        0.010039      0.278620         0.699      27.9        100433      10004035
+	    41        0.009253      0.224678         0.810      22.5         92568      10003550
+	    42        0.009406      0.237790         0.590      23.8         94135      10007519
+	    43        0.009217      0.232907         0.610      23.3         92260      10010125
+	    44        0.008967      0.224442         0.644      22.5         89781      10011848
+	    45        0.008739      0.213092         0.535      21.3         87512      10013386
+	    46        0.008544      0.182171         0.507      18.2         85567      10015020
+	    47        0.008350      0.216097         0.585      21.6         83635      10016495
+	    48        0.008349      0.212093         0.665      21.2         83662      10020063
+	    49        0.008008      0.184977         0.558      18.5         80255      10022218
+	    50        0.007911      0.238465         0.505      23.9         79305      10025131
+	    51        0.007740      0.205037         0.579      20.5         77610      10026954
+	    52        0.007946      0.219285         0.584      21.9         79706      10030869
+	    53        0.007363      0.172717         0.457      17.3         73857      10030910
+	    54        0.007379      0.205441         0.593      20.6         74046      10034146
+	    55        0.007116      0.168169         0.473      16.8         71430      10037402
+	    56        0.007269      0.180383         0.730      18.1         72993      10042178
+	    57        0.007003      0.217533         0.562      21.8         70331      10043373	DTA
+	Wed Dec  6 17:22:37 2017  DTA  page 7
 
 	Convergence Gap Report
 
 	          --------------- Link Gap ---------------      %     --------- Hours ---------
 	Iteration        Total       Std.Dev       Maximum     RMSE     Difference         Total
 
-	    58        0.006977      0.230139         0.481      23.0         71536      10253447
-	    59        0.006736      0.161444         0.414      16.2         69070      10254259
-	    60        0.006788      0.188170         0.491      18.8         69627      10257361
-	    61        0.006603      0.183707         0.521      18.4         67745      10260062
-	    62        0.006595      0.191767         0.631      19.2         67685      10263395
-	    63        0.006402      0.174569         0.506      17.5         65716      10265066
-	    64        0.006277      0.170429         0.459      17.1         64435      10265951
-	    65        0.006028      0.153413         0.589      15.4         61882      10266084
-	    66        0.005918      0.154223         0.367      15.4         60763      10266765
-	    67        0.005974      0.202400         0.527      20.2         61344      10267728
-	    68        0.005953      0.217380         0.598      21.7         61134      10269316
-	    69        0.005853      0.178258         0.467      17.8         60121      10271521
-	    70        0.005893      0.250374         0.486      25.0         60555      10274982
-	    71        0.005658      0.174867         0.527      17.5         58143      10276572
-	    72        0.005869      0.267782         0.599      26.8         60323      10278550
-	    73        0.005330      0.139545         0.370      14.0         54772      10276638
-	    74        0.005240      0.138064         0.456      13.8         53855      10278623
-	    75        0.005382      0.209135         0.544      20.9         55338      10281276
-	    76        0.005411      0.160040         0.592      16.0         55643      10282489
-	    77        0.005257      0.203035         0.639      20.3         54053      10282939
-	    78        0.005161      0.151137         0.355      15.1         53076      10283929
-	    79        0.004920      0.108599         0.363      10.9         50601      10284911
-	    80        0.005123      0.165193         0.419      16.5         52707      10289131
-	    81        0.004988      0.155900         0.415      15.6         51332      10291864
-	    82        0.004921      0.150420         0.415      15.1         50665      10294608
-	    83        0.004962      0.182724         0.385      18.3         51098      10298103
-	    84        0.004897      0.154610         0.422      15.5         50447      10301285
-	    85        0.004779      0.154908         0.332      15.5         49240      10303936
-	    86        0.004648      0.129046         0.376      12.9         47900      10305978
-	    87        0.004712      0.145689         0.336      14.6         48578      10308856
-	    88        0.004722      0.134241         0.357      13.4         48686      10310627
-	    89        0.004679      0.152590         0.411      15.3         48240      10310543
-	    90        0.004526      0.129846         0.257      13.0         46659      10310153
-	    91        0.004442      0.141195         0.251      14.1         45800      10311145
-	    92        0.004524      0.147290         0.388      14.7         46659      10312527
-	    93        0.004568      0.186884         0.340      18.7         47115      10314469
-	    94        0.004381      0.133556         0.449      13.4         45194      10315969
-	    95        0.004377      0.127507         0.305      12.8         45159      10317280
-	    96        0.004312      0.127236         0.276      12.7         44488      10317666
-	    97        0.004247      0.145201         0.301      14.5         43820      10318532
-	    98        0.004404      0.172114         0.370      17.2         45452      10321020
-	    99        0.004330      0.159810         0.620      16.0         44694      10322120
-	   100        0.004276      0.139664         0.406      14.0         44141      10323306
+	    58        0.006875      0.186735         0.578      18.7         69061      10045107
+	    59        0.006919      0.229910         0.876      23.0         69519      10048199
+	    60        0.006769      0.212171         0.601      21.2         68035      10050768
+	    61        0.006653      0.224426         0.507      22.5         66892      10053823
+	    62        0.006469      0.181013         0.503      18.1         65062      10057025
+	    63        0.006354      0.210828         0.365      21.1         63929      10061142
+	    64        0.006170      0.166059         0.443      16.6         62096      10064606
+	    65        0.006253      0.176431         0.395      17.7         62964      10068791
+	    66        0.006622      0.216555         0.738      21.7         66712      10074301
+	    67        0.006173      0.187773         0.490      18.8         62207      10076520
+	    68        0.006088      0.164887         0.546      16.5         61374      10080833
+	    69        0.006198      0.224116         0.740      22.4         62520      10086391
+	    70        0.005985      0.174368         0.484      17.4         60393      10090487
+	    71        0.005811      0.158127         0.349      15.8         58647      10093191
+	    72        0.005858      0.199218         0.498      19.9         59141      10095859
+	    73        0.006184      0.296405         0.787      29.6         62460      10101015
+	    74        0.005816      0.204985         0.440      20.5         58763      10102899
+	    75        0.005960      0.256438         0.436      25.7         60236      10107208
+	    76        0.005495      0.194497         0.472      19.5         55544      10108666
+	    77        0.005424      0.181768         0.409      18.2         54848      10111727
+	    78        0.005642      0.205359         0.449      20.5         57073      10116012
+	    79        0.005315      0.157499         0.423      15.8         53769      10116492
+	    80        0.005343      0.170206         0.354      17.0         54069      10119072
+	    81        0.005496      0.183609         0.529      18.4         55635      10123125
+	    82        0.005344      0.169749         0.409      17.0         54111      10124993
+	    83        0.005304      0.174065         0.534      17.4         53715      10127226
+	    84        0.005259      0.213597         0.481      21.4         53277      10129623
+	    85        0.005123      0.203301         0.399      20.3         51903      10132055
+	    86        0.005193      0.204471         0.364      20.5         52633      10135856
+	    87        0.005331      0.188003         0.631      18.8         54051      10139497
+	    88        0.004840      0.144958         0.459      14.5         49071      10138331
+	    89        0.005016      0.173487         0.493      17.4         50860      10140467
+	    90        0.004785      0.140748         0.319      14.1         48526      10141295
+	    91        0.004741      0.158573         0.435      15.9         48084      10142162
+	    92        0.004645      0.145240         0.342      14.5         47109      10142157
+	    93        0.004681      0.156538         0.477      15.7         47482      10144285
+	    94        0.004598      0.139687         0.470      14.0         46653      10145922
+	    95        0.004639      0.158646         0.449      15.9         47079      10147744
+	    96        0.004649      0.169493         0.344      17.0         47191      10149845
+	    97        0.004605      0.155122         0.365      15.5         46747      10151229
+	    98        0.004586      0.204110         0.547      20.4         46566      10153192
+	    99        0.004348      0.136707         0.542      13.7         44150      10153407
+	   100        0.004348      0.161006         0.342      16.1         44159      10155386
 
-	Wed Nov 29 18:13:21 2017 -- Process Complete (6:42:52)
+	Wed Dec  6 17:22:37 2017 -- Process Complete (0:48:01)

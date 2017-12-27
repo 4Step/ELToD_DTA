@@ -2,9 +2,9 @@
 PROJECT=NETWORK
 
 [HWYLAYER]
-FileName=C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Incremental_Test1\SF_TollLinks.net
+FileName=C:\projects\Advanced_Projects\ELToD_DTA\SF_2040\2040_Create_Master_Network\SF_TollLinks.net
 Visible=1
-ActiveLinkColorGroup=15
+ActiveLinkColorGroup=14
 LinkColorGroup1=XL, GUL, Tolls
 LinkColorPaletteIndex1=0
 LinkDrawOffset1=0
@@ -189,7 +189,7 @@ NodeCalc1_1=$DELETE=T
 NodeCalcApply1=1
 NodeCalcCondition1=_FLAG=1
 LinkColor3_1=255,0,3,FLAG=9
-ActiveLinkPostGroup=3
+ActiveLinkPostGroup=0
 LinkPostGroup1=Check
 LinkPost1_1=CAPACITY_E_LANE,-1,0
 LinkPost1_2=NUM_LANES,0,0
@@ -230,7 +230,7 @@ LinkColor5_2=33023,0,3,GU_SB_WB=1 ; GUL Southbound or Westbound
 LinkColor5_3=65280,0,3,TOLLLINK_ID=1 ; Toll Link & Pull Link for XL Lanes
 LinkColor5_4=16711680,0,6,FTC2=97 ; Entry
 LinkColor5_5=255,0,6,FTC2=98 ; Exit
-ActiveNodePostGroup=2
+ActiveNodePostGroup=3
 NodePostGroup1=SEGNUMID
 NodePost1_1=SEGNUMID,-1,0
 NodePostSelectStr1=SEGNUMID>0
@@ -355,6 +355,9 @@ LinkColorGroup15=
 LinkColorPaletteIndex15=0
 LinkDrawOffset15=0
 LinkColor15_1=255,0,4,TOLLSEGNUM > 0
+NodePostGroup3=check_NodeFlags
+NodePost3_1=N,255,0
+NodePostSelectStr3=N = 20834, 26250, 33416, 35046, 100443, 100717, 100718, 26251
 
 [PLOT]
 ActiveSetUp=1
@@ -381,7 +384,7 @@ Set1HeaderAlignment=Left
 Set1FooterAlignment=Left
 
 [LEGEND]
-LegendDisplay=0
+LegendDisplay=1
 Set1Legend1UnitType=0
 Set1Legend1Anchor=0,0
 Set1Legend1Loc=0,0
@@ -420,7 +423,7 @@ Set1Legend4Item1Auto=
 
 [SAVEVIEWS]
 RestoreLastView=0
-ViewLast=850004.562194524,853579.202252345,429221.32303868,430707.281578093
+ViewLast=759580.743256385,1010159.59831283,475895.469047956,580059.743896448
 View0=920808.135175991,925312.057748702,584936.200974494,586988.413568379,Miami Gardens Drive
 View1=924646.1896817,931284.886380129,649306.449332163,652702.429052744,Park-n-Ride
 View2=869632.415008021,873422.646469878,648483.161133761,650422.028017651,Ramps I-75
@@ -504,6 +507,6 @@ NumRecords=1
 ScreenColor=16777215
 FreewayOutlineColor=5263440
 NumDisplayDec=-1
-ScreenFont=Tahoma,32768,12
+ScreenFont=Tahoma,255,12
 Order=HWYLAYER,TRNLAYER,PTSLAYER,LINLAYER,BDYLAYER,IMGLAYER,DRWLAYER
 

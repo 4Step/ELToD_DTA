@@ -172,6 +172,10 @@ private:
 	Flts_Array trips;
 };
 
+typedef vector <Assign_Data>    Assign_Array;
+typedef Assign_Array::iterator  Assign_Itr;
+typedef Assign_Array::pointer   Assign_Ptr;
+
 //---------------------------------------------------------
 //	Toll_Data class definition
 //---------------------------------------------------------

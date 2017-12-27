@@ -11,14 +11,13 @@
 DTA::DTA (void) : Execution_Service ()
 {
 	Program ("DTA");
-	Version (5);
+	Version (8);
 	Title ("Dynamnic Traffic Assignment");
 
 	Control_Key keys [] = { //--- code, key, level, status, type, default, range, help ----
 		{ LINK_FILE, "LINK_FILE", LEVEL0, REQ_KEY, IN_KEY, "", FILE_RANGE, NO_HELP },
 		{ LINK_FORMAT, "LINK_FORMAT", LEVEL0, OPT_KEY, TEXT_KEY, "COMMA_DELIMITED", FORMAT_RANGE, FORMAT_HELP },
 		{ EXPRESS_FACILITY_TYPES, "EXPRESS_FACILITY_TYPES", LEVEL0, OPT_KEY, INT_KEY, "96..98", "1..100", NO_HELP },
-		{ MINIMUM_TRIP_SPLIT, "MINIMUM_TRIP_SPLIT", LEVEL0, OPT_KEY, FLOAT_KEY, "0.01", "0.0..10.0", NO_HELP },
 
 		{ NODE_FILE, "NODE_FILE", LEVEL0, REQ_KEY, IN_KEY, "", FILE_RANGE, NO_HELP },
 		{ NODE_FORMAT, "NODE_FORMAT", LEVEL0, OPT_KEY, TEXT_KEY, "COMMA_DELIMITED", FORMAT_RANGE, FORMAT_HELP },
@@ -29,6 +28,9 @@ DTA::DTA (void) : Execution_Service ()
 
 		{ TRIP_FILE, "TRIP_FILE", LEVEL0, REQ_KEY, IN_KEY, "", FILE_RANGE, NO_HELP },
 		{ TRIP_FORMAT, "TRIP_FORMAT", LEVEL0, OPT_KEY, TEXT_KEY, "COMMA_DELIMITED", FORMAT_RANGE, FORMAT_HELP },
+		{ MINIMUM_TRIP_SPLIT, "MINIMUM_TRIP_SPLIT", LEVEL0, OPT_KEY, FLOAT_KEY, "0.01", "0.0..10.0", NO_HELP },
+		{ STORE_TRIPS_IN_MEMORY, "STORE_TRIPS_IN_MEMORY", LEVEL0, OPT_KEY, BOOL_KEY, "FALSE", BOOL_RANGE, NO_HELP},
+
 		{ TOLL_FILE, "TOLL_FILE", LEVEL0, REQ_KEY, IN_KEY, "", FILE_RANGE, NO_HELP },
 		{ TOLL_FORMAT, "TOLL_FORMAT", LEVEL0, OPT_KEY, TEXT_KEY, "COMMA_DELIMITED", FORMAT_RANGE, FORMAT_HELP },
 
@@ -55,19 +57,22 @@ DTA::DTA (void) : Execution_Service ()
 		{ SELECT_TIME_PERIODS, "SELECT_TIME_PERIODS", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
 		{ SELECT_ITERATIONS, "SELECT_ITERATIONS", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
 		{ SELECT_MODES, "SELECT_MODES", LEVEL0, OPT_KEY, TEXT_KEY, "NONE", RANGE_RANGE, FORMAT_HELP },
-		{ NEW_CONVERGENCE_FILE, "NEW_CONVERGENCE_FILE", LEVEL0, OPT_KEY, OUT_KEY, "", FILE_RANGE, NO_HELP },
+		{ NEW_LINK_GAP_FILE, "NEW_LINK_GAP_FILE", LEVEL0, OPT_KEY, OUT_KEY, "", FILE_RANGE, NO_HELP },
+		{ NEW_TOLL_GAP_FILE, "NEW_TOLL_GAP_FILE", LEVEL0, OPT_KEY, OUT_KEY, "", FILE_RANGE, NO_HELP },
 		END_CONTROL
 	};
 	const char *reports [] = {
-		"CONVERGENCE_REPORT",
+		"LINK_GAP_REPORT",
+		"TOLL_GAP_REPORT",
 		""
 	};
 	Key_List (keys);
 	Report_List (reports);
 
-	thread_flag = volume_flag = path_leg_flag = false;
+	thread_flag = volume_flag = path_leg_flag = memory_flag = false;
 	sel_org_flag = sel_des_flag = sel_per_flag = sel_iter_flag = sel_mode_flag = false;
-	max_zone = 4500;
+	link_gap_flag = toll_gap_flag = false;
+	max_zone = 1000;
 	num_period = 96;
 	num_mode = 0;
 	num_iter = 10;
@@ -76,6 +81,7 @@ DTA::DTA (void) : Execution_Service ()
 	min_speed = 0.1;
 
 	min_trip_split = 0.01;
+	report_num = 0;
 }
 
 //---------------------------------------------------------

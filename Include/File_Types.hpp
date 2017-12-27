@@ -167,6 +167,7 @@ public:
 	int    Period (void)                     { return (Get_Integer (period)); }
 	double Volume (int mode)                 { return (Get_Double (volume [mode])); }
 	double Speed (void)                      { return (Get_Double (speed)); }
+	double Toll (void)                       { return (Get_Double (toll)); }
 	int    Modes (void)                      { return ((int) volume.size ()); }
 
 	void   Node_A (int value)                { Put_Field (node_a, value); }
@@ -174,6 +175,7 @@ public:
 	void   Period (int value)                { Put_Field (period, value); }
 	void   Volume (int mode, double value)   { Put_Field (volume [mode], value); }
 	void   Speed (double value)              { Put_Field (speed, value); }
+	void   Toll (double value)               { Put_Field (toll, value); }
 	void   Modes (Strings modes)             { _modes = modes; }
 
 	virtual bool Create_Fields (void);
@@ -182,7 +184,7 @@ protected:
 	virtual bool Set_Field_Numbers (void);
 
 private:
-	int node_a, node_b, period, speed;
+	int node_a, node_b, period, speed, toll;
 	Integers volume;
 	Strings _modes;
 };

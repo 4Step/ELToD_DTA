@@ -29,9 +29,6 @@
     <ClCompile Include="Control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="File_Types.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Assign_Trips.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -68,12 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DTA.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Data_Types.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\File_Types.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

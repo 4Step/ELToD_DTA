@@ -37,10 +37,13 @@ public:
 	int    Increment (void)                    { return (_increment); }
 	void   Increment (int value)               { Set_Periods (value, Start (), End ()); }
 
+	bool   Wrap_Flag (void)                    { return (_wrap_flag); }
+	void   Wrap_Flag (bool flag)               { _wrap_flag = flag; }
+
 	bool   Range_Flag (void)                   { return (_range_flag); }
 	void   Range_Flag (bool flag)              { _range_flag = flag; }
 
-	bool   Set_Periods (int increment, int start = 0, int end = 0);
+	bool   Set_Periods (int increment, int start = 0, int end = 0, bool wrap_flag = false);
 
 	bool   Add_Ranges (string ranges);
 
@@ -53,7 +56,7 @@ public:
 	void   Clear ();
 
 private:
-	bool   _range_flag;
+	bool   _range_flag, _wrap_flag;
 	int  _start, _end_time, _increment;
 };
 

@@ -123,6 +123,10 @@ void DTA::Program_Control (void)
 
 	min_trip_split = Get_Control_Double (MINIMUM_TRIP_SPLIT);
 
+	//---- store trips in memory ----
+
+	memory_flag = Get_Control_Flag (STORE_TRIPS_IN_MEMORY);
+
 	//---- look for mode fields in the link file ----
 
 	mode_fields.assign (num_mode, -1);
@@ -374,14 +378,25 @@ void DTA::Program_Control (void)
 		}
 	}
 
-	//---- open the convergence_file ----
+	//---- open the link gap_file ----
 
-	key = Get_Control_String (NEW_CONVERGENCE_FILE);
+	key = Get_Control_String (NEW_LINK_GAP_FILE);
 
 	if (!key.empty ()) {
 		Print (1);
-		if (!gap_file.Create (Project_Filename (key))) {
-			Error ("Convergence File was Not Created");
+		if (!link_gap_file.Create (Project_Filename (key))) {
+			Error ("Link Gap File was Not Created");
+		}
+	}
+
+	//---- open the toll gap_file ----
+
+	key = Get_Control_String (NEW_TOLL_GAP_FILE);
+
+	if (!key.empty ()) {
+		Print (1);
+		if (!toll_gap_file.Create (Project_Filename (key))) {
+			Error ("Toll Gap File was Not Created");
 		}
 	}
 
@@ -389,6 +404,7 @@ void DTA::Program_Control (void)
 
 	List_Reports ();
 
-	gap_flag = (Report_Flag (CONVERGENCE_REPORT) || gap_file.Is_Open ());
+	link_gap_flag = (Report_Flag (LINK_GAP_REPORT) || link_gap_file.Is_Open ());
+	toll_gap_flag = (Report_Flag (TOLL_GAP_REPORT) || toll_gap_file.Is_Open ());
 }
 

@@ -125,7 +125,6 @@
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="DTA.cpp" />
     <ClCompile Include="Execute.cpp" />
-    <ClCompile Include="File_Types.cpp" />
     <ClCompile Include="Gap_Data.cpp" />
     <ClCompile Include="Gap_Report.cpp" />
     <ClCompile Include="Load_Path.cpp" />
@@ -139,11 +138,12 @@
     <ClCompile Include="Write_Volumes.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\Data_Types.hpp" />
-    <ClInclude Include="..\Include\File_Types.hpp" />
     <ClInclude Include="DTA.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataFiles\DataFiles.vcxproj">
+      <Project>{bf3e0243-a0e9-42a1-b4cd-322b0fee9ac8}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\SysLib\SysLib.vcxproj">
       <Project>{6287a9ef-d246-492c-88e3-e4d60ef40d97}</Project>
     </ProjectReference>

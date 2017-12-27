@@ -10,7 +10,7 @@
 
 void DTA::Assign_Trips::Alt_Path (Path_Leg_Data root_data, int from_node, int to_node, int skip_link, Path_Leg_Array &leg_array)
 {
-	int anode, bnode, link, period;
+	int anode, bnode, link, period, best;
 	double vtime, vlen, time, length, cost, imp_a, imp_b, max_imp, cost_factor;
 
 	Path_Data *path_ptr, *first_ptr, *last_ptr, path_root;
@@ -48,6 +48,7 @@ void DTA::Assign_Trips::Alt_Path (Path_Leg_Data root_data, int from_node, int to
 	cost_factor = exe->cost_factors [mode];
 
 	max_imp = MAX_INTEGER;
+	best = -1;
 
 	//---- add links leaving the origin node ----
 
@@ -86,8 +87,9 @@ void DTA::Assign_Trips::Alt_Path (Path_Leg_Data root_data, int from_node, int to
 		path_ptr->From (from_node);
 		path_ptr->Link (link);
 
-		if (bnode == to_node) {
+		if (bnode == to_node || bnode == des_node) {
 			max_imp = imp_b;
+			best = bnode;
 		}
 	}
 
@@ -164,15 +166,16 @@ void DTA::Assign_Trips::Alt_Path (Path_Leg_Data root_data, int from_node, int to
 			path_ptr->From (anode);
 			path_ptr->Link (link);
 
-			if (bnode == to_node) {
+			if (bnode == to_node || bnode == des_node) {
 				max_imp = imp_b;
+				best = bnode;
 			}
 		}
 	}
 
 	//---- trace the paths ----
 
-	for (bnode = to_node; bnode >= 0; bnode = path_ptr->From ()) {
+	for (bnode = best; bnode >= 0; bnode = path_ptr->From ()) {
 		path_ptr = &path_array [bnode];
 
 		leg_rec.Node (bnode);

@@ -97,9 +97,12 @@ void DTA::Execute (void)
 
 	//---- print reports ----
 
-	for (i = First_Report (); i != 0; i = Next_Report ()) {
-		switch (i) {
-			case CONVERGENCE_REPORT:		//---- Statistics Report ----
+	for (report_num = First_Report (); report_num != 0; report_num = Next_Report ()) {
+		switch (report_num) {
+			case LINK_GAP_REPORT:		//---- link gap Report ----
+				Gap_Report ();
+				break;
+			case TOLL_GAP_REPORT:		//---- toll gap Report ----
 				Gap_Report ();
 				break;
 			default:
@@ -116,7 +119,10 @@ void DTA::Execute (void)
 void DTA::Page_Header (void)
 {
 	switch (Header_Number ()) {
-		case CONVERGENCE_REPORT:		//---- Statistics Report ----
+		case LINK_GAP_REPORT:		//---- link gap Report ----
+			Gap_Header ();
+			break;
+		case TOLL_GAP_REPORT:		//---- toll gap Report ----
 			Gap_Header ();
 			break;
 		default:

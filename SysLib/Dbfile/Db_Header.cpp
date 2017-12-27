@@ -860,7 +860,7 @@ Strings Db_Header::Def_Fields (string filename)
 bool Db_Header::Read_Def_Header (void) 
 {
 	bool binary, matrix;
-	int num, width, decimal, offset;
+	int num, offset;
 	double size;
 	Field_Type type;
 	char buffer [4094];
@@ -953,12 +953,7 @@ bool Db_Header::Read_Def_Header (void)
 			offset = -1;
 		}
 		record.Split (token, delim);
-		width = token.Integer ();
-
-		record.Split (token, delim);
-		decimal = token.Integer ();
-
-		size = (double) width + (decimal / 10.0);
+		size = token.Double ();
 
 		if (Add_Field (name, type, size, binary, offset) < 0) goto error;
 	}

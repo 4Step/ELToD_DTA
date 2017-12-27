@@ -11,12 +11,13 @@
 void DTA::Write_Volumes (void)
 {
 	int period, mode;
-	double speed, time;
+	double speed, time, toll;
 
 	Int2_Map_Itr map_itr;
 	Volume_Data *vol_ptr;
 	Link_Data *link_ptr;
-	
+	Toll_Data *toll_ptr;
+
 	Show_Message ("Writing Volume File -- Record");
 	Set_Progress ();
 
@@ -44,6 +45,14 @@ void DTA::Write_Volumes (void)
 				speed = 0.0;
 			}
 			volume_file.Speed (speed);
+
+			if (link_ptr->Ex_Toll () >= 0) {
+				toll_ptr = &toll_array[link_ptr->Ex_Toll ()];
+				toll = toll_ptr->Toll (period);
+			} else {
+				toll = 0;
+			}
+			volume_file.Toll (toll);
 			
 			volume_file.Write ();
 		}

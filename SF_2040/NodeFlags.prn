@@ -1,0 +1,43 @@
+
+	********************************************
+	|                                          |
+	|        NodeFlags - Version 7.1.0         |
+	|  Copyright 2017 by TRANSIMS Open-Source  |
+	|         Tue Dec 26 13:20:24 2017         |
+	|                                          |
+	********************************************
+
+	Control File = NodeFlags.ctl
+	Report File  = NodeFlags.prn (Create)
+
+	ArcNet
+
+	Project Directory = .\
+	Random Number Seed = 1514312424
+
+	NodeFlags Control Keys:
+	Link File = .\link.csv
+	Link Format = COMMA_DELIMITED
+	Express Facility Types = 96
+	Express Entry Types = 97
+	Express Exit Types = 98
+
+	Node File = .\node.csv
+	Node Format = COMMA_DELIMITED
+	Node Flag Field = DTA_Type (Field=2)
+
+	New Node File = .\new_node.csv
+	New Node Format = COMMA_DELIMITED
+
+	Number of Node Records = 7691
+	Number of Link Records = 14463
+	Number of Express Link Records = 586
+	Number of Express Entry Records = 81
+	Number of Express Exit Records = 79
+
+	Number of New Node Records = 7691
+	Number of Express Entry Records = 77
+	Number of Express Exit Records = 59
+	Number of General Join Records = 76
+
+	Tue Dec 26 13:20:24 2017 -- Process Complete (0:00:00)

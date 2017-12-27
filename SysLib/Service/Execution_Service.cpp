@@ -400,7 +400,7 @@ void Execution_Service::Program_Control (void)
 
 	increment = Get_Control_Integer (MODEL_TIME_INCREMENT);
 
-	time_periods.Set_Periods (increment, Model_Start_Time (), Model_End_Time ());
+	time_periods.Set_Periods (increment, Model_Start_Time (), Model_End_Time (), true);
 
 	//---- number of threads ----
 

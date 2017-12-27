@@ -13,17 +13,26 @@ void DTA::Gap_Report (void)
 	int i;
 	double factor, max;
 
+	Gap_Array *ptr;
 	Gap_Itr gap_itr;
 
-	Header_Number (CONVERGENCE_REPORT);
+	if (report_num == LINK_GAP_REPORT) {
+		ptr = &link_gap_array;
+		factor = 1.0;
+	} else if (report_num == TOLL_GAP_REPORT) {
+		ptr = &toll_gap_array;
+		factor = 1.0;
+	} else {
+		return;
+	}
+	Header_Number (report_num);
 
-	if (!Break_Check ((int) gap_array.size () + 7)) {
+	if (!Break_Check ((int) ptr->size () + 7)) {
 		Print (1);
 		Gap_Header ();
 	}
-	factor = 1.0;
 
-	for (i=1, gap_itr = gap_array.begin (); gap_itr != gap_array.end (); gap_itr++, i++) {
+	for (i=1, gap_itr = ptr->begin (); gap_itr != ptr->end (); gap_itr++, i++) {
 		if (gap_itr->Count () == 0) continue;
 
 		//---- print the data record ----
@@ -44,15 +53,20 @@ void DTA::Gap_Report (void)
 
 void DTA::Gap_Header (void)
 {
-	Print (1, "Convergence Gap Report");
-	Print (2, "          --------------- Link Gap ---------------      %     --------- Hours ---------");
+	if (report_num == LINK_GAP_REPORT) {
+		Print (1, "Link Gap Report");
+		Print (2, "          --------------- Link Gap ---------------      %     --------- Hours ---------");
+	} else if (report_num == TOLL_GAP_REPORT) {
+		Print (1, "Toll Gap Report");
+		Print (2, "          --------------- Toll Gap ---------------      %     --------- Dollars --------");
+	}
 	Print (1, "Iteration        Total       Std.Dev       Maximum     RMSE     Difference         Total");
 	Print (1);
 }
 
 /*********************************************|***********************************************
 
-	Convergence Gap Report
+	Link Gap Report
 
               --------------- Link Gap ---------------      %     --------- Hours ---------
 	Iteration        Total       Std.Dev       Maximum     RMSE    Difference         Total

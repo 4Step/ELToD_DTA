@@ -25,7 +25,8 @@ void DTA::Assign_Trips::Load_Path (double trips, Path_Leg_Array &leg_array)
 	//---- set the output flag ----
 
 	express_flag = toll_flag = exit_flag = next_toll_flag = false;
-	toll_link = to_node = from_node = exit_node = next_toll_link = -1;
+	toll_link = from_node = exit_node = next_toll_link = -1;
+	to_node = des_node;
 
 	if (trips > exe->min_trip_split) {
 

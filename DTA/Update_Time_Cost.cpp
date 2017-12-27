@@ -19,7 +19,7 @@ double DTA::Update_Time_Cost (int iteration)
 	Volume_Ptr old_vol_ptr;
 	Link_Data *link_ptr;
 	Toll_Data *toll_ptr;
-	Gap_Data gap_data;
+	Gap_Data gap_data, toll_gap;
 
 	factor = 1.0 / iteration;
 
@@ -92,25 +92,43 @@ double DTA::Update_Time_Cost (int iteration)
 						cost = max_toll [index];
 					}
 					//cost -= min_toll;
-	
+
+					if (toll_gap_flag) {
+						toll_gap.Add (toll_ptr->Toll (period) * old_vol, cost * volume);
+					}
 					toll_ptr->Toll (period, cost);
 				}
 			}
 		}
 	}
-	if (gap_flag) {
-		gap_array.push_back (gap_data);
+	if (link_gap_flag) {
+		link_gap_array.push_back (gap_data);
 
-		if (gap_file.Is_Open ()) {
-			gap_file.Iteration (iteration);
-			gap_file.Gap (gap_data.Gap ());
-			gap_file.Std_Dev (gap_data.Std_Dev ());
-			gap_file.Maximum (gap_data.Max_Gap ());
-			gap_file.RMSE (gap_data.RMSE ());
-			gap_file.Difference (gap_data.Difference ());
-			gap_file.Total (gap_data.Total ());
+		if (link_gap_file.Is_Open ()) {
+			link_gap_file.Iteration (iteration);
+			link_gap_file.Gap (gap_data.Gap ());
+			link_gap_file.Std_Dev (gap_data.Std_Dev ());
+			link_gap_file.Maximum (gap_data.Max_Gap ());
+			link_gap_file.RMSE (gap_data.RMSE ());
+			link_gap_file.Difference (gap_data.Difference ());
+			link_gap_file.Total (gap_data.Total ());
 
-			gap_file.Write ();
+			link_gap_file.Write ();
+		}
+	}
+	if (toll_gap_flag) {
+		toll_gap_array.push_back (toll_gap);
+
+		if (toll_gap_file.Is_Open ()) {
+			toll_gap_file.Iteration (iteration);
+			toll_gap_file.Gap (toll_gap.Gap ());
+			toll_gap_file.Std_Dev (toll_gap.Std_Dev ());
+			toll_gap_file.Maximum (toll_gap.Max_Gap ());
+			toll_gap_file.RMSE (toll_gap.RMSE ());
+			toll_gap_file.Difference (toll_gap.Difference ());
+			toll_gap_file.Total (toll_gap.Total ());
+
+			toll_gap_file.Write ();
 		}
 	}
 	return (gap_data.Gap ());

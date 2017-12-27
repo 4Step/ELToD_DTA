@@ -12,7 +12,7 @@
 
 Time_Periods::Time_Periods (void) : Range_Array (1), Static_Service () 
 {
-	_range_flag = false;
+	_range_flag = _wrap_flag = false;
 	_increment = _start = _end_time = 0;
 }
 
@@ -26,7 +26,7 @@ int Time_Periods::Period (int time)
 		return (In_Index ((int) time));
 	} else if (time >= _start) {
 		if (time >= _end_time) {
-			if (_end_time <= _start) return (-1);
+			if (!_wrap_flag || _end_time <= _start) return (-1);
 			time = (time - _start) % (_end_time - _start);
 		} else {
 			time -= _start;
@@ -137,23 +137,36 @@ int Time_Periods::Range_Length (void)
 //	Set_Periods
 //---------------------------------------------------------
 
-bool Time_Periods::Set_Periods (int increment, int start, int end)
+bool Time_Periods::Set_Periods (int increment, int start, int end, bool wrap)
 {
 	_increment = increment;
+	_wrap_flag = wrap;
 	_range_flag = false;
 
 	if (start == 0 && end == 0) {
 		if (_end_time == 0) {
 			_start = exe->Model_Start_Time ();
-			_end_time = exe->Model_End_Time ();
+			if (_wrap_flag) {
+				_end_time = MIN ((_start + Round (MIDNIGHT)), exe->Model_End_Time ());
+			} else {
+				_end_time = exe->Model_End_Time ();
+			}
 		}
 	} else if (start > end) {
 		if (end != 0) return (false);
 		_start = start;
-		_end_time = exe->Model_End_Time ();
+		if (_wrap_flag) {
+			_end_time = MIN ((_start + Round (MIDNIGHT)), exe->Model_End_Time ());
+		} else {
+			_end_time = exe->Model_End_Time ();
+		}
 	} else {
 		_start = start;
-		_end_time = end;
+		if (_wrap_flag) {
+			_end_time = MIN ((_start + Round (MIDNIGHT)), end);
+		} else {
+			_end_time = end;
+		}
 	}
 	return (true);
 }
@@ -181,7 +194,7 @@ bool Time_Periods::Add_Ranges (string range)
 
 			return (Add_Range ((int) low, (int) high - 1, _increment));
 		} else {
-			return (Set_Periods (_increment, _start, _end_time));
+			return (Set_Periods (_increment, _start, _end_time, _wrap_flag));
 		}
 	}
 
@@ -201,7 +214,7 @@ bool Time_Periods::Add_Ranges (string range)
 		if (_range_flag) {
 			if (!Add_Range (low, high - 1, _increment)) return (false);
 		} else {
-			return (Set_Periods (_increment, low, high));
+			return (Set_Periods (_increment, low, high, _wrap_flag));
 		}
 	}
 	return (Num_Ranges () > 0);
@@ -256,7 +269,7 @@ bool Time_Periods::Copy_Periods (Time_Periods &periods)
 	if (_range_flag) {
 		assign (periods.begin (), periods.end ());
 	} else {
-		Set_Periods (periods.Increment (), periods.Start (), periods.End ());
+		Set_Periods (periods.Increment (), periods.Start (), periods.End (), periods.Wrap_Flag ());
 	}
 	return (true);
 }
@@ -267,7 +280,7 @@ bool Time_Periods::Copy_Periods (Time_Periods &periods)
 
 void Time_Periods::Clear (void)
 {
-	_range_flag = false;
+	_range_flag = _wrap_flag = false;
 	_increment = _start = _end_time = 0;
 	clear ();
 }

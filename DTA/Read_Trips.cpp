@@ -14,6 +14,7 @@ void DTA::Read_Trips (void)
 	double trips;
 	String mode_code;
 	Str_ID_Itr mode_itr;
+	Assign_Itr assign_itr;
 
 	Assign_Data assign_data (num_mode, max_zone);
 
@@ -27,42 +28,69 @@ void DTA::Read_Trips (void)
 	if (thread_flag) {
 		assign_queue.Start_Work ();
 	}
-	Show_Message ("Reading Trip File -- Record");
-	Set_Progress ();
 
-	trip_file.Rewind ();
+	if (memory_flag && iter > 1) {
+		Show_Message ("Processing Trip Data -- Record");
+		Set_Progress ();
 
-	while (trip_file.Read ()) {
-		Show_Progress ();
+		//---- process records stored in memory ----
 
-		org = trip_file.Origin ();
-		period = (trip_file.Period () - 1) * increment;
-
-		if (org != assign_data.Origin () || period != assign_data.Start ()) {
-			if (assign_data.Origin () > 0) {
-				if (thread_flag) {
-					assign_queue.Put (assign_data);
-				} else {
-					(*assign_trips)->Process_Trips (assign_data);
-				}
+		for (assign_itr = assign_array.begin (); assign_itr != assign_array.end (); assign_itr++) {
+			Show_Progress ();
+			if (thread_flag) {
+				assign_queue.Put (*assign_itr);
+			} else {
+				(*assign_trips)->Process_Trips (*assign_itr);
 			}
-			assign_data.Origin (org);
-			assign_data.Start (period);
-			assign_data.Zero_Trips ();
 		}
-		des = trip_file.Destination () - 1;
 
-		for (mode = 0; mode < num_mode; mode++) {
-			trips = trip_file.Mode (mode);
+	} else {
+		Show_Message ("Reading Trip File -- Record");
+		Set_Progress ();
 
-			assign_data.Trips (mode, des, trips);
+		trip_file.Rewind ();
+
+		while (trip_file.Read ()) {
+			Show_Progress ();
+
+			org = trip_file.Origin ();
+			period = (trip_file.Period () - 1) * increment;
+
+			if (org != assign_data.Origin () || period != assign_data.Start ()) {
+				if (assign_data.Origin () > 0) {
+					if (memory_flag) {
+						assign_array.push_back (assign_data);
+					}
+					if (thread_flag) {
+						assign_queue.Put (assign_data);
+					} else {
+						(*assign_trips)->Process_Trips (assign_data);
+					}
+				}
+				assign_data.Origin (org);
+				assign_data.Start (period);
+				assign_data.Zero_Trips ();
+			}
+			des = trip_file.Destination () - 1;
+
+			for (mode = 0; mode < num_mode; mode++) {
+				trips = trip_file.Mode (mode);
+
+				assign_data.Trips (mode, des, trips);
+			}
 		}
-	}
-	if (assign_data.Origin () > 0) {
-		if (thread_flag) {
-			assign_queue.Put (assign_data);
-		} else {
-			(*assign_trips)->Process_Trips (assign_data);
+		if (assign_data.Origin () > 0) {
+			if (memory_flag) {
+				assign_array.push_back (assign_data);
+			}
+			if (thread_flag) {
+				assign_queue.Put (assign_data);
+			} else {
+				(*assign_trips)->Process_Trips (assign_data);
+			}
+		}
+		if (memory_flag) {
+			trip_file.Close ();
 		}
 	}
 	if (thread_flag) {

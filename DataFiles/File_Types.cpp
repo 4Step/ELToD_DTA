@@ -365,7 +365,8 @@ Gap_File::Gap_File (void) : Db_Header ()
 	File_Type ("Gap File");
 	File_ID ("Gap");
 
-	iteration = gap = std_dev = maximum = rmse = diff = total = -1;
+	iteration = period = gap = std_dev = maximum = rmse = diff = total = -1;
+	period_flag = false;
 }
 
 //---------------------------------------------------------
@@ -377,6 +378,9 @@ bool Gap_File::Create_Fields (void)
 	Clear_Fields ();
 
 	Add_Field ("ITERATION", DB_INTEGER, 6);
+	if (period_flag) {
+		Add_Field ("PERIOD", DB_INTEGER, 6);
+	}
 	Add_Field ("GAP", DB_DOUBLE, 13.6);
 	Add_Field ("STD_DEV", DB_DOUBLE, 13.6);
 	Add_Field ("MAXIMUM", DB_DOUBLE, 13.6);
@@ -402,6 +406,10 @@ bool Gap_File::Set_Field_Numbers (void)
 
 	//---- optional fields ----
 
+	period = Optional_Field ("PERIOD", "TSTEP");
+	if (period >= 0) {
+		period_flag = true;
+	}
 	std_dev = Optional_Field ("STD_DEV", "STDDEV");
 	maximum = Optional_Field ("MAXIMUM", "MAX");
 	rmse = Optional_Field ("RMSE");
@@ -411,3 +419,78 @@ bool Gap_File::Set_Field_Numbers (void)
 	return (true);
 }
 
+//-----------------------------------------------------------
+//	Model_Data_File constructors
+//-----------------------------------------------------------
+
+Model_Data_File::Model_Data_File (void) : Db_Header ()
+{
+	File_Type ("Model Data File");
+	File_ID ("Data");
+
+	iteration = origin = destination = start = period = from_node = to_node = -1;
+	distance1 = distance2 = time1 = time2 = fftime1 = fftime2 = toll1 = toll2 = utility = share1 = -1;
+}
+
+//---------------------------------------------------------
+//	Create_Fields
+//---------------------------------------------------------
+
+bool Model_Data_File::Create_Fields (void)
+{
+	Clear_Fields ();
+
+	Add_Field ("ITERATION", DB_INTEGER, 6);
+	Add_Field ("ORIGIN", DB_INTEGER, 10);
+	Add_Field ("DESTINATION", DB_INTEGER, 10);
+	Add_Field ("START", DB_INTEGER, 4);
+	Add_Field ("PERIOD", DB_INTEGER, 4);
+	Add_Field ("FROM_NODE", DB_INTEGER, 10);
+	Add_Field ("TO_NODE", DB_INTEGER, 10);
+	Add_Field ("DISTANCE1", DB_DOUBLE, 12.2);
+	Add_Field ("DISTANCE2", DB_DOUBLE, 12.2);
+	Add_Field ("TIME1", DB_DOUBLE, 12.2);
+	Add_Field ("TIME2", DB_DOUBLE, 12.2);
+	Add_Field ("FFTIME1", DB_DOUBLE, 12.2);
+	Add_Field ("FFTIME2", DB_DOUBLE, 12.2);
+	Add_Field ("TOLL1", DB_DOUBLE, 12.2);
+	Add_Field ("TOLL2", DB_DOUBLE, 12.2);
+	Add_Field ("UTILITY", DB_DOUBLE, 15.6);
+	Add_Field ("SHARE1", DB_DOUBLE, 12.4);
+
+	return (Set_Field_Numbers ());
+}
+
+//-----------------------------------------------------------
+//	Set_Field_Numbers
+//-----------------------------------------------------------
+
+bool Model_Data_File::Set_Field_Numbers (void)
+{
+	//---- required fields ----
+
+	iteration = Required_Field ("ITERATION", "ITER");
+
+	if (iteration < 0) return (false);
+
+	//---- optional fields ----
+
+	origin = Optional_Field ("ORIGIN", "ORG");
+	destination = Optional_Field ("DESTINATION", "DES");
+	start = Optional_Field ("START", "TIME");
+	period = Optional_Field ("PERIOD", "TSTEP");
+	from_node = Optional_Field ("FROM_NODE", "DPID");
+	to_node = Optional_Field ("TO_NODE", "DESTID");
+	distance1 = Optional_Field ("DISTANCE1", "DISTTL");
+	distance2 = Optional_Field ("DISTANCE2", "DISTTF");
+	time1 = Optional_Field ("TIME1", "TIMETL");
+	time2 = Optional_Field ("TIME2", "TIMETF");
+	fftime1 = Optional_Field ("FFTIME1", "TIMEFFTL");
+	fftime2 = Optional_Field ("FFTIME2", "TIMEFFTF");
+	toll1 = Optional_Field ("TOLL1", "TOLLEL");
+	toll2 = Optional_Field ("TOLL2", "TOLLGP");
+	utility = Optional_Field ("UTILITY", "UTIL");
+	share1 = Optional_Field ("SHARE1", "TLSHARE");
+
+	return (true);
+}

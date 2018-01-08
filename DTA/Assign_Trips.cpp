@@ -18,8 +18,20 @@ DTA::Assign_Trips::Assign_Trips (DTA *_exe, int id)
 		volume_array.assign (exe->num_link, volume_data);
 
 		volume_array_ptr = &volume_array;
+
+		num_alt_path = num_path_build = num_od_loads = num_choices = 0;
+
+		alt_path_ptr = &num_alt_path;
+		path_build_ptr = &num_path_build;
+		od_loads_ptr = &num_od_loads;
+		choice_ptr = &num_choices;
 	} else {
 		volume_array_ptr = &exe->volume_array;
+
+		alt_path_ptr = &exe->num_alt_path;
+		path_build_ptr = &exe->num_path_build;
+		od_loads_ptr = &exe->num_od_loads;
+		choice_ptr = &exe->num_choices;
 	}
 }
 
@@ -67,6 +79,12 @@ void DTA::Assign_Trips::Combine_Volume (void)
 				}
 			}
 		}
+		exe->num_alt_path += num_alt_path;
+		exe->num_path_build += num_path_build;
+		exe->num_od_loads += num_od_loads;
+		exe->num_choices += num_choices;
+
+		num_alt_path = num_path_build = num_od_loads = num_choices = 0;
 	}
 }
 

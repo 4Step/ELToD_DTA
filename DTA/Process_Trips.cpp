@@ -16,10 +16,10 @@ void DTA::Assign_Trips::Process_Trips (Assign_Data data)
 	Flt_Itr trip_itr, cost_itr;
 	Int_Map_Itr map_itr;
 
-	root = data.Origin ();
+	org = data.Origin ();
 	start = data.Start ();
 
-	map_itr = exe->node_map.find (root);
+	map_itr = exe->node_map.find (org);
 	if (map_itr == exe->node_map.end ()) return;
 
 	root = map_itr->second;

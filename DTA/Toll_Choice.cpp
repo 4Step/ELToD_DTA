@@ -12,7 +12,7 @@
 
 void DTA::Assign_Trips::Toll_Choice (double trips, Path_Leg_Array &path1_array, Path_Leg_Array &path2_array)
 {
-	int join_node;
+	int branch_node, join_node, period;
 	double trips1, trips2, fftime1, fftime2, time1, time2, cost1, cost2, dist1, dist2, scale, rely, utility, prob, toll_const;
 	bool first;
 
@@ -21,7 +21,6 @@ void DTA::Assign_Trips::Toll_Choice (double trips, Path_Leg_Array &path1_array, 
 	Model_Itr model;
 
 	model = exe->model_array.begin ();
-	toll_const = -1.5;
 
 	//---- check for a path ----
 
@@ -30,6 +29,10 @@ void DTA::Assign_Trips::Toll_Choice (double trips, Path_Leg_Array &path1_array, 
 
 	itr2 = path2_array.rbegin ();
 	if (itr2 == path2_array.rend ()) return;
+
+	branch_node = 0;
+	period = exe->time_periods.Period ((int) itr1->Time ());
+	toll_const = exe->toll_constant [period];
 
 	//---- look for a common join node ----
 
@@ -62,6 +65,7 @@ void DTA::Assign_Trips::Toll_Choice (double trips, Path_Leg_Array &path1_array, 
 			time1 = itr1->Time ();
 			cost1 = itr1->Cost ();
 			dist1 = itr1->Length ();
+			branch_node = itr1->Node ();
 		}
 	}
 	fftime2 = 0;
@@ -120,6 +124,40 @@ void DTA::Assign_Trips::Toll_Choice (double trips, Path_Leg_Array &path1_array, 
 
 	trips1 = trips * prob;
 	trips2 = trips - trips1;
+
+	(*choice_ptr)++;
+
+	if (exe->sel_node_flag && data_out_flag) {
+		Node_Data *node_ptr = &exe->node_array [branch_node];
+
+		if (exe->sel_nodes.In_Range (node_ptr->Node ())) {
+			MAIN_LOCK
+			exe->model_data_file.Iteration (exe->iter);
+			exe->model_data_file.Origin (org);
+			exe->model_data_file.Destination (des);
+			exe->model_data_file.Start (start_period);
+
+			exe->model_data_file.Period (period + 1);
+			exe->model_data_file.From_Node (node_ptr->Node ());
+
+			node_ptr = &exe->node_array [join_node];
+
+			exe->model_data_file.To_Node (node_ptr->Node ());
+			exe->model_data_file.Distance1 (dist1);
+			exe->model_data_file.Distance2 (dist2);
+			exe->model_data_file.Time1 (time1);
+			exe->model_data_file.Time2 (time2);
+			exe->model_data_file.FFTime1 (fftime1);
+			exe->model_data_file.FFTime2 (fftime2);
+			exe->model_data_file.Toll1 (cost1);
+			exe->model_data_file.Toll2 (cost2);
+			exe->model_data_file.Utility (utility);
+			exe->model_data_file.Share1 (prob);
+
+			exe->model_data_file.Write ();
+			END_LOCK
+		}
+	}
 
 	Load_Path (trips1, path1_array);
 

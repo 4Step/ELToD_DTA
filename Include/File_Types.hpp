@@ -241,6 +241,7 @@ public:
 	Gap_File (void);
 
 	int    Iteration (void)           { return (Get_Integer (iteration)); }
+	int    Period (void)              { return (Get_Integer (period)); }
 	double Gap (void)                 { return (Get_Double (gap)); }
 	double Std_Dev (void)             { return (Get_Double (std_dev)); }
 	double Maximum (void)             { return (Get_Double (maximum)); }
@@ -249,6 +250,7 @@ public:
 	double Total (void)               { return (Get_Double (total)); }
 
 	void   Iteration (int value)      { Put_Field (iteration, value); }
+	void   Period (int value)         { Put_Field (period, value); }
 	void   Gap (double value)         { Put_Field (gap, value); }
 	void   Std_Dev (double value)     { Put_Field (std_dev, value); }
 	void   Maximum (double value)     { Put_Field (maximum, value); }
@@ -256,13 +258,72 @@ public:
 	void   Difference (double value)  { Put_Field (diff, value); }
 	void   Total (double value)       { Put_Field (total, value); }
 
+	bool   Period_Flag (void)         { return (period_flag); }
+	void   Period_Flag (bool flag)    { period_flag = flag;  }
+
 	virtual bool Create_Fields (void);
 
 protected:
 	virtual bool Set_Field_Numbers (void);
 
 private:
-	int iteration, gap, std_dev, maximum, rmse, diff, total;
+	int iteration, gap, std_dev, maximum, rmse, diff, total, period;
+	bool period_flag;
+};
+
+//---------------------------------------------------------
+//	Model_Data_File Class definition
+//---------------------------------------------------------
+
+class Model_Data_File : public Db_Header
+{
+public:
+	Model_Data_File (void);
+
+	int    Iteration (void)          { return (Get_Integer (iteration)); }
+	int    Origin (void)             { return (Get_Integer (origin)); }
+	int    Destination (void)        { return (Get_Integer (destination)); }
+	int    Start (void)              { return (Get_Integer (start)); }
+	int    Period (void)             { return (Get_Integer (period)); }
+	int    From_Node (void)          { return (Get_Integer (from_node)); }
+	int    To_Node (void)            { return (Get_Integer (to_node)); }
+	double Distance1 (void)          { return (Get_Double (distance1)); }
+	double Distance2 (void)          { return (Get_Double (distance2)); }
+	double Time1 (void)              { return (Get_Double (time1)); }
+	double Time2 (void)              { return (Get_Double (time2)); }
+	double FFTime1 (void)            { return (Get_Double (fftime1)); }
+	double FFTime2 (void)            { return (Get_Double (fftime2)); }
+	double Toll1 (void)              { return (Get_Double (toll1)); }
+	double Toll2 (void)              { return (Get_Double (toll2)); }
+	double Utility (void)            { return (Get_Double (utility)); }
+	double Share1 (void)             { return (Get_Double (share1)); }
+
+	void   Iteration (int value)     { Put_Field (iteration, value); }
+	void   Origin (int value)        { Put_Field (origin, value); }
+	void   Destination (int value)   { Put_Field (destination, value); }
+	void   Start (int value)         { Put_Field (start, value); }
+	void   Period (int value)        { Put_Field (period, value); }
+	void   From_Node (int value)     { Put_Field (from_node, value); }
+	void   To_Node (int value)       { Put_Field (to_node, value); }
+	void   Distance1 (double value)  { Put_Field (distance1, value); }
+	void   Distance2 (double value)  { Put_Field (distance2, value); }
+	void   Time1 (double value)      { Put_Field (time1, value); }
+	void   Time2 (double value)      { Put_Field (time2, value); }
+	void   FFTime1 (double value)    { Put_Field (fftime1, value); }
+	void   FFTime2 (double value)    { Put_Field (fftime2, value); }
+	void   Toll1 (double value)      { Put_Field (toll1, value); }
+	void   Toll2 (double value)      { Put_Field (toll2, value); }
+	void   Utility (double value)    { Put_Field (utility, value); }
+	void   Share1 (double value)     { Put_Field (share1, value); }
+
+	virtual bool Create_Fields (void);
+
+protected:
+	virtual bool Set_Field_Numbers (void);
+
+private:
+	int iteration, origin, destination, start, period, from_node, to_node;
+	int distance1, distance2, time1, time2, fftime1, fftime2, toll1, toll2, utility, share1;
 };
 
 #endif

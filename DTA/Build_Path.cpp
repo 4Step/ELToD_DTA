@@ -10,9 +10,9 @@
 
 void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 {
-	int anode, bnode, link, period, org, des;
+	int anode, bnode, link, period;
 	double vtime, vlen, trips, time, length, cost, imp_a, imp_b, cost_factor;
-	bool out_flag;
+	bool out_flag, leg_output_flag, data_output_flag;
 
 	Path_Data *path_ptr, *first_ptr, *last_ptr, path_root;
 	Path_Array path_array;
@@ -22,6 +22,8 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 	Node_Data *node_ptr;
 	Toll_Data *toll_ptr;
 	Int_Map_Itr map_itr;
+
+	(*path_build_ptr)++;
 
 	//---- initialie the queue pointers ----
 
@@ -39,27 +41,24 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 	last_ptr->Time (start);
 
 	period = exe->time_periods.Period ((int) start);
+	start_period = period + 1;
 
-	out_flag = false;
+	//---- check the section criteria ----
 
-	if (exe->path_leg_flag) {
-		node_ptr = &exe->node_array [root];
-		org = node_ptr->Node ();
+	out_flag = true;
 
-		if (!exe->sel_org_flag || exe->sel_org_range.In_Range (org)) {
-			if (!exe->sel_per_flag || exe->sel_per_range.In_Range (period + 1)) {
-				if (!exe->sel_iter_flag || exe->sel_iter_range.In_Range (exe->iter)) {
-					if (!exe->sel_mode_flag || exe->sel_mode_range.In_Range (mode)) {
-						exe->path_leg_file.Origin (org);
-						exe->path_leg_file.Period (period + 1);
-						exe->path_leg_file.Iteration (exe->iter);
-						exe->path_leg_file.Mode (exe->mode_names [mode]);
-						out_flag = true;
-					}
-				}
-			}
-		}
+	if (exe->sel_org_flag && !exe->sel_org_range.In_Range (org)) out_flag = false;
+	if (exe->sel_per_flag && !exe->sel_per_range.In_Range (period + 1)) out_flag = false;
+	if (exe->sel_iter_flag && !exe->sel_iter_range.In_Range (exe->iter)) out_flag = false;
+	if (exe->sel_mode_flag && !exe->sel_mode_range.In_Range (mode)) out_flag = false;
+
+	if (out_flag) {
+		leg_output_flag = exe->path_leg_flag;
+		data_output_flag = exe->model_data_flag;
+	} else {
+		leg_output_flag = data_output_flag = false;
 	}
+
 	vtime = exe->value_time;
 	vlen = exe->value_len;
 
@@ -182,15 +181,16 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 
 		des_node = map_itr->second;
 
+		(*od_loads_ptr)++;
+
 		//---- set the output flag ----
 
-		output_flag = false;
+		leg_out_flag = leg_output_flag;
+		data_out_flag = data_output_flag;
 
-		if (out_flag) {
-			if (!exe->sel_des_flag || exe->sel_des_range.In_Range (des)) {
-				exe->path_leg_file.Destination (des);
-				output_flag = true;
-			}
+		if (exe->sel_des_flag && !exe->sel_des_range.In_Range (des)) {
+			leg_out_flag = false;
+			data_out_flag = false;
 		}
 
 		//---- build the path array ----

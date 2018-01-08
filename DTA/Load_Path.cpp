@@ -98,9 +98,15 @@ void DTA::Assign_Trips::Load_Path (double trips, Path_Leg_Array &leg_array)
 
 			//---- save the path links ----
 
-			if (output_flag) {
+			if (leg_out_flag) {
 				link_ptr = &exe->link_array [leg_ritr->Link ()];
 
+				MAIN_LOCK
+				exe->path_leg_file.Origin (org);
+				exe->path_leg_file.Destination (des);
+				exe->path_leg_file.Period (start_period);
+				exe->path_leg_file.Iteration (exe->iter);
+				exe->path_leg_file.Mode (exe->mode_names [mode]);
 				exe->path_leg_file.Node_A (exe->node_array [link_ptr->Anode ()].Node ());
 				exe->path_leg_file.Node_B (exe->node_array [link_ptr->Bnode ()].Node ());
 				exe->path_leg_file.Time (leg_ritr->Time () - start);
@@ -109,6 +115,7 @@ void DTA::Assign_Trips::Load_Path (double trips, Path_Leg_Array &leg_array)
 				exe->path_leg_file.Trips (trips);
 
 				exe->path_leg_file.Write ();
+				END_LOCK
 			}
 		}
 		leg_data = *leg_ritr;

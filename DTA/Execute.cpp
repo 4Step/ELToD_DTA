@@ -64,7 +64,17 @@ void DTA::Execute (void)
 			Show_Message (String ("Convergence Gap = %.4lf") % gap);
 			Show_Message (1);
 			Print (2, String ("Iteration %d Gap %.4lf Processing Time %s") % iter % gap % Processing_Time (clock () - start));
+		} else {
+			Print (2, "Processing Time ") << Processing_Time (clock () - start);
 		}
+		Print (1, "Number of Origin Path Trees Built = ") << num_path_build;
+		Print (1, "Number of OD Pairs with Trips = ") << num_od_loads;
+		Print (1, "Number of Alternate Paths Built = ") << num_alt_path;
+		Print (1, "Number of Toll Model Choices = ") << num_choices;
+
+		num_path_build = num_od_loads = num_alt_path = num_choices = 0;
+
+		if (gap < exit_gap) break;
 	}
 	trip_file.Close ();
 
@@ -79,6 +89,30 @@ void DTA::Execute (void)
 
 	if (path_leg_flag) {
 		path_leg_file.Close ();
+	}
+
+	//---- close the model data file ----
+
+	if (model_data_flag) {
+		model_data_file.Close ();
+	}
+
+	//---- close the period gap file ----
+
+	if (period_gap_flag) {
+		period_gap_file.Close ();
+	}
+
+	//---- close the link gap file ----
+
+	if (link_gap_flag) {
+		link_gap_file.Close ();
+	}
+
+	//---- close the toll gap file ----
+
+	if (toll_gap_flag) {
+		toll_gap_file.Close ();
 	}
 
 	//---- write volumes ----

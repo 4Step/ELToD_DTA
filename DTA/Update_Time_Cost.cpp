@@ -20,6 +20,12 @@ double DTA::Update_Time_Cost (int iteration)
 	Link_Data *link_ptr;
 	Toll_Data *toll_ptr;
 	Gap_Data gap_data, toll_gap;
+	Gap_Array period_gap;
+	Gap_Itr period_itr;
+
+	if (period_gap_flag) {
+		period_gap.assign (num_period, gap_data);
+	}
 
 	factor = 1.0 / iteration;
 
@@ -62,6 +68,10 @@ double DTA::Update_Time_Cost (int iteration)
 
 			gap_data.Add (old_time * old_vol / 60.0, time * volume / 60.0);
 
+			if (period_gap_flag) {
+				period_gap [period].Add (old_time * old_vol / 60.0, time * volume / 60.0);
+			}
+
 			link_ptr->TTime (period, time);
 
 			//---- adjust cost ----
@@ -99,6 +109,21 @@ double DTA::Update_Time_Cost (int iteration)
 					toll_ptr->Toll (period, cost);
 				}
 			}
+		}
+	}
+	if (period_gap_flag) {
+		period_gap_file.Iteration (iteration);
+
+		for (period = 1, period_itr = period_gap.begin (); period_itr != period_gap.end (); period_itr++, period++) {
+			period_gap_file.Period (period);
+			period_gap_file.Gap (period_itr->Gap ());
+			period_gap_file.Std_Dev (period_itr->Std_Dev ());
+			period_gap_file.Maximum (period_itr->Max_Gap ());
+			period_gap_file.RMSE (period_itr->RMSE ());
+			period_gap_file.Difference (period_itr->Difference ());
+			period_gap_file.Total (period_itr->Total ());
+
+			period_gap_file.Write ();
 		}
 	}
 	if (link_gap_flag) {

@@ -10,7 +10,8 @@
 
 void DTA::Program_Control (void)
 {
-	int i, j, num;
+	int i, j, num, period_field, constant_field;
+
 	String key;
 	Strings values;
 	Str_Itr str_itr;
@@ -26,6 +27,7 @@ void DTA::Program_Control (void)
 		time_periods.Set_Periods (15, 0, 24 * 60);
 		num_period = time_periods.Num_Periods ();
 	}
+	toll_constant.assign (num_period, -1.5);
 
 	Print (2, String ("%s Control Keys:") % Program ());
 
@@ -81,20 +83,6 @@ void DTA::Program_Control (void)
 
 	zone_type = Get_Control_Integer (ZONE_NODE_TYPE);
 
-	//---- open toll file ----
-
-	Print (1);
-	key = Get_Control_String (TOLL_FILE);
-
-	//---- get the file format ----
-
-	if (Check_Control_Key (TOLL_FORMAT)) {
-		toll_file.Dbase_Format (Get_Control_String (TOLL_FORMAT));
-	}
-	if (!toll_file.Open (Project_Filename (key))) {
-		Error ("Toll File Not Found");
-	}
-
 	//---- open trip file ----
 
 	Print (1);
@@ -131,8 +119,49 @@ void DTA::Program_Control (void)
 
 	mode_fields.assign (num_mode, -1);
 
-	for (i=0, str_itr = mode_names.begin (); str_itr != mode_names.end (); str_itr++, i++) {
+	for (i = 0, str_itr = mode_names.begin (); str_itr != mode_names.end (); str_itr++, i++) {
 		mode_fields [i] = link_file.Field_Number (*str_itr);
+	}
+
+	//---- open toll file ----
+
+	Print (1);
+	key = Get_Control_String (TOLL_FILE);
+
+	//---- get the file format ----
+
+	if (Check_Control_Key (TOLL_FORMAT)) {
+		toll_file.Dbase_Format (Get_Control_String (TOLL_FORMAT));
+	}
+	if (!toll_file.Open (Project_Filename (key))) {
+		Error ("Toll File Not Found");
+	}
+
+	//---- open toll constant file ----
+
+	key = Get_Control_String (TOLL_CONSTANT_FILE);
+
+	if (!key.empty ()) {
+		constant_file.File_Type ("Toll Constant File");
+
+		//---- get the file format ----
+
+		if (Check_Control_Key (TOLL_CONSTANT_FORMAT)) {
+			constant_file.Dbase_Format (Get_Control_String (TOLL_CONSTANT_FORMAT));
+		}
+		if (!constant_file.Open (Project_Filename (key))) {
+			Error ("Toll Constant File Not Found");
+		}
+		period_field = constant_file.Required_Field ("PERIOD", "TSTEP", "TIME");
+		constant_field = constant_file.Required_Field ("CONSTANT", "FACTOR", "CONST");
+
+		while (constant_file.Read ()) {
+			i = constant_file.Get_Integer (period_field);
+
+			if (i > 0 && i <= num_period) {
+				toll_constant [i - 1] = (float) constant_file.Get_Double (constant_field);
+			}
+		}
 	}
 
 	//---- number of iteration ----
@@ -140,8 +169,13 @@ void DTA::Program_Control (void)
 	Print (1);
 	num_iter = Get_Control_Integer (NUMBER_OF_ITERATIONS);
 
+	//---- gap convergence criteria ----
+
+	exit_gap = Get_Control_Double (GAP_CONVERGENCE_CRITERIA);
+
 	//---- time value ----
 
+	Print (1);
 	value_time = Get_Control_Double (TIME_VALUE);
 
 	//---- distance value ----
@@ -268,17 +302,18 @@ void DTA::Program_Control (void)
 
 	//---- toll choice model ----
 
-	model.Time_Factor (-0.117);
-	model.Toll_Factor (-0.584);
-	model.Rely_Ratio (2.0);
-	model.Rely_Time (0.2);
-	model.Rely_Dist (0.1);
-	model.Perceive_Time (13.67);
-	model.Perceive_Mid_VC (0.693);
-	model.Perceive_Max_VC (1.2);
-	model.Express_Weight (1.28);
-	model.Scale_Length (7.2);
-	model.Scale_Alpha (1.0);
+	Print (1);
+	model.Time_Factor (Get_Control_Double (MODEL_TIME_FACTOR));
+	model.Toll_Factor (Get_Control_Double (MODEL_TOLL_FACTOR));
+	model.Rely_Ratio (Get_Control_Double (MODEL_RELIABILITY_RATIO));
+	model.Rely_Time (Get_Control_Double (MODEL_RELIABILITY_TIME));
+	model.Rely_Dist (Get_Control_Double (MODEL_RELIABILITY_DISTANCE));
+	model.Perceive_Time (Get_Control_Double (MODEL_PERCEIVED_TIME));
+	model.Perceive_Mid_VC (Get_Control_Double (MODEL_PERCEIVED_MID_VC));
+	model.Perceive_Max_VC (Get_Control_Double (MODEL_PERCEIVED_MAX_VC));
+	model.Express_Weight (Get_Control_Double (MODEL_EXPRESS_WEIGHT));
+	model.Scale_Length (Get_Control_Double (MODEL_SCALE_LENGTH));
+	model.Scale_Alpha (Get_Control_Double (MODEL_SCALE_ALPHA));
 
 	model_array.push_back (model);
 
@@ -317,6 +352,28 @@ void DTA::Program_Control (void)
 		if (!path_leg_file.Create (Project_Filename (key))) {
 			Error ("Path Leg File Not Created");
 		}
+	}
+
+	//---- open the new model data file ----
+
+	Print (1);
+	key = Get_Control_String (NEW_MODEL_DATA_FILE);
+
+	if (!key.empty ()) {
+		model_data_flag = true;
+
+		//---- get the file format ----
+
+		if (Check_Control_Key (NEW_MODEL_DATA_FORMAT)) {
+			model_data_file.Dbase_Format (Get_Control_String (NEW_MODEL_DATA_FORMAT));
+		}
+		if (!model_data_file.Create (Project_Filename (key))) {
+			Error ("Model Data File Not Created");
+		}
+	}
+
+	if (path_leg_flag || model_data_flag) {
+		Print (1);
 
 		//---- select origins ----
 
@@ -376,6 +433,15 @@ void DTA::Program_Control (void)
 			sel_iter_flag = true;
 			sel_iter_range.Add_Ranges ((key ("%d") % num_iter));
 		}
+
+		//---- select iterations ----
+
+		key = Get_Control_Text (SELECT_DECISION_NODES);
+
+		if (!key.empty () && !key.Equals ("NONE")) {
+			sel_node_flag = true;
+			sel_nodes.Add_Ranges (key);
+		}
 	}
 
 	//---- open the link gap_file ----
@@ -397,6 +463,24 @@ void DTA::Program_Control (void)
 		Print (1);
 		if (!toll_gap_file.Create (Project_Filename (key))) {
 			Error ("Toll Gap File was Not Created");
+		}
+	}
+	
+	//---- open period gap file ----
+
+	key = Get_Control_String (NEW_PERIOD_GAP_FILE);
+
+	if (!key.empty ()) {
+		period_gap_flag = true;
+		period_gap_file.Period_Flag (true);
+
+		//---- get the file format ----
+
+		if (Check_Control_Key (NEW_PERIOD_GAP_FORMAT)) {
+			period_gap_file.Dbase_Format (Get_Control_String (NEW_PERIOD_GAP_FORMAT));
+		}
+		if (!period_gap_file.Create (Project_Filename (key))) {
+			Error ("Period Gap File Not Created");
 		}
 	}
 

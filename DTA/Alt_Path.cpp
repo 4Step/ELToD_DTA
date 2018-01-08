@@ -49,6 +49,7 @@ void DTA::Assign_Trips::Alt_Path (Path_Leg_Data root_data, int from_node, int to
 
 	max_imp = MAX_INTEGER;
 	best = -1;
+	(*alt_path_ptr)++;
 
 	//---- add links leaving the origin node ----
 

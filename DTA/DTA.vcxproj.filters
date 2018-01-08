@@ -62,6 +62,9 @@
     <ClCompile Include="Gap_Report.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Distribution_Report.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DTA.hpp">

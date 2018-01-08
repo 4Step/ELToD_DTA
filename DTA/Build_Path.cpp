@@ -10,7 +10,7 @@
 
 void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 {
-	int anode, bnode, link, period;
+	int i, anode, bnode, link, period;
 	double vtime, vlen, trips, time, length, cost, imp_a, imp_b, cost_factor;
 	bool out_flag, leg_output_flag, data_output_flag;
 
@@ -182,6 +182,7 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 		des_node = map_itr->second;
 
 		(*od_loads_ptr)++;
+		(*count_ptr) = 0;
 
 		//---- set the output flag ----
 
@@ -214,5 +215,10 @@ void DTA::Assign_Trips::Build_Path (Floats *trip_ptr)
 		//---- load the path ----
 
 		Load_Path (trips, leg_array);
+
+		i = (*count_ptr);
+		if (i >= exe->num_distb) i = exe->num_distb - 1;
+
+		(*(distb_ptr + i))++;
 	}
 }

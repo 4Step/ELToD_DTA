@@ -23,6 +23,8 @@ void DTA::Read_Trips (void)
 	Volume_Data volume_data (num_period, num_mode);
 	volume_array.assign (num_link, volume_data);
 
+	memset (choice_distb, '\0', sizeof (choice_distb));
+
 	increment = time_periods.Increment ();
 	
 	if (thread_flag) {

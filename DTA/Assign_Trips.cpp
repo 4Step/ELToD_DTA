@@ -19,12 +19,16 @@ DTA::Assign_Trips::Assign_Trips (DTA *_exe, int id)
 
 		volume_array_ptr = &volume_array;
 
-		num_alt_path = num_path_build = num_od_loads = num_choices = 0;
+		num_alt_path = num_path_build = num_od_loads = num_choices = choice_count = 0;
 
 		alt_path_ptr = &num_alt_path;
 		path_build_ptr = &num_path_build;
 		od_loads_ptr = &num_od_loads;
 		choice_ptr = &num_choices;
+		distb_ptr = choice_distb;
+		count_ptr = &choice_count;
+
+		memset (choice_distb, '\0', sizeof (choice_distb));
 	} else {
 		volume_array_ptr = &exe->volume_array;
 
@@ -32,6 +36,8 @@ DTA::Assign_Trips::Assign_Trips (DTA *_exe, int id)
 		path_build_ptr = &exe->num_path_build;
 		od_loads_ptr = &exe->num_od_loads;
 		choice_ptr = &exe->num_choices;
+		distb_ptr = exe->choice_distb;
+		count_ptr = &exe->choice_count;
 	}
 }
 
@@ -84,6 +90,10 @@ void DTA::Assign_Trips::Combine_Volume (void)
 		exe->num_od_loads += num_od_loads;
 		exe->num_choices += num_choices;
 
+		for (int i = 0; i < exe->num_distb; i++) {
+			exe->choice_distb [i] += choice_distb [i];
+			choice_distb [i] = 0;
+		}
 		num_alt_path = num_path_build = num_od_loads = num_choices = 0;
 	}
 }

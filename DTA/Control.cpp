@@ -490,5 +490,7 @@ void DTA::Program_Control (void)
 
 	link_gap_flag = (Report_Flag (LINK_GAP_REPORT) || link_gap_file.Is_Open ());
 	toll_gap_flag = (Report_Flag (TOLL_GAP_REPORT) || toll_gap_file.Is_Open ());
+
+	distb_flag = Report_Flag (CHOICE_DISTRIBUTION);
 }
 

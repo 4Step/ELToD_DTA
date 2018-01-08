@@ -8,6 +8,8 @@
 #include "Bounded_Queue.hpp"
 #include "Data_Range.hpp"
 
+#define NUM_DISTB	100
+
 //---------------------------------------------------------
 //	DTA class definition
 //---------------------------------------------------------
@@ -37,7 +39,7 @@ protected:
 	virtual void Page_Header (void);
 
 private:
-	enum DTA_Reports { LINK_GAP_REPORT = 1, TOLL_GAP_REPORT };
+	enum DTA_Reports { LINK_GAP_REPORT = 1, TOLL_GAP_REPORT, CHOICE_DISTRIBUTION };
 
 	Link_File link_file;
 	Node_File node_file;
@@ -52,12 +54,12 @@ private:
 	Gap_Array link_gap_array, toll_gap_array;
 
 	bool volume_flag, path_leg_flag, sel_org_flag, sel_des_flag, sel_per_flag, sel_iter_flag, sel_mode_flag, sel_node_flag;
-	bool link_gap_flag, toll_gap_flag, memory_flag, model_data_flag, period_gap_flag;
-	int max_zone, num_node, num_link, num_period, num_mode, num_iter, zone_type, report_num;
+	bool link_gap_flag, toll_gap_flag, memory_flag, model_data_flag, period_gap_flag, distb_flag;
+	int max_zone, num_node, num_link, num_period, num_mode, num_iter, zone_type, report_num, num_distb, choice_count;
 	Data_Range sel_org_range, sel_des_range, sel_per_range, sel_iter_range, sel_mode_range, sel_nodes;
 	Data_Range policy_range, express_types, entry_types, exit_types, join_types;
 
-	int iter, num_alt_path, num_path_build, num_od_loads, num_choices;
+	int iter, num_alt_path, num_path_build, num_od_loads, num_choices, choice_distb [NUM_DISTB];
 	double value_time, value_len, value_cost, min_trip_split, min_speed, exit_gap;
 	Floats cost_factors, max_vc, min_toll, max_toll, vc_offset, exponent, max_change, toll_constant;
 
@@ -90,6 +92,9 @@ private:
 
 	void Gap_Report (void);
 	void Gap_Header (void);
+	
+	void Distribution_Report (void);
+	void Distribution_Header (void);
 
 	bool thread_flag;
 	Threads threads;
@@ -116,7 +121,7 @@ private:
 		void Clear (void);
 
 	private:
-		int thread, root, mode, org, des, des_node, start_period;
+		int thread, root, mode, org, des, des_node, start_period, choice_count, *count_ptr, choice_distb [NUM_DISTB], *distb_ptr;
 		int num_alt_path, num_path_build, num_od_loads, num_choices, *alt_path_ptr, *path_build_ptr, *od_loads_ptr, *choice_ptr;
 		double vcost, start;
 		bool leg_out_flag, data_out_flag;

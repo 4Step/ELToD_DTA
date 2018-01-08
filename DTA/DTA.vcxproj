@@ -123,6 +123,7 @@
     <ClCompile Include="Assign_Trips.cpp" />
     <ClCompile Include="Build_Path.cpp" />
     <ClCompile Include="Control.cpp" />
+    <ClCompile Include="Distribution_Report.cpp" />
     <ClCompile Include="DTA.cpp" />
     <ClCompile Include="Execute.cpp" />
     <ClCompile Include="Gap_Data.cpp" />

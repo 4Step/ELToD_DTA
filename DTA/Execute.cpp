@@ -139,6 +139,9 @@ void DTA::Execute (void)
 			case TOLL_GAP_REPORT:		//---- toll gap Report ----
 				Gap_Report ();
 				break;
+			case CHOICE_DISTRIBUTION:	//---- choice distribution ----
+				Distribution_Report ();
+				break;
 			default:
 				break;
 		}
@@ -158,6 +161,9 @@ void DTA::Page_Header (void)
 			break;
 		case TOLL_GAP_REPORT:		//---- toll gap Report ----
 			Gap_Header ();
+			break;
+		case CHOICE_DISTRIBUTION:	//---- choice distribution ----
+			Distribution_Header ();
 			break;
 		default:
 			break;

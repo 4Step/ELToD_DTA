@@ -126,6 +126,7 @@ void DTA::Assign_Trips::Toll_Choice (double trips, Path_Leg_Array &path1_array, 
 	trips2 = trips - trips1;
 
 	(*choice_ptr)++;
+	(*count_ptr)++;
 
 	if (exe->sel_node_flag && data_out_flag) {
 		Node_Data *node_ptr = &exe->node_array [branch_node];

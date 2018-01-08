@@ -11,7 +11,7 @@
 DTA::DTA (void) : Execution_Service ()
 {
 	Program ("DTA");
-	Version (9);
+	Version (10);
 	Title ("Dynamnic Traffic Assignment");
 
 	Control_Key keys [] = { //--- code, key, level, status, type, default, range, help ----
@@ -87,15 +87,16 @@ DTA::DTA (void) : Execution_Service ()
 	const char *reports [] = {
 		"LINK_GAP_REPORT",
 		"TOLL_GAP_REPORT",
+		"CHOICE_DISTRIBUTION",
 		""
 	};
 	Key_List (keys);
 	Report_List (reports);
 
-	iter = num_alt_path = num_path_build = num_od_loads = num_choices = 0;
+	iter = num_alt_path = num_path_build = num_od_loads = num_choices = choice_count = 0;
 	thread_flag = volume_flag = path_leg_flag = memory_flag = period_gap_flag = false;
 	sel_org_flag = sel_des_flag = sel_per_flag = sel_iter_flag = sel_mode_flag = sel_node_flag = false;
-	link_gap_flag = toll_gap_flag = model_data_flag = false;
+	link_gap_flag = toll_gap_flag = model_data_flag = distb_flag = false;
 	max_zone = 1000;
 	num_period = 96;
 	num_mode = 0;
@@ -104,6 +105,8 @@ DTA::DTA (void) : Execution_Service ()
 	zone_type = 99;
 	min_speed = 0.1;
 	exit_gap = 0.0;
+
+	num_distb = NUM_DISTB;
 
 	min_trip_split = 0.01;
 	report_num = 0;
